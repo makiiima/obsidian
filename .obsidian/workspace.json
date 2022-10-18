@@ -11,27 +11,11 @@
             "id": "7c2ab3cba3eaa7ab",
             "type": "leaf",
             "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Network/Computer Networking A Top-Down Approach, 7th Edition (James Kurose, Keith Ross) (z-lib.org).pdf"
-              }
-            }
-          },
-          {
-            "id": "04295e00ccee150d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "未命名.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "8c3d967f2b4b6f43",
@@ -116,7 +100,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "未命名.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +116,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "未命名.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -155,9 +137,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "未命名.md"
-              }
+              "state": {}
             }
           },
           {
@@ -168,22 +148,22 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "ribbon": {
     "mostRecentAction": ""
   },
-  "active": "04295e00ccee150d",
+  "active": "f0e3f5d3e4b1bf0f",
   "lastOpenFiles": [
     "Network/Computer Network.md",
-    "未命名.md",
-    "Network/Computer Networking A Top-Down Approach, 7th Edition (James Kurose, Keith Ross) (z-lib.org).pdf",
     "2022-10-18.md",
+    "未命名.md",
+    "Network/Textbooks/Computer Networking A Top-Down Approach, 7th Edition (James Kurose, Keith Ross) (z-lib.org).pdf",
     "Network/Top-Down Aprroach.md",
     "ann.md",
     "Network/image.png"
