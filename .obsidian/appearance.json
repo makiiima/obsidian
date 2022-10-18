@@ -1,5 +1,7 @@
 {
   "accentColor": "",
-  "cssTheme": "Atom",
-  "translucency": false
+  "cssTheme": "",
+  "translucency": false,
+  "theme": "system",
+  "textFontFamily": "PingFang HK"
 }

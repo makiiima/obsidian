@@ -1,16 +1,5 @@
 #notes #in-class
-> Hw+Quiz+Lab 50% Final 50%
-
-[[Top-Down Aprroach]]
-
-# Chap.2 The Physical Layer
-
-Transmission media
-
--   guided or wired
--   wireless
--   satellite
-## 2.1 Guided Transmission media
+dia
 
 ### 2.1.1 Persistent Storage
 
@@ -20,15 +9,15 @@ Transmission media
 
 > A signal is usually carried as the difference in voltage between the two wires in the pair. **Transmitting the signal as the difference between the two voltage levels**, as opposed to an absolute voltage, provides better immunity to external noise because **the noise tends to affect the voltage traveling through both wires in the same way, leaving the differential relatively unchanged**. 使用电压差值, 这样外界影响会被抵消
 
--   **Category 5e cabling**: also known as **Cat 5e**
--   **full-duplex links**: links can be used in both directions at the same time
--   **half-duplex links**: links can only be used in one direction at a time
--   **simplex links**: links only allow one direction
+- **Category 5e cabling**: also known as **Cat 5e**
+- **full-duplex links**: links can be used in both directions at the same time
+- **half-duplex links**: links can only be used in one direction at a time
+- **simplex links**: links only allow one direction
 
 ### 2.1.3 Coaxial Cable
 
--   50-ohm cable, for digital transmission from the start
--   75-ohm cable, for analog transmission and cable television
+- 50-ohm cable, for digital transmission from the start
+- 75-ohm cable, for analog transmission and cable television
 
 wide bandwidth with up to 6GHz
 
@@ -46,7 +35,9 @@ Despite these difficulties, it is practical to send at least 500 Mbps short dist
 
 ### 2.2.1 The Electromagnetic Spectrum
 
-$$\lambda*f=c $$
+$$
+\lambda*f=c
+$$
 
 when ƛ is meters and f is MHz, ƛ*f=300
 

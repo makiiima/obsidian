@@ -4,16 +4,61 @@
     "type": "split",
     "children": [
       {
-        "id": "14f1c63cd2d144a2",
+        "id": "329de79b3a84d5e6",
         "type": "tabs",
+        "dimension": 66.18122977346277,
         "children": [
           {
-            "id": "f0a2cba8f79649e8",
+            "id": "fb9895e2ba428a13",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "pdf",
               "state": {
-                "file": "ComputerNetwork/Textbooks/计算机网络（原书第7版） 自顶向下方法 (James F. Kurose Keith W. Ross) (z-lib.org).pdf"
+                "file": "ComputerNetwork/Textbooks/Computer Networks, Global Edition (Andrew Tanenbaum, Nick Feamster etc.) (z-lib.org).pdf"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "b442fa02a2caf629",
+        "type": "tabs",
+        "dimension": 33.81877022653722,
+        "children": [
+          {
+            "id": "2439f7e15181a64a",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "2022-10-18",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Diary/2022-10-18.md\",\"mode\":\"source\",\"backlinks\":true,\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":4,\"ch\":14},\"to\":{\"line\":4,\"ch\":14}}}"
+                }
+              ]
+            },
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ComputerNetwork/Computer Network.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
               }
             }
           }
@@ -33,6 +78,15 @@
           {
             "id": "f0e3f5d3e4b1bf0f",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "file-explorer",
               "state": {
@@ -43,6 +97,15 @@
           {
             "id": "8e4c0564b2c10ac0",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "search",
               "state": {
@@ -58,6 +121,15 @@
           {
             "id": "eb700eae359a460a",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "starred",
               "state": {}
@@ -67,7 +139,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "544e3be013c1692f",
@@ -80,10 +153,19 @@
           {
             "id": "6ded484b9f27a687",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ComputerNetwork/Textbooks/计算机网络（原书第7版） 自顶向下方法 (James F. Kurose Keith W. Ross) (z-lib.org).pdf",
+                "file": "ComputerNetwork/Computer Network.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,10 +179,19 @@
           {
             "id": "11fb8668391f8068",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ComputerNetwork/Textbooks/计算机网络（原书第7版） 自顶向下方法 (James F. Kurose Keith W. Ross) (z-lib.org).pdf",
+                "file": "ComputerNetwork/Computer Network.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -109,6 +200,15 @@
           {
             "id": "141abb8e31d74325",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "tag",
               "state": {
@@ -120,18 +220,53 @@
           {
             "id": "4e352bd19ea45fe2",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "outline",
               "state": {
-                "file": "ComputerNetwork/Textbooks/计算机网络（原书第7版） 自顶向下方法 (James F. Kurose Keith W. Ross) (z-lib.org).pdf"
+                "file": "ComputerNetwork/Computer Network.md"
               }
             }
           },
           {
             "id": "ba3a758211f41362",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "41678d19f408d2b7",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "advanced-tables-toolbar",
               "state": {}
             }
           }
@@ -145,17 +280,20 @@
   "ribbon": {
     "mostRecentAction": ""
   },
-  "active": "f0a2cba8f79649e8",
+  "active": "2439f7e15181a64a",
+  "ophidian:layout-settings": {
+    "pane-relief:focus-lock": true
+  },
   "lastOpenFiles": [
+    "ComputerNetwork/Textbooks/Computer Networks, Global Edition (Andrew Tanenbaum, Nick Feamster etc.) (z-lib.org).pdf",
+    "ComputerNetwork/Computer Network.md",
+    "Diary/2022-10-18.md",
+    "ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/sim/README.md",
+    "ComputerNetwork/Top-Down Aprroach.md",
+    "ComputerNetwork/Labs/Lab1/3200102555_Lab1.pdf",
+    "ComputerNetwork/Textbooks/计算机网络（原书第7版） 自顶向下方法 (James F. Kurose Keith W. Ross) (z-lib.org).pdf",
     "TheoryofComputation/TC01.pdf",
     "OperatingSystem/Lab/报告模板.md",
-    "OperatingSystem/Lab/Lab1/riscv-spec-20191213.pdf",
-    "OperatingSystem/Lab/Lab1/Lab1_3200102555.md",
-    "OperatingSystem/Lab/Lab0/Lab0_3200102555.pdf",
-    "OperatingSystem/Lab/Lab0/Lab0_3200102555.md",
-    "OperatingSystem/Lab/Lab0/GDB完全中文手册(1).pdf",
-    "OperatingSystem/Lab/Lab0/报告模板.md",
-    "DataStructure/Project/Project1/project1.md",
-    "Network/Textbooks/Computer Networks, Global Edition (Andrew Tanenbaum, Nick Feamster etc.) (z-lib.org).pdf"
+    "OperatingSystem/Lab/Lab1/riscv-spec-20191213.pdf"
   ]
 }

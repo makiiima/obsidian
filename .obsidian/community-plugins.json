@@ -3,5 +3,7 @@
   "obsidian-tasks-plugin",
   "obsidian-git",
   "calendar",
-  "obsidian-native-scrollbars"
+  "obsidian-native-scrollbars",
+  "table-editor-obsidian",
+  "pane-relief"
 ]
