@@ -1,0 +1,191 @@
+{
+  "main": {
+    "id": "3a274d9e63e98d39",
+    "type": "split",
+    "children": [
+      {
+        "id": "ab245f28709c5b15",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7c2ab3cba3eaa7ab",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Network/Computer Networking A Top-Down Approach, 7th Edition (James Kurose, Keith Ross) (z-lib.org).pdf"
+              }
+            }
+          },
+          {
+            "id": "04295e00ccee150d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "未命名.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "8c3d967f2b4b6f43",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "51727e017648770f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Network/Computer Network.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c079b29152bb4fcf",
+    "type": "split",
+    "children": [
+      {
+        "id": "91731cd8e907be98",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f0e3f5d3e4b1bf0f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "8e4c0564b2c10ac0",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "eb700eae359a460a",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "544e3be013c1692f",
+    "type": "split",
+    "children": [
+      {
+        "id": "d6cc9888cd03096e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6ded484b9f27a687",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "未命名.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "11fb8668391f8068",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "未命名.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "141abb8e31d74325",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "4e352bd19ea45fe2",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "未命名.md"
+              }
+            }
+          },
+          {
+            "id": "ba3a758211f41362",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "ribbon": {
+    "mostRecentAction": ""
+  },
+  "active": "04295e00ccee150d",
+  "lastOpenFiles": [
+    "Network/Computer Network.md",
+    "未命名.md",
+    "Network/Computer Networking A Top-Down Approach, 7th Edition (James Kurose, Keith Ross) (z-lib.org).pdf",
+    "2022-10-18.md",
+    "Network/Top-Down Aprroach.md",
+    "ann.md",
+    "Network/image.png"
+  ]
+}
