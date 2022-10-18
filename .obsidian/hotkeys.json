@@ -18,5 +18,13 @@
       "key": "]"
     }
   ],
-  "obsidian-annotator:toggle-annotation-mode": []
+  "obsidian-annotator:toggle-annotation-mode": [],
+  "editor:focus": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "J"
+    }
+  ]
 }

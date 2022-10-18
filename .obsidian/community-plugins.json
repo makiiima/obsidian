@@ -1,7 +1,7 @@
 [
-  "obsidian-annotator",
   "dataview",
   "obsidian-tasks-plugin",
   "obsidian-git",
-  "calendar"
+  "calendar",
+  "obsidian-native-scrollbars"
 ]

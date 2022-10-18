@@ -1,0 +1,55 @@
+#-----------------------------------------------------------
+# Vivado v2020.3 (64-bit)
+# SW Build 3173277 on Wed Apr  7 05:07:49 MDT 2021
+# IP Build 3174024 on Wed Apr  7 23:42:35 MDT 2021
+# Start of session at: Sun Oct  9 00:51:29 2022
+# Process ID: 33512
+# Current directory: C:/Users/LENOVO/Desktop/Exp1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent23708 C:\Users\LENOVO\Desktop\Exp1\Exp1.xpr
+# Log file: C:/Users/LENOVO/Desktop/Exp1/vivado.log
+# Journal file: C:/Users/LENOVO/Desktop/Exp1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project -part xcvc1802-viva1596-1LHP-i-L C:/Users/LENOVO/Desktop/Exp1/Exp1.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+launch_simulation
+open_wave_config C:/Users/LENOVO/Desktop/Exp1/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+close_sim
+launch_simulation
+open_wave_config C:/Users/LENOVO/Desktop/Exp1/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+close_sim
+launch_simulation
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_simulation
+open_wave_config C:/Users/LENOVO/Desktop/Exp1/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+close_sim

@@ -1,6 +1,6 @@
 {
   "vimMode": true,
-  "showFrontmatter": true,
+  "showFrontmatter": false,
   "attachmentFolderPath": "./attachments",
   "promptDelete": false
 }

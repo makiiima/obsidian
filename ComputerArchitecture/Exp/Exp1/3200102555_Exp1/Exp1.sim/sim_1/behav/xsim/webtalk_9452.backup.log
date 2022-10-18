@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Webtalk v2020.3 (64-bit)
+# SW Build 3173277 on Wed Apr  7 05:07:49 MDT 2021
+# IP Build 3174024 on Wed Apr  7 23:42:35 MDT 2021
+# Start of session at: Sun Oct  9 01:31:15 2022
+# Process ID: 9452
+# Current directory: C:/Users/LENOVO/Desktop/Exp1/Exp1.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source C:/Users/LENOVO/Desktop/Exp1/Exp1.sim/sim_1/behav/xsim/xsim.dir/core_sim_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: C:/Users/LENOVO/Desktop/Exp1/Exp1.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: C:/Users/LENOVO/Desktop/Exp1/Exp1.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source C:/Users/LENOVO/Desktop/Exp1/Exp1.sim/sim_1/behav/xsim/xsim.dir/core_sim_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/LENOVO/Desktop/Exp1/Exp1.sim/sim_1/behav/xsim/xsim.dir/core_sim_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sun Oct  9 01:31:21 2022. For additional details about this file, please refer to the WebTalk help file at Z:/Xili/Vivado/2020.3/doc/webtalk_introduction.html.
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 99.336 ; gain = 0.367
+INFO: [Common 17-206] Exiting Webtalk at Sun Oct  9 01:31:21 2022...
