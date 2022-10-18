@@ -41,11 +41,21 @@ $$
 
 when ƛ is meters and f is MHz, ƛ*f=300
 
-![[image.png]]
-![](https://secure2.wostatic.cn/static/oFo9JctTJ7MA1THpdMaZ1L/image.png?auth_key=1666033753-4ayk1WNk9BX6HB4p2YAjRP-0-e824cf791c994a4be6388b88ebfbe99c)
+![](attachments/image.png)
 
 ### 2.2.2 Frequency Hopping Spread Spectrum
 
 > In **frequency hopping spread spectrum**(调频扩频, FHSS), a transmitter hops from frequency to frequency hundreds of times per second. It is popular for military communication because it makes transmissions hard to detect and next to impossible to jam. It also offers good resistance to fading due to signals taking different paths from source to destination and interfering after recombining. It also offers resistance to narrowband interference because the receiver will not be stuck on an impaired frequency for long enough to shut down communication.
 
 ### 2.2.3 Direct Sequence Spread Spectrum
+
+- code division multiple access
+
+### 2.2.4 Ultra-Wideband Communication
+
+- UWB, Ultra-WideBand, have a bandwidth of at least 500 MHz or at least 20% of the center frequency of their frequency band.
+
+## 2.3 Using the Spectrum for Transmission
+
+### 2.3.1 Radio Transmission
+
