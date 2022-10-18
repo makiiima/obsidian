@@ -49,8 +49,8 @@ Despite these difficulties, it is practical to send at least 500 Mbps short dist
 $$\lambda*f=c $$
 
 when ƛ is meters and f is MHz, ƛ*f=300
-![[image.png]]
 
+![[image.png]]
 ![](https://secure2.wostatic.cn/static/oFo9JctTJ7MA1THpdMaZ1L/image.png?auth_key=1666033753-4ayk1WNk9BX6HB4p2YAjRP-0-e824cf791c994a4be6388b88ebfbe99c)
 
 ### 2.2.2 Frequency Hopping Spread Spectrum

@@ -4,20 +4,6 @@
     "type": "split",
     "children": [
       {
-        "id": "ab245f28709c5b15",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "7c2ab3cba3eaa7ab",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          }
-        ]
-      },
-      {
         "id": "8c3d967f2b4b6f43",
         "type": "tabs",
         "children": [
@@ -25,12 +11,9 @@
             "id": "51727e017648770f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Network/Computer Network.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
+                "file": "Network/Textbooks/计算机网络（原书第7版） 自顶向下方法 (James F. Kurose Keith W. Ross) (z-lib.org).pdf"
               }
             }
           }
@@ -100,6 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Network/Textbooks/计算机网络（原书第7版） 自顶向下方法 (James F. Kurose Keith W. Ross) (z-lib.org).pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,6 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Network/Textbooks/计算机网络（原书第7版） 自顶向下方法 (James F. Kurose Keith W. Ross) (z-lib.org).pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +122,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Network/Textbooks/计算机网络（原书第7版） 自顶向下方法 (James F. Kurose Keith W. Ross) (z-lib.org).pdf"
+              }
             }
           },
           {
@@ -153,19 +140,22 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "ribbon": {
     "mostRecentAction": ""
   },
-  "active": "f0e3f5d3e4b1bf0f",
+  "active": "51727e017648770f",
   "lastOpenFiles": [
+    "note.md",
     "Network/Computer Network.md",
-    "2022-10-18.md",
-    "未命名.md",
-    "Network/Textbooks/Computer Networking A Top-Down Approach, 7th Edition (James Kurose, Keith Ross) (z-lib.org).pdf",
     "Network/Top-Down Aprroach.md",
-    "ann.md",
-    "Network/image.png"
+    "Network/image.png",
+    "Network/Textbooks/计算机网络（原书第7版） 自顶向下方法 (James F. Kurose Keith W. Ross) (z-lib.org).pdf",
+    "Diary/2022-10-18.md",
+    "2022-10-18.md",
+    "Network/Textbooks/Computer Networking A Top-Down Approach, 7th Edition (James Kurose, Keith Ross) (z-lib.org).pdf",
+    "ann.md"
   ]
 }
