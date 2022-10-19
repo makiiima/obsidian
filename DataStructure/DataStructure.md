@@ -49,13 +49,54 @@ Features that a linked list must have:
 - A new structure can be obtained from the system's global memory by a call to malloc and released by a call to free.
 
 ![image-20221019160402637](./attachments/image-20221019160402637.png)
-
+![[Pasted image 20221020023526.png]]
 ## 3 The Stack ADT
+### ADT
+- LIFO: Last-In-First-Out
+- Insertions and deletions at the **top** only
+- Objects: A finite orderd list with zero or more elements
+- Operations:
+	- Int IsEmpty(Stack S)
+	- Stack CreateStack()
+	- DisposeStack(Stack S)
+	- MakeEmpty(Stack S)
+	- Push(ElementType X, Stack S)
+	- ELementType Top(Stack S)
+	- Pop(Stack S)
 
+### Implementations
+#### Linked List Implementation(with a header node)
+```c
+Push(int x, Stack S)
+{
+	TmpCell->Next = S->Next;
+	S->Next=TmpCell;
+}
 
+int Top(Stack S)
+{
+	return S->Next->Element;
+}
 
+int Pop(Stack S)
+{
+	FirstCell=S->Next
+}
+```
 
+> calls to malloc() and free() are expensive->keep another stack as a recycle bin
 
+#### Array Implementation
+```c
+struct StackRecord{
+    int Capacity;//size
+    int TopofStack;//top pointer
+    ElementType *Array;//array for stack elements
+}
+```
+> The stack model must be well **encapsulated**
+> Error check must be done before Push and Pop(Top)
+### Applications
 
 # Binary Tree
 

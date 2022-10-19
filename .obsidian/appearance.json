@@ -1,7 +1,10 @@
 {
   "accentColor": "",
-  "cssTheme": "",
+  "cssTheme": "Things",
   "translucency": false,
   "theme": "system",
-  "textFontFamily": "PingFang HK"
+  "textFontFamily": "PingFang HK",
+  "monospaceFontFamily": "JetBrains Mono",
+  "nativeMenus": false,
+  "baseFontSize": 15
 }

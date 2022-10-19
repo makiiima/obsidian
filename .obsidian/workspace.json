@@ -11,11 +11,23 @@
             "id": "7b2e5f34d688091b",
             "type": "leaf",
             "pane-relief:history-v1": {
-              "pos": 0,
+              "pos": 1,
               "stack": [
+                {
+                  "title": "2022-10-20",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Diary/2022-10-20.md\",\"mode\":\"source\",\"backlinks\":false,\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
                 {
                   "state": "{}",
                   "eState": "{}"
+                },
+                {
+                  "title": "DataStructure",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"DataStructure/DataStructure.md\",\"mode\":\"source\",\"backlinks\":true,\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":54,\"ch\":0},\"to\":{\"line\":54,\"ch\":0}},\"scroll\":62.8546046046046}"
                 },
                 {
                   "title": "DataStructure",
@@ -26,8 +38,13 @@
               ]
             },
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "DataStructure/DataStructure.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
             }
           }
         ]
@@ -107,7 +124,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "544e3be013c1692f",
@@ -132,6 +150,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "DataStructure/DataStructure.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -157,6 +176,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "DataStructure/DataStructure.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -196,7 +216,9 @@
             },
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "DataStructure/DataStructure.md"
+              }
             }
           },
           {
@@ -249,15 +271,15 @@
     "pane-relief:focus-lock": true
   },
   "lastOpenFiles": [
-    "ComputerNetwork/Textbooks/计算机网络_自顶向下.pdf",
+    "Diary/2022-10-20.md",
     "DataStructure/DataStructure.md",
+    "DataStructure/attachments/Pasted image 20221020023401.png",
+    "ComputerNetwork/Textbooks/计算机网络_自顶向下.pdf",
     "Diary/2022-10-19.md",
     "ComputerNetwork/Computer Network.md",
     "Diary/2022-10-18.md",
     "ComputerNetwork/Textbooks/Computer Networks, Global Edition (Andrew Tanenbaum, Nick Feamster etc.) (z-lib.org).pdf",
     "ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/sim/README.md",
-    "ComputerNetwork/Top-Down Aprroach.md",
-    "ComputerNetwork/Labs/Lab1/3200102555_Lab1.pdf",
-    "ComputerNetwork/Textbooks/计算机网络（原书第7版） 自顶向下方法 (James F. Kurose Keith W. Ross) (z-lib.org).pdf"
+    "ComputerNetwork/Top-Down Aprroach.md"
   ]
 }

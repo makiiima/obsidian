@@ -3,5 +3,7 @@
   "showFrontmatter": false,
   "attachmentFolderPath": "./attachments",
   "promptDelete": false,
-  "showUnsupportedFiles": true
+  "showUnsupportedFiles": true,
+  "strictLineBreaks": true,
+  "useTab": false
 }
