@@ -97,7 +97,7 @@ struct StackRecord{
 > The stack model must be well **encapsulated**
 > Error check must be done before Push and Pop(Top)
 ### Applications
-
+test
 # Binary Tree
 
 ## Implementation
