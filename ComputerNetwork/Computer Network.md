@@ -59,3 +59,27 @@ when ƛ is meters and f is MHz, ƛ*f=300
 
 ### 2.3.1 Radio Transmission
 
+- easy to generate, travel long distances, penetrate buildings
+- path loss with 1/r^2
+
+### 2.3.2 Microwave Transmission
+
+- travel in nearly straight line, narrowly focused
+- **directional**: travel in straight line so the earth will get in the way if too far apart, needs repeaters(中继器)
+- do not pass the buildings well
+- **multipath fading**, the delayed waves may arrive out of phase with the direct waveandthus cancel the signal
+- do not need the **right of way** compared to the fiber
+
+### 2.3.3 Infrared Transmisssion
+
+红外传播
+- can not pass through solid walls
+
+### 2.3.4 Light Transmission
+
+## 2.4 From Waveforms to Bits
+
+### 2.4.1 The Theoretical Basis for Data Communication
+
+#### Fourier Analysis
+![[Pasted image 20221018182404.png]]

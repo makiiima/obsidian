@@ -4,38 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "329de79b3a84d5e6",
+        "id": "39c81314d728e54b",
         "type": "tabs",
-        "dimension": 66.18122977346277,
         "children": [
           {
-            "id": "fb9895e2ba428a13",
-            "type": "leaf",
-            "pane-relief:history-v1": {
-              "pos": 0,
-              "stack": [
-                {
-                  "state": "{}",
-                  "eState": "{}"
-                }
-              ]
-            },
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "ComputerNetwork/Textbooks/Computer Networks, Global Edition (Andrew Tanenbaum, Nick Feamster etc.) (z-lib.org).pdf"
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "b442fa02a2caf629",
-        "type": "tabs",
-        "dimension": 33.81877022653722,
-        "children": [
-          {
-            "id": "2439f7e15181a64a",
+            "id": "7b2e5f34d688091b",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -45,21 +18,16 @@
                   "eState": "{}"
                 },
                 {
-                  "title": "2022-10-18",
+                  "title": "DataStructure",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Diary/2022-10-18.md\",\"mode\":\"source\",\"backlinks\":true,\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":4,\"ch\":14},\"to\":{\"line\":4,\"ch\":14}}}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"DataStructure/DataStructure.md\",\"mode\":\"source\",\"backlinks\":false,\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
                 }
               ]
             },
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ComputerNetwork/Computer Network.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -139,8 +107,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "544e3be013c1692f",
@@ -165,7 +132,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ComputerNetwork/Computer Network.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -191,7 +157,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ComputerNetwork/Computer Network.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -231,9 +196,7 @@
             },
             "state": {
               "type": "outline",
-              "state": {
-                "file": "ComputerNetwork/Computer Network.md"
-              }
+              "state": {}
             }
           },
           {
@@ -270,7 +233,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -280,20 +244,20 @@
   "ribbon": {
     "mostRecentAction": ""
   },
-  "active": "2439f7e15181a64a",
+  "active": "7b2e5f34d688091b",
   "ophidian:layout-settings": {
     "pane-relief:focus-lock": true
   },
   "lastOpenFiles": [
-    "ComputerNetwork/Textbooks/Computer Networks, Global Edition (Andrew Tanenbaum, Nick Feamster etc.) (z-lib.org).pdf",
+    "ComputerNetwork/Textbooks/计算机网络_自顶向下.pdf",
+    "DataStructure/DataStructure.md",
+    "Diary/2022-10-19.md",
     "ComputerNetwork/Computer Network.md",
     "Diary/2022-10-18.md",
+    "ComputerNetwork/Textbooks/Computer Networks, Global Edition (Andrew Tanenbaum, Nick Feamster etc.) (z-lib.org).pdf",
     "ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/sim/README.md",
     "ComputerNetwork/Top-Down Aprroach.md",
     "ComputerNetwork/Labs/Lab1/3200102555_Lab1.pdf",
-    "ComputerNetwork/Textbooks/计算机网络（原书第7版） 自顶向下方法 (James F. Kurose Keith W. Ross) (z-lib.org).pdf",
-    "TheoryofComputation/TC01.pdf",
-    "OperatingSystem/Lab/报告模板.md",
-    "OperatingSystem/Lab/Lab1/riscv-spec-20191213.pdf"
+    "ComputerNetwork/Textbooks/计算机网络（原书第7版） 自顶向下方法 (James F. Kurose Keith W. Ross) (z-lib.org).pdf"
   ]
 }
