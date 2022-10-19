@@ -97,7 +97,12 @@ struct StackRecord{
 > The stack model must be well **encapsulated**
 > Error check must be done before Push and Pop(Top)
 ### Applications
-test
+- Balancing Symbols(check if brackets are balanced)
+- Postfix Evaluation
+  ![[Pasted image 20221020033536.png]]
+  >Infix to Postfix Conversion
+  >    The order of operands is the same in infix and post fix
+  >    Operators with higher precedence appear before those with lower precedence
 # Binary Tree
 
 ## Implementation
