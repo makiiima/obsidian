@@ -5,5 +5,10 @@
   "promptDelete": false,
   "showUnsupportedFiles": true,
   "strictLineBreaks": true,
-  "useTab": false
+  "useTab": false,
+  "spellcheck": true,
+  "spellcheckLanguages": [
+    "zh-CN",
+    "en-US"
+  ]
 }

@@ -103,6 +103,24 @@ struct StackRecord{
   >Infix to Postfix Conversion
   >    The order of operands is the same in infix and post fix
   >    Operators with higher precedence appear before those with lower precedence
+  
+  Solutions
+  - Never pop a `(` from a stack except when processing a `)`
+  - Observe that when `(` is not in the stack, its precedence is the highest; but when it is in the stack, its precedence is the lowest. Define in-stack precedence and incoming precedence for symbols, and each time use the corresponding precedence for comparison
+## 4 The Queue ADT
+### ADT
+First-In-First-Out, an ordered list in which insertions take place at one end and deletions take place at the opposite end
+- Objects: A finite ordered list with zero or more elements
+- Operations:
+    - `int IsEmpty(Queue Q);`
+    - `Queue CreateQueue();`
+    - `DisposeQueue(Queue Q);`
+    - `MakeEmpty(Queue Q);`
+    - `Enqueue(ElementType X, Queue Q);`
+    - `ElementType Front(Queue Q);`
+    - `Dequeue(Queue Q);`
+### Implementation
+#### ArrayImplementation
 # Binary Tree
 
 ## Implementation
