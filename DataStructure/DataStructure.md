@@ -161,6 +161,14 @@ struct QueueRecord{
 - parent: a node that has subtrees
 - children: the roots of the subtrees of a parent
 - siblings: children of the same parent
+- leaf(terminal node): a node with degree 0(no siblings)
+- path from $n_1$to $n_k$: a (unique) sequence of nodes $n_1, n_2, ... , n_k$ such that $n_i$ is the parent of $n_{i+1}$ for 1 <= i <= k
+- length of path: number of edges on the path
+- depth of $n_i$: length of the unique path from the root to $n_i$
+- height of $n_i$: length of the longest path from $n_i$ to leaf
+- height(depth) of a tree: height(root)=depth(deepest leaf)
+- ancestors of a node: all the nodes along the path from the node up to the root
+- 
 ## Implementation
 - Find
 ```c
