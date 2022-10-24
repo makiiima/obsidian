@@ -54,7 +54,7 @@ Features that a linked list must have:
 ### ADT
 - LIFO: Last-In-First-Out
 - Insertions and deletions at the **top** only
-- Objects: A finite orderd list with zero or more elements
+- Objects: A finite ordered list with zero or more elements
 - Operations:
 	- Int IsEmpty(Stack S)
 	- Stack CreateStack()
@@ -120,8 +120,22 @@ First-In-First-Out, an ordered list in which insertions take place at one end an
     - `ElementType Front(Queue Q);`
     - `Dequeue(Queue Q);`
 ### Implementation
-#### ArrayImplementation
-# Binary Tree
+#### Linked List Implementation
+#### Array Implementation
+```c
+struct QueueRecord{
+    int Capacity;//max size of queue
+    int Front;//the front pointer
+    int Rear;//the rear pointer   
+    int Size;//Optional-the current size of queue
+    ElementType *Array;//array for queue elements
+}
+```
+#### Circular Queue
+![[Pasted image 20221024060814.png]]
+最多n-1个，因为rear=front-1的时候为空
+# Chapter 4 Trees
+
 
 ## Implementation
 - Find

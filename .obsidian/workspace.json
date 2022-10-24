@@ -16,6 +16,18 @@
                 {
                   "state": "{}",
                   "eState": "{}"
+                },
+                {
+                  "title": "NJUOperatingSystem",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"OperatingSystem/NJUOperatingSystem.md\",\"mode\":\"source\",\"backlinks\":false,\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "DataStructure",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"DataStructure/DataStructure.md\",\"mode\":\"source\",\"backlinks\":false,\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":26,\"ch\":0},\"to\":{\"line\":26,\"ch\":0}},\"scroll\":16.70770202020202}"
                 }
               ]
             },
@@ -250,15 +262,15 @@
   },
   "active": "7b2e5f34d688091b",
   "lastOpenFiles": [
-    "Diary/2022-10-20.md",
+    "OperatingSystem/NJUOperatingSystem.md",
     "DataStructure/DataStructure.md",
+    "Diary/2022-10-20.md",
     "DataStructure/attachments/Pasted image 20221020023401.png",
     "ComputerNetwork/Textbooks/计算机网络_自顶向下.pdf",
     "Diary/2022-10-19.md",
     "ComputerNetwork/Computer Network.md",
     "Diary/2022-10-18.md",
     "ComputerNetwork/Textbooks/Computer Networks, Global Edition (Andrew Tanenbaum, Nick Feamster etc.) (z-lib.org).pdf",
-    "ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/sim/README.md",
-    "ComputerNetwork/Top-Down Aprroach.md"
+    "ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/sim/README.md"
   ]
 }
