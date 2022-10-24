@@ -122,7 +122,17 @@ First-In-First-Out, an ordered list in which insertions take place at one end an
 ### Implementation
 #### ArrayImplementation
 # Binary Tree
-
+- Definition: A tree is a collection of nodes. The collection can be empty; otherwise, a tree consists of
+    - a distinguished node r, called the root
+    - and zero or more nonempty (sub)trees T1, ... , Tk, each of whose roots are connected by a directed edge from r
+    >Subtrees must not connect together. Therefore every node in the tree is the root of some subtree
+    >There are N-1 edges in a tree with N nodes
+    >Normally the root is drawn at the top
+- degree of a node: = the number of the subtrees of the node
+- degree of a tree : = max{degree(node)}
+- parent: a node that has subtrees
+- children: the roots of the subtrees of a parent
+- siblings: children of the same parent
 ## Implementation
 - Find
 ```c
