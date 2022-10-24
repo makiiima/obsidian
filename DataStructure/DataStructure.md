@@ -120,21 +120,6 @@ First-In-First-Out, an ordered list in which insertions take place at one end an
     - `ElementType Front(Queue Q);`
     - `Dequeue(Queue Q);`
 ### Implementation
-<<<<<<< HEAD
-#### ArrayImplementation
-# Binary Tree
-- Definition: A tree is a collection of nodes. The collection can be empty; otherwise, a tree consists of
-    - a distinguished node r, called the root
-    - and zero or more nonempty (sub)trees T1, ... , Tk, each of whose roots are connected by a directed edge from r
-    >Subtrees must not connect together. Therefore every node in the tree is the root of some subtree
-    >There are N-1 edges in a tree with N nodes
-    >Normally the root is drawn at the top
-- degree of a node: = the number of the subtrees of the node
-- degree of a tree : = max{degree(node)}
-- parent: a node that has subtrees
-- children: the roots of the subtrees of a parent
-- siblings: children of the same parent
-=======
 #### Linked List Implementation
 #### Array Implementation
 ```c
@@ -150,6 +135,7 @@ struct QueueRecord{
 ![[Pasted image 20221024060814.png]]
 最多n-1个，因为rear=front-1的时候为空
 # Chapter 4 Trees
+## 1 Preliminaries
 - Definition: A tree is a collection of nodes. The collection can be empty; otherwise, a tree consists of
     - a distinguished node r, called the root
     - and zero or more nonempty (sub)trees T1, ... , Tk, each of whose roots are connected by a directed edge from r
@@ -168,8 +154,14 @@ struct QueueRecord{
 - height of $n_i$: length of the longest path from $n_i$ to leaf
 - height(depth) of a tree: height(root)=depth(deepest leaf)
 - ancestors of a node: all the nodes along the path from the node up to the root
-- 
-## Implementation
+- descendats of a node: all the nodes in its subtrees
+### Representation
+![[Pasted image 20221024153353.png]]
+## 2 Binary Trees
+- Definition: A tree in which no node with more than two children
+### Expression Trees
+
+### Implementation
 - Find
 ```c
 //tail recursion

@@ -6,7 +6,7 @@
   "showUnsupportedFiles": true,
   "strictLineBreaks": true,
   "useTab": false,
-  "spellcheck": true,
+  "spellcheck": false,
   "spellcheckLanguages": [
     "zh-CN",
     "en-US"
