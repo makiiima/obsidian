@@ -161,6 +161,72 @@ struct QueueRecord{
 - Definition: A tree in which no node with more than two children
 ### Expression Trees
 
+### Tree Traversals
+> visit each node exactly once
+- Preorder Traversal
+```c
+void preorder(tree_ptr tree)
+{
+    if(tree){
+        visit(tree);
+        for(each child C of tree)
+            preorder(C);
+    }
+}
+```
+- Postorder Traversal
+```c
+void postorder(tree_ptr tree)
+{
+    if(tree){
+        for(each child C of tree)
+            postorder(C);
+        visit(tree);
+    }
+}
+```
+- Levelorder Travelsal
+```c
+void levelorder(tree_ptr tree)
+{
+    enqueue(tree);
+    while(queue is not empty){
+        visit(T=dequeue());
+        for(each child C of T)
+            enqueue(C);
+    }
+}
+```
+![[Pasted image 20221025063028.png]]
+- Inorder Traversal(Binary tree only)
+```c
+void Inorder(tree_ptr tree)
+{
+    if(tree){
+        inorder(tree->Left);
+        visit(tree->Element);
+        inorder(tree->Right);
+    }
+}
+```
+
+```c
+//Iterative Program
+void iter_inorder(tree_ptr tree)
+{
+    Stack S=CreateStack(MAX_SIZE);
+    for(;;){
+        for(;tree;tree=tree->Left)
+            Push(tree, S);
+        tree=Top(S); Pop(S);
+        if(!tree) break;
+        visit(tree->Element);
+        tree=tree->Right;
+    }
+}
+```
+
+
 ### Implementation
 - Find
 ```c
@@ -186,7 +252,7 @@ Position Iter_Find(ElementType X, SearchTree T)
 	}
 }
 ```
-$$ T(N)=X(N)=O(d), d=depth(X$$
+$$ T(N)=X(N)=O(d), d=depth(X)$$
 - FindMin
 ```c
 Position FindMin(SearchTree T)
