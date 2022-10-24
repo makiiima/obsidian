@@ -54,7 +54,7 @@ Features that a linked list must have:
 ### ADT
 - LIFO: Last-In-First-Out
 - Insertions and deletions at the **top** only
-- Objects: A finite orderd list with zero or more elements
+- Objects: A finite ordered list with zero or more elements
 - Operations:
 	- Int IsEmpty(Stack S)
 	- Stack CreateStack()
@@ -120,8 +120,36 @@ First-In-First-Out, an ordered list in which insertions take place at one end an
     - `ElementType Front(Queue Q);`
     - `Dequeue(Queue Q);`
 ### Implementation
+<<<<<<< HEAD
 #### ArrayImplementation
 # Binary Tree
+- Definition: A tree is a collection of nodes. The collection can be empty; otherwise, a tree consists of
+    - a distinguished node r, called the root
+    - and zero or more nonempty (sub)trees T1, ... , Tk, each of whose roots are connected by a directed edge from r
+    >Subtrees must not connect together. Therefore every node in the tree is the root of some subtree
+    >There are N-1 edges in a tree with N nodes
+    >Normally the root is drawn at the top
+- degree of a node: = the number of the subtrees of the node
+- degree of a tree : = max{degree(node)}
+- parent: a node that has subtrees
+- children: the roots of the subtrees of a parent
+- siblings: children of the same parent
+=======
+#### Linked List Implementation
+#### Array Implementation
+```c
+struct QueueRecord{
+    int Capacity;//max size of queue
+    int Front;//the front pointer
+    int Rear;//the rear pointer   
+    int Size;//Optional-the current size of queue
+    ElementType *Array;//array for queue elements
+}
+```
+#### Circular Queue
+![[Pasted image 20221024060814.png]]
+最多n-1个，因为rear=front-1的时候为空
+# Chapter 4 Trees
 - Definition: A tree is a collection of nodes. The collection can be empty; otherwise, a tree consists of
     - a distinguished node r, called the root
     - and zero or more nonempty (sub)trees T1, ... , Tk, each of whose roots are connected by a directed edge from r
