@@ -225,7 +225,8 @@ void iter_inorder(tree_ptr tree)
     }
 }
 ```
-
+### Search Trees
+![[Pasted image 20221025193040.png]]
 
 ### Implementation
 - Find

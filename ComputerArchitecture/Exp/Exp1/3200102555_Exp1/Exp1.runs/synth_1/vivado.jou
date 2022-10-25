@@ -1,12 +1,13 @@
 #-----------------------------------------------------------
-# Vivado v2020.3 (64-bit)
-# SW Build 3173277 on Wed Apr  7 05:07:49 MDT 2021
-# IP Build 3174024 on Wed Apr  7 23:42:35 MDT 2021
-# Start of session at: Sun Oct  9 23:38:23 2022
-# Process ID: 4748
-# Current directory: C:/Users/LENOVO/Desktop/Exp1/Exp1.runs/synth_1
-# Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
-# Log file: C:/Users/LENOVO/Desktop/Exp1/Exp1.runs/synth_1/top.vds
-# Journal file: C:/Users/LENOVO/Desktop/Exp1/Exp1.runs/synth_1\vivado.jou
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Tue Oct 25 10:01:45 2022
+# Process ID: 72454
+# Current directory: /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/Exp1.runs/synth_1
+# Command line: vivado -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file: /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/Exp1.runs/synth_1/top.vds
+# Journal file: /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/Exp1.runs/synth_1/vivado.jou
+# Running On: yunfanli, OS: Linux, CPU Frequency: 2600.000 MHz, CPU Physical cores: 6, Host memory: 16472 MB
 #-----------------------------------------------------------
 source top.tcl -notrace

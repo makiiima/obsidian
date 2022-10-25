@@ -1,0 +1,58 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Tue Oct 25 10:03:41 2022
+# Process ID: 72880
+# Current directory: /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/Exp1.runs/impl_1
+# Command line: vivado -log top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top.tcl -notrace
+# Log file: /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/Exp1.runs/impl_1/top.vdi
+# Journal file: /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/Exp1.runs/impl_1/vivado.jou
+# Running On: yunfanli, OS: Linux, CPU Frequency: 2600.000 MHz, CPU Physical cores: 6, Host memory: 16472 MB
+#-----------------------------------------------------------
+source top.tcl -notrace
+Command: link_design -top top -part xc7k160tffg676-2L
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7k160tffg676-2L
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1606.230 ; gain = 0.000 ; free physical = 1030 ; free virtual = 6232
+INFO: [Netlist 29-17] Analyzing 1235 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/constraint.xdc]
+Finished Parsing XDC File [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/constraint.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+CRITICAL WARNING: [Project 1-560] Could not resolve non-primitive black box cell 'Code2Inst' instantiated as 'vga/c2i1'. 5 instances of this cell are unresolved black boxes. [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/VGATEST.v:105]
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1778.633 ; gain = 0.000 ; free physical = 933 ; free virtual = 6134
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 7 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 5 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 2 instances
+
+7 Infos, 0 Warnings, 1 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1778.633 ; gain = 444.559 ; free physical = 933 ; free virtual = 6135
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k160t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k160t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'vga/c2i1' of type 'Code2Inst' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'vga/c2i2' of type 'Code2Inst' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'vga/c2i3' of type 'Code2Inst' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'vga/c2i4' of type 'Code2Inst' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'vga/c2i5' of type 'Code2Inst' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+INFO: [Project 1-461] DRC finished with 5 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+ERROR: [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.69 . Memory (MB): peak = 1865.445 ; gain = 86.812 ; free physical = 920 ; free virtual = 6122
+INFO: [Common 17-83] Releasing license: Implementation
+12 Infos, 0 Warnings, 1 Critical Warnings and 6 Errors encountered.
+opt_design failed
+ERROR: [Common 17-39] 'opt_design' failed due to earlier errors.
+
+INFO: [Common 17-206] Exiting Vivado at Tue Oct 25 10:03:53 2022...

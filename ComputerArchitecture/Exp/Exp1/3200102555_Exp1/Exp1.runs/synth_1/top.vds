@@ -1,40 +1,47 @@
 #-----------------------------------------------------------
-# Vivado v2020.3 (64-bit)
-# SW Build 3173277 on Wed Apr  7 05:07:49 MDT 2021
-# IP Build 3174024 on Wed Apr  7 23:42:35 MDT 2021
-# Start of session at: Sun Oct  9 23:38:23 2022
-# Process ID: 4748
-# Current directory: C:/Users/LENOVO/Desktop/Exp1/Exp1.runs/synth_1
-# Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
-# Log file: C:/Users/LENOVO/Desktop/Exp1/Exp1.runs/synth_1/top.vds
-# Journal file: C:/Users/LENOVO/Desktop/Exp1/Exp1.runs/synth_1\vivado.jou
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Tue Oct 25 10:01:45 2022
+# Process ID: 72454
+# Current directory: /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/Exp1.runs/synth_1
+# Command line: vivado -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file: /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/Exp1.runs/synth_1/top.vds
+# Journal file: /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/Exp1.runs/synth_1/vivado.jou
+# Running On: yunfanli, OS: Linux, CPU Frequency: 2600.000 MHz, CPU Physical cores: 6, Host memory: 16472 MB
 #-----------------------------------------------------------
 source top.tcl -notrace
-Command: synth_design -top top -part xcvc1802-viva1596-1LHP-i-L
+Command: synth_design -top top -part xc7k160tffg676-2L
 Starting synth_design
-Attempting to get a license for feature 'Synthesis' and/or device 'xcvc1802'
-INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcvc1802'
-INFO: [Device 21-403] Loading part xcvc1802-viva1596-1LHP-i-L
-WARNING: [Device 21-713] Unknown Tile Type, SLL, given for group, SLL
-INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k160t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k160t'
+INFO: [Device 21-403] Loading part xc7k160tffg676-2L
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 31868
-load Versal unisim library
-load Versal unisim library
-WARNING: [Synth 8-6901] identifier 'DATA_BITS' is used before its declaration [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/parallel2serial.v:10]
+INFO: [Synth 8-7075] Helper process launched with PID 72475
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/tools/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+INFO: [Synth 8-11241] undeclared symbol 'Addr', assumed default net type 'wire' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/RV32core.v:189]
+INFO: [Synth 8-11241] undeclared symbol 'MWR', assumed default net type 'wire' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/RV32core.v:190]
+INFO: [Synth 8-11241] undeclared symbol 'clkout0', assumed default net type 'wire' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/my_clk_gen.v:137]
+INFO: [Synth 8-11241] undeclared symbol 'clkout1', assumed default net type 'wire' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/my_clk_gen.v:139]
+INFO: [Synth 8-11241] undeclared symbol 'clkout2', assumed default net type 'wire' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/my_clk_gen.v:141]
+INFO: [Synth 8-11241] undeclared symbol 'clkout3', assumed default net type 'wire' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/my_clk_gen.v:143]
+WARNING: [Synth 8-6901] identifier 'DATA_BITS' is used before its declaration [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/parallel2serial.v:10]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1524.949 ; gain = 261.660
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1974.297 ; gain = 372.770 ; free physical = 212 ; free virtual = 5721
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1397.754; parent = 1188.902; children = 208.852
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 2975.668; parent = 1977.270; children = 998.398
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/top.v:8]
-INFO: [Synth 8-6157] synthesizing module 'clk_diff' [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/clk_diff.v:7]
-INFO: [Synth 8-6157] synthesizing module 'IBUFGDS' [Z:/Xili/Vivado/2020.3/scripts/rt/data/unisim_comp.v:52490]
+INFO: [Synth 8-6157] synthesizing module 'top' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/top.v:8]
+INFO: [Synth 8-6157] synthesizing module 'clk_diff' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/clk_diff.v:7]
+INFO: [Synth 8-6157] synthesizing module 'IBUFGDS' [/tools/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:71834]
 	Parameter DIFF_TERM bound to: FALSE - type: string 
 	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'IBUFGDS' (1#1) [Z:/Xili/Vivado/2020.3/scripts/rt/data/unisim_comp.v:52490]
-INFO: [Synth 8-6155] done synthesizing module 'clk_diff' (2#1) [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/clk_diff.v:7]
-INFO: [Synth 8-6157] synthesizing module 'my_clk_gen' [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/my_clk_gen.v:73]
-INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [Z:/Xili/Vivado/2020.3/scripts/rt/data/unisim_comp.v:60268]
+INFO: [Synth 8-6155] done synthesizing module 'IBUFGDS' (0#1) [/tools/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:71834]
+INFO: [Synth 8-6155] done synthesizing module 'clk_diff' (0#1) [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/clk_diff.v:7]
+INFO: [Synth 8-6157] synthesizing module 'my_clk_gen' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/my_clk_gen.v:72]
+INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [/tools/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:79852]
 	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
 	Parameter CLKFBOUT_MULT_F bound to: 5.000000 - type: double 
 	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: double 
@@ -61,96 +68,85 @@ INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [Z:/Xili/Vivado/2020.3/scr
 	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
 	Parameter REF_JITTER1 bound to: 0.010000 - type: double 
 	Parameter STARTUP_WAIT bound to: FALSE - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (3#1) [Z:/Xili/Vivado/2020.3/scripts/rt/data/unisim_comp.v:60268]
-INFO: [Synth 8-6157] synthesizing module 'BUFG' [Z:/Xili/Vivado/2020.3/scripts/rt/data/unisim_comp.v:1083]
-INFO: [Synth 8-6155] done synthesizing module 'BUFG' (4#1) [Z:/Xili/Vivado/2020.3/scripts/rt/data/unisim_comp.v:1083]
-INFO: [Synth 8-6155] done synthesizing module 'my_clk_gen' (5#1) [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/my_clk_gen.v:73]
-INFO: [Synth 8-6157] synthesizing module 'btn_scan' [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/btn_scan.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (0#1) [/tools/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:79852]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [/tools/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:1082]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (0#1) [/tools/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:1082]
+INFO: [Synth 8-6155] done synthesizing module 'my_clk_gen' (0#1) [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/my_clk_gen.v:72]
+INFO: [Synth 8-6157] synthesizing module 'btn_scan' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/btn_scan.v:8]
 	Parameter CLK_FREQ bound to: 25 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'btn_scan' (6#1) [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/btn_scan.v:8]
-INFO: [Synth 8-6157] synthesizing module 'display' [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/display.v:7]
-INFO: [Synth 8-6157] synthesizing module 'parallel2serial' [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/parallel2serial.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'btn_scan' (0#1) [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/btn_scan.v:8]
+INFO: [Synth 8-6157] synthesizing module 'display' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/display.v:7]
+INFO: [Synth 8-6157] synthesizing module 'parallel2serial' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/parallel2serial.v:7]
 	Parameter P_CLK_FREQ bound to: 25 - type: integer 
 	Parameter S_CLK_FREQ bound to: 20 - type: integer 
 	Parameter DATA_BITS bound to: 16 - type: integer 
 	Parameter CODE_ENDIAN bound to: 1 - type: integer 
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/parallel2serial.v:48]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/parallel2serial.v:99]
-INFO: [Synth 8-6155] done synthesizing module 'parallel2serial' (7#1) [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/parallel2serial.v:7]
-INFO: [Synth 8-6157] synthesizing module 'parallel2serial__parameterized0' [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/parallel2serial.v:7]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/parallel2serial.v:48]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/parallel2serial.v:99]
+INFO: [Synth 8-6155] done synthesizing module 'parallel2serial' (0#1) [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/parallel2serial.v:7]
+INFO: [Synth 8-6157] synthesizing module 'parallel2serial__parameterized0' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/parallel2serial.v:7]
 	Parameter P_CLK_FREQ bound to: 25 - type: integer 
 	Parameter S_CLK_FREQ bound to: 20 - type: integer 
 	Parameter DATA_BITS bound to: 64 - type: integer 
 	Parameter CODE_ENDIAN bound to: 1 - type: integer 
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/parallel2serial.v:48]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/parallel2serial.v:99]
-INFO: [Synth 8-6155] done synthesizing module 'parallel2serial__parameterized0' (7#1) [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/parallel2serial.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'display' (8#1) [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/display.v:7]
-INFO: [Synth 8-6157] synthesizing module 'RV32core' [C:/Users/LENOVO/Desktop/Exp1/code/core/RV32core.v:4]
-INFO: [Synth 8-6157] synthesizing module 'debug_clk' [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/debug_clk.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'debug_clk' (9#1) [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/debug_clk.v:3]
-INFO: [Synth 8-6157] synthesizing module 'REG32' [C:/Users/LENOVO/Desktop/Exp1/code/common/REG32.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'REG32' (10#1) [C:/Users/LENOVO/Desktop/Exp1/code/common/REG32.v:23]
-INFO: [Synth 8-6157] synthesizing module 'add_32' [C:/Users/LENOVO/Desktop/Exp1/code/common/add_32.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'add_32' (11#1) [C:/Users/LENOVO/Desktop/Exp1/code/common/add_32.v:23]
-INFO: [Synth 8-6157] synthesizing module 'MUX2T1_32' [C:/Users/LENOVO/Desktop/Exp1/code/common/MUX2T1_32.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'MUX2T1_32' (12#1) [C:/Users/LENOVO/Desktop/Exp1/code/common/MUX2T1_32.v:23]
-INFO: [Synth 8-6157] synthesizing module 'ROM_D' [C:/Users/LENOVO/Desktop/Exp1/code/core/ROM_D.v:3]
-INFO: [Synth 8-3876] $readmem data file 'rom.hex' is read successfully [C:/Users/LENOVO/Desktop/Exp1/code/core/ROM_D.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'ROM_D' (13#1) [C:/Users/LENOVO/Desktop/Exp1/code/core/ROM_D.v:3]
-INFO: [Synth 8-6157] synthesizing module 'REG_IF_ID' [C:/Users/LENOVO/Desktop/Exp1/code/core/REG_IF_ID.v:22]
-INFO: [Synth 8-6155] done synthesizing module 'REG_IF_ID' (14#1) [C:/Users/LENOVO/Desktop/Exp1/code/core/REG_IF_ID.v:22]
-INFO: [Synth 8-6157] synthesizing module 'CtrlUnit' [C:/Users/LENOVO/Desktop/Exp1/code/core/CtrlUnit.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'CtrlUnit' (15#1) [C:/Users/LENOVO/Desktop/Exp1/code/core/CtrlUnit.v:4]
-INFO: [Synth 8-6157] synthesizing module 'Regs' [C:/Users/LENOVO/Desktop/Exp1/code/core/Regs.v:22]
-INFO: [Synth 8-6155] done synthesizing module 'Regs' (16#1) [C:/Users/LENOVO/Desktop/Exp1/code/core/Regs.v:22]
-INFO: [Synth 8-6157] synthesizing module 'ImmGen' [C:/Users/LENOVO/Desktop/Exp1/code/core/ImmGen.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'ImmGen' (17#1) [C:/Users/LENOVO/Desktop/Exp1/code/core/ImmGen.v:3]
-INFO: [Synth 8-6157] synthesizing module 'MUX4T1_32' [C:/Users/LENOVO/Desktop/Exp1/code/common/MUX4T1_32.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'MUX4T1_32' (18#1) [C:/Users/LENOVO/Desktop/Exp1/code/common/MUX4T1_32.v:23]
-INFO: [Synth 8-6157] synthesizing module 'cmp_32' [C:/Users/LENOVO/Desktop/Exp1/code/common/cmp_32.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'cmp_32' (19#1) [C:/Users/LENOVO/Desktop/Exp1/code/common/cmp_32.v:3]
-INFO: [Synth 8-6157] synthesizing module 'HazardDetectionUnit' [C:/Users/LENOVO/Desktop/Exp1/code/core/HazardDetectionUnit.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'HazardDetectionUnit' (20#1) [C:/Users/LENOVO/Desktop/Exp1/code/core/HazardDetectionUnit.v:3]
-WARNING: [Synth 8-7071] port 'mem_w_EXE' of module 'HazardDetectionUnit' is unconnected for instance 'hazard_unit' [C:/Users/LENOVO/Desktop/Exp1/code/core/RV32core.v:98]
-WARNING: [Synth 8-7071] port 'DatatoReg_MEM' of module 'HazardDetectionUnit' is unconnected for instance 'hazard_unit' [C:/Users/LENOVO/Desktop/Exp1/code/core/RV32core.v:98]
-WARNING: [Synth 8-7071] port 'DatatoReg_EXE' of module 'HazardDetectionUnit' is unconnected for instance 'hazard_unit' [C:/Users/LENOVO/Desktop/Exp1/code/core/RV32core.v:98]
-WARNING: [Synth 8-7071] port 'RegWrite_EXE' of module 'HazardDetectionUnit' is unconnected for instance 'hazard_unit' [C:/Users/LENOVO/Desktop/Exp1/code/core/RV32core.v:98]
-WARNING: [Synth 8-7071] port 'RegWrite_MEM' of module 'HazardDetectionUnit' is unconnected for instance 'hazard_unit' [C:/Users/LENOVO/Desktop/Exp1/code/core/RV32core.v:98]
-WARNING: [Synth 8-7023] instance 'hazard_unit' of module 'HazardDetectionUnit' has 27 connections declared, but only 22 given [C:/Users/LENOVO/Desktop/Exp1/code/core/RV32core.v:98]
-INFO: [Synth 8-6157] synthesizing module 'REG_ID_EX' [C:/Users/LENOVO/Desktop/Exp1/code/core/REG_ID_EX.v:22]
-INFO: [Synth 8-6155] done synthesizing module 'REG_ID_EX' (21#1) [C:/Users/LENOVO/Desktop/Exp1/code/core/REG_ID_EX.v:22]
-INFO: [Synth 8-6157] synthesizing module 'ALU' [C:/Users/LENOVO/Desktop/Exp1/code/core/ALU.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'ALU' (22#1) [C:/Users/LENOVO/Desktop/Exp1/code/core/ALU.v:3]
-INFO: [Synth 8-6157] synthesizing module 'REG_EX_MEM' [C:/Users/LENOVO/Desktop/Exp1/code/core/REG_EX_MEM.v:22]
-INFO: [Synth 8-6155] done synthesizing module 'REG_EX_MEM' (23#1) [C:/Users/LENOVO/Desktop/Exp1/code/core/REG_EX_MEM.v:22]
-INFO: [Synth 8-6157] synthesizing module 'RAM_B' [C:/Users/LENOVO/Desktop/Exp1/code/core/RAM_B.v:3]
-INFO: [Synth 8-3876] $readmem data file 'ram.hex' is read successfully [C:/Users/LENOVO/Desktop/Exp1/code/core/RAM_B.v:15]
-
-Warning: Trying to implement RAM in registers. Block RAM or DRAM implementation is not possible for one or more of the following reasons :
-	1: RAM has multiple writes via different ports in same process. If RAM inferencing intended, write to one port per process. 
-	2: Unable to determine number of words or word size in RAM. 
-	3: No valid read/write found for RAM. 
-RAM dissolved into registers
-Reason is one or more of the following :
-	1: RAM has multiple writes via different ports in same process. If RAM inferencing intended, write to one port per process. 
-	2: Unable to determine number of words or word size in RAM. 
-	3: No valid read/write found for RAM. 
-RAM "data_reg" dissolved into registers
-INFO: [Synth 8-6155] done synthesizing module 'RAM_B' (24#1) [C:/Users/LENOVO/Desktop/Exp1/code/core/RAM_B.v:3]
-INFO: [Synth 8-6157] synthesizing module 'REG_MEM_WB' [C:/Users/LENOVO/Desktop/Exp1/code/core/REG_MEM_WB.v:21]
-INFO: [Synth 8-6155] done synthesizing module 'REG_MEM_WB' (25#1) [C:/Users/LENOVO/Desktop/Exp1/code/core/REG_MEM_WB.v:21]
-INFO: [Synth 8-6157] synthesizing module 'CPUTEST' [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/CPUTEST.v:21]
-INFO: [Synth 8-226] default block is never used [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/CPUTEST.v:62]
-INFO: [Synth 8-6155] done synthesizing module 'CPUTEST' (26#1) [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/CPUTEST.v:21]
-INFO: [Synth 8-6155] done synthesizing module 'RV32core' (27#1) [C:/Users/LENOVO/Desktop/Exp1/code/core/RV32core.v:4]
-INFO: [Synth 8-6157] synthesizing module 'VGA_TESTP' [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/VGATEST.v:21]
-INFO: [Synth 8-6157] synthesizing module 'Code2Inst' [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/Code2Inst.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'Code2Inst' (28#1) [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/Code2Inst.v:2]
-INFO: [Synth 8-226] default block is never used [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/VGATEST.v:167]
-INFO: [Synth 8-226] default block is never used [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/VGATEST.v:206]
-INFO: [Synth 8-6157] synthesizing module 'FONT8_16' [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/Font816.v:2]
-INFO: [Synth 8-6157] synthesizing module 'RAMB16_S1' [Z:/Xili/Vivado/2020.3/scripts/rt/data/unisim_comp.v:95157]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/parallel2serial.v:48]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/parallel2serial.v:99]
+INFO: [Synth 8-6155] done synthesizing module 'parallel2serial__parameterized0' (0#1) [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/parallel2serial.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'display' (0#1) [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/display.v:7]
+INFO: [Synth 8-6157] synthesizing module 'RV32core' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/RV32core.v:4]
+INFO: [Synth 8-6157] synthesizing module 'debug_clk' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/debug_clk.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'debug_clk' (0#1) [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/debug_clk.v:3]
+INFO: [Synth 8-6157] synthesizing module 'REG32' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/common/REG32.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'REG32' (0#1) [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/common/REG32.v:23]
+INFO: [Synth 8-6157] synthesizing module 'add_32' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/common/add_32.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'add_32' (0#1) [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/common/add_32.v:23]
+INFO: [Synth 8-6157] synthesizing module 'MUX2T1_32' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/common/MUX2T1_32.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'MUX2T1_32' (0#1) [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/common/MUX2T1_32.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ROM_D' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/ROM_D.v:3]
+INFO: [Synth 8-3876] $readmem data file 'rom.hex' is read successfully [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/ROM_D.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'ROM_D' (0#1) [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/ROM_D.v:3]
+INFO: [Synth 8-6157] synthesizing module 'REG_IF_ID' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/REG_IF_ID.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'REG_IF_ID' (0#1) [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/REG_IF_ID.v:22]
+INFO: [Synth 8-6157] synthesizing module 'CtrlUnit' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/CtrlUnit.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'CtrlUnit' (0#1) [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/CtrlUnit.v:4]
+INFO: [Synth 8-6157] synthesizing module 'Regs' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/Regs.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'Regs' (0#1) [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/Regs.v:22]
+INFO: [Synth 8-6157] synthesizing module 'ImmGen' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/ImmGen.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ImmGen' (0#1) [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/ImmGen.v:3]
+INFO: [Synth 8-6157] synthesizing module 'MUX4T1_32' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/common/MUX4T1_32.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'MUX4T1_32' (0#1) [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/common/MUX4T1_32.v:23]
+INFO: [Synth 8-6157] synthesizing module 'cmp_32' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/common/cmp_32.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'cmp_32' (0#1) [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/common/cmp_32.v:3]
+INFO: [Synth 8-6157] synthesizing module 'HazardDetectionUnit' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/HazardDetectionUnit.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'HazardDetectionUnit' (0#1) [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/HazardDetectionUnit.v:3]
+WARNING: [Synth 8-7071] port 'mem_w_EXE' of module 'HazardDetectionUnit' is unconnected for instance 'hazard_unit' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/RV32core.v:98]
+WARNING: [Synth 8-7071] port 'DatatoReg_MEM' of module 'HazardDetectionUnit' is unconnected for instance 'hazard_unit' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/RV32core.v:98]
+WARNING: [Synth 8-7071] port 'DatatoReg_EXE' of module 'HazardDetectionUnit' is unconnected for instance 'hazard_unit' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/RV32core.v:98]
+WARNING: [Synth 8-7071] port 'RegWrite_EXE' of module 'HazardDetectionUnit' is unconnected for instance 'hazard_unit' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/RV32core.v:98]
+WARNING: [Synth 8-7071] port 'RegWrite_MEM' of module 'HazardDetectionUnit' is unconnected for instance 'hazard_unit' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/RV32core.v:98]
+WARNING: [Synth 8-7023] instance 'hazard_unit' of module 'HazardDetectionUnit' has 27 connections declared, but only 22 given [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/RV32core.v:98]
+INFO: [Synth 8-6157] synthesizing module 'REG_ID_EX' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/REG_ID_EX.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'REG_ID_EX' (0#1) [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/REG_ID_EX.v:22]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/ALU.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/ALU.v:3]
+INFO: [Synth 8-6157] synthesizing module 'REG_EX_MEM' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/REG_EX_MEM.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'REG_EX_MEM' (0#1) [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/REG_EX_MEM.v:22]
+INFO: [Synth 8-6157] synthesizing module 'RAM_B' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/RAM_B.v:3]
+INFO: [Synth 8-3876] $readmem data file 'ram.hex' is read successfully [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/RAM_B.v:15]
+INFO: [Synth 8-6155] done synthesizing module 'RAM_B' (0#1) [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/RAM_B.v:3]
+INFO: [Synth 8-6157] synthesizing module 'REG_MEM_WB' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/REG_MEM_WB.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'REG_MEM_WB' (0#1) [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/REG_MEM_WB.v:21]
+INFO: [Synth 8-6157] synthesizing module 'CPUTEST' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/CPUTEST.v:21]
+INFO: [Synth 8-226] default block is never used [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/CPUTEST.v:62]
+INFO: [Synth 8-6155] done synthesizing module 'CPUTEST' (0#1) [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/CPUTEST.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'RV32core' (0#1) [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/RV32core.v:4]
+INFO: [Synth 8-6157] synthesizing module 'VGA_TESTP' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/VGATEST.v:21]
+INFO: [Synth 8-6157] synthesizing module 'Code2Inst' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/Code2Inst.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'Code2Inst' (0#1) [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/Code2Inst.v:2]
+INFO: [Synth 8-226] default block is never used [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/VGATEST.v:167]
+INFO: [Synth 8-226] default block is never used [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/VGATEST.v:206]
+INFO: [Synth 8-6157] synthesizing module 'FONT8_16' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/Font816.v:2]
+INFO: [Synth 8-6157] synthesizing module 'RAMB16_S1' [/tools/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:125548]
 	Parameter INIT_00 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111101000000110000001100110011011110110000001100000011010010110000001011111100000000000000000 
 	Parameter INIT_01 bound to: 256'b0000000000000000000000000000000001111110111111111111111111100111110000111111111111111111110110111111111101111110000000000000000000000000000000000000000000000000000100000011100001111100111111101111111011111110111111100110110000000000000000000000000000000000 
 	Parameter INIT_02 bound to: 256'b0000000000000000000000000000000000000000000100000011100001111100111111100111110000111000000100000000000000000000000000000000000000000000000000000000000000000000001111000001100000011000111001111110011111100111001111000011110000011000000000000000000000000000 
@@ -215,73 +211,161 @@ INFO: [Synth 8-6157] synthesizing module 'RAMB16_S1' [Z:/Xili/Vivado/2020.3/scri
 	Parameter INIT_3D bound to: 256'b0000000000000000000000000000000011111110110001100110000000110000000110001100110011111110000000000000000000000000000000000000000000000000000000000000000000000000000011100001100000011000000110000001100001110000000110000001100000011000000011100000000000000000 
 	Parameter INIT_3E bound to: 256'b0000000000000000000000000000000000011000000110000001100000011000000110000000000000011000000110000001100000011000000000000000000000000000000000000000000000000000011100000001100000011000000110000001100000001110000110000001100000011000011100000000000000000000 
 	Parameter INIT_3F bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001101110001110110000000000000000000000000000000000000000000000000000000001111111011000110110001101100011001101100001110000001000000000000000000000000000000000000 
-INFO: [Synth 8-6155] done synthesizing module 'RAMB16_S1' (29#1) [Z:/Xili/Vivado/2020.3/scripts/rt/data/unisim_comp.v:95157]
-INFO: [Synth 8-6155] done synthesizing module 'FONT8_16' (30#1) [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/Font816.v:2]
-INFO: [Synth 8-6157] synthesizing module 'vga' [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/vga.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'vga' (31#1) [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/vga.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'VGA_TESTP' (32#1) [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/VGATEST.v:21]
-INFO: [Synth 8-6155] done synthesizing module 'top' (33#1) [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/top.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'RAMB16_S1' (0#1) [/tools/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:125548]
+INFO: [Synth 8-6155] done synthesizing module 'FONT8_16' (0#1) [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/Font816.v:2]
+INFO: [Synth 8-6157] synthesizing module 'vga' [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/vga.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'vga' (0#1) [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/vga.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'VGA_TESTP' (0#1) [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/VGATEST.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/top.v:8]
+WARNING: [Synth 8-3848] Net hazard_optype in module/entity CtrlUnit does not have driver. [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/CtrlUnit.v:9]
+WARNING: [Synth 8-7137] Register A_EX_reg in module REG_ID_EX has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/REG_ID_EX.v:84]
+WARNING: [Synth 8-7137] Register B_EX_reg in module REG_ID_EX has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/REG_ID_EX.v:85]
+WARNING: [Synth 8-7137] Register Imm32_EX_reg in module REG_ID_EX has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/REG_ID_EX.v:86]
+WARNING: [Synth 8-7137] Register ALUSrc_A_EX_reg in module REG_ID_EX has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/REG_ID_EX.v:90]
+WARNING: [Synth 8-7137] Register ALUSrc_B_EX_reg in module REG_ID_EX has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/REG_ID_EX.v:91]
+WARNING: [Synth 8-7137] Register ALUC_EX_reg in module REG_ID_EX has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/REG_ID_EX.v:92]
+WARNING: [Synth 8-7137] Register DatatoReg_EX_reg in module REG_ID_EX has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/REG_ID_EX.v:93]
+WARNING: [Synth 8-7137] Register u_b_h_w_EX_reg in module REG_ID_EX has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/REG_ID_EX.v:96]
+WARNING: [Synth 8-7137] Register ALUO_MEM_reg in module REG_EX_MEM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/REG_EX_MEM.v:61]
+WARNING: [Synth 8-7137] Register Datao_MEM_reg in module REG_EX_MEM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/REG_EX_MEM.v:62]
+WARNING: [Synth 8-7137] Register DatatoReg_MEM_reg in module REG_EX_MEM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/REG_EX_MEM.v:63]
+WARNING: [Synth 8-7137] Register u_b_h_w_MEM_reg in module REG_EX_MEM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/REG_EX_MEM.v:67]
+WARNING: [Synth 8-4767] Trying to implement RAM ' ' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+	1: RAM has multiple writes via different ports in same process. If RAM inferencing intended, write to one port per process. 
+	2: Unable to determine number of words or word size in RAM. 
+	3: No valid read/write found for RAM. 
+RAM dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'data_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM has multiple writes via different ports in same process. If RAM inferencing intended, write to one port per process. 
+	2: Unable to determine number of words or word size in RAM. 
+	3: No valid read/write found for RAM. 
+RAM "data_reg" dissolved into registers
+WARNING: [Synth 8-7137] Register ALUO_WB_reg in module REG_MEM_WB has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/REG_MEM_WB.v:50]
+WARNING: [Synth 8-7137] Register MDR_WB_reg in module REG_MEM_WB has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/REG_MEM_WB.v:51]
+WARNING: [Synth 8-7137] Register DatatoReg_WB_reg in module REG_MEM_WB has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/REG_MEM_WB.v:54]
+WARNING: [Synth 8-3848] Net Addr in module/entity RV32core does not have driver. [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/RV32core.v:189]
+WARNING: [Synth 8-3848] Net MWR in module/entity RV32core does not have driver. [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/RV32core.v:190]
+WARNING: [Synth 8-7129] Port MEM_Addr[31] in module VGA_TESTP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_Addr[30] in module VGA_TESTP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_Addr[29] in module VGA_TESTP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_Addr[28] in module VGA_TESTP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_Addr[27] in module VGA_TESTP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_Addr[26] in module VGA_TESTP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_Addr[25] in module VGA_TESTP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_Addr[24] in module VGA_TESTP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_Addr[23] in module VGA_TESTP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_Addr[22] in module VGA_TESTP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_Addr[21] in module VGA_TESTP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_Addr[20] in module VGA_TESTP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_Addr[19] in module VGA_TESTP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_Addr[18] in module VGA_TESTP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_Addr[17] in module VGA_TESTP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_Addr[16] in module VGA_TESTP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_Addr[15] in module VGA_TESTP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_Addr[14] in module VGA_TESTP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_Addr[13] in module VGA_TESTP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_Addr[12] in module VGA_TESTP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_Addr[11] in module VGA_TESTP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_Addr[10] in module VGA_TESTP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_Addr[9] in module VGA_TESTP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_Addr[1] in module VGA_TESTP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_Addr[0] in module VGA_TESTP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flush in module REG_EX_MEM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module HazardDetectionUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port hazard_optype_ID[1] in module HazardDetectionUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port hazard_optype_ID[0] in module HazardDetectionUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst_field[6] in module ImmGen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst_field[5] in module ImmGen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst_field[4] in module ImmGen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst_field[3] in module ImmGen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst_field[2] in module ImmGen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst_field[1] in module ImmGen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst_field[0] in module ImmGen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port hazard_optype[1] in module CtrlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port hazard_optype[0] in module CtrlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[24] in module CtrlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[23] in module CtrlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[22] in module CtrlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[21] in module CtrlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[20] in module CtrlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[19] in module CtrlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[18] in module CtrlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[17] in module CtrlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[16] in module CtrlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[15] in module CtrlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[11] in module CtrlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[10] in module CtrlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[9] in module CtrlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[8] in module CtrlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inst[7] in module CtrlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_addr[6] in module RV32core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port interrupter in module RV32core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[11] in module top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[10] in module top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[9] in module top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[8] in module top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1612.672 ; gain = 349.383
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2072.234 ; gain = 470.707 ; free physical = 337 ; free virtual = 5778
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1397.754; parent = 1188.902; children = 208.852
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3070.637; parent = 2072.238; children = 998.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1630.582 ; gain = 367.293
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2087.078 ; gain = 485.551 ; free physical = 337 ; free virtual = 5779
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1397.754; parent = 1188.902; children = 208.852
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3085.480; parent = 2087.082; children = 998.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1630.582 ; gain = 367.293
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2087.078 ; gain = 485.551 ; free physical = 337 ; free virtual = 5779
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1397.754; parent = 1188.902; children = 208.852
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3085.480; parent = 2087.082; children = 998.398
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.116 . Memory (MB): peak = 1642.629 ; gain = 0.000
-CRITICAL WARNING: [Netlist 29-180] Cell 'RAMB16_S1' is not a supported primitive for versal part: xcvc1802-viva1596-1LHP-i-L.  Instance 'vga/FONT_8X16/BRAM_PC_VGA_0' will be treated as a black box, not an architecture primitive [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/Font816.v:10]
-Resolution: Modify instantiation of primitive to match Xilinx primitive. Please review the guidelines in the Design Methodology Guide UG949 to replace this primitive with a supported primitive.
-INFO: [Netlist 29-17] Analyzing 7 Unisim elements for replacement
-WARNING: [Netlist 29-389] Instance 'CLK_GEN/mmcm_adv_inst' of type 'MMCME2_ADV' is being converted to 'MMCME5'. A generic scaling factor is being applied in order to retarget older MMCM settings to the new cell type. It is recommended instead to use clocking wizard or directly instantiate the 'MMCME5' cell to obtain optimal settings for the target part.
+Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2090.047 ; gain = 0.000 ; free physical = 335 ; free virtual = 5778
+INFO: [Netlist 29-17] Analyzing 3 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'Z:/Xili/Vivado/2020.3/data/ip'.
-INFO: [Constraints 18-5718] GCLK Deskew mode is set to Off via param.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/LENOVO/Desktop/Exp1/code/constraint.xdc]
-CRITICAL WARNING: [Common 17-69] Command failed: Invalid I/O Standard 'LVDS'. Default I/O Standard is used instead [C:/Users/LENOVO/Desktop/Exp1/code/constraint.xdc:4]
-CRITICAL WARNING: [Common 17-69] Command failed: Invalid I/O Standard 'LVDS'. Default I/O Standard is used instead [C:/Users/LENOVO/Desktop/Exp1/code/constraint.xdc:6]
-Finished Parsing XDC File [C:/Users/LENOVO/Desktop/Exp1/code/constraint.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/LENOVO/Desktop/Exp1/code/constraint.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Parsing XDC File [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/constraint.xdc]
+Finished Parsing XDC File [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/constraint.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/constraint.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 INFO: [Timing 38-2] Deriving generated clocks
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1891.348 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2242.828 ; gain = 0.000 ; free physical = 226 ; free virtual = 5679
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 7 instances were transformed.
-  BUFG => BUFGCE: 5 instances
+  A total of 2 instances were transformed.
   IBUFGDS => IBUFDS: 1 instance 
-  MMCME2_ADV => MMCME5: 1 instance 
+  RAMB16_S1 => RAMB18E1: 1 instance 
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1891.348 ; gain = 0.000
-load Versal unisim library
-load Versal unisim library
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2242.828 ; gain = 0.000 ; free physical = 226 ; free virtual = 5679
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/tools/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 1891.348 ; gain = 628.059
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2242.828 ; gain = 641.301 ; free physical = 312 ; free virtual = 5762
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1397.754; parent = 1188.902; children = 208.852
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3209.215; parent = 2210.816; children = 998.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
-Loading part: xcvc1802-viva1596-1LHP-i-L
-INFO: [Synth 8-6742] Reading net delay rules and data
+Loading part: xc7k160tffg676-2L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:27 . Memory (MB): peak = 1891.348 ; gain = 628.059
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2242.828 ; gain = 641.301 ; free physical = 312 ; free virtual = 5762
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1397.754; parent = 1188.902; children = 208.852
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3209.215; parent = 2210.816; children = 998.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:27 . Memory (MB): peak = 1891.348 ; gain = 628.059
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2242.828 ; gain = 641.301 ; free physical = 312 ; free virtual = 5762
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1397.754; parent = 1188.902; children = 208.852
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3209.215; parent = 2210.816; children = 998.398
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'btn_x_reg' in module 'btn_scan'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'parallel2serial'
@@ -316,9 +400,10 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
                   S_DONE |                               11 |                              011
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'parallel2serial__parameterized0'
-INFO: [Synth 8-6904] The RAM "VGA_TESTP:/data_buf_reg" of size (depth=4 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:35 . Memory (MB): peak = 1891.348 ; gain = 628.059
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2242.828 ; gain = 641.301 ; free physical = 292 ; free virtual = 5743
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1397.754; parent = 1188.902; children = 208.852
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3209.215; parent = 2210.816; children = 998.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -392,23 +477,30 @@ Finished RTL Component Statistics
 Start Part Resource Summary
 ---------------------------------------------------------------------------------
 Part Resources:
-DSPs: 1600 (col length:164)
-BRAMs: 1600 (col length: RAMB18 168 RAMB36 84)
+DSPs: 600 (col length:100)
+BRAMs: 650 (col length: RAMB18 100 RAMB36 50)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6904] The RAM "i_0/vga/data_buf_reg" of size (depth=4 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port SW[12] in module top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[11] in module top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[10] in module top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[9] in module top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[8] in module top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:06 ; elapsed = 00:01:15 . Memory (MB): peak = 2073.297 ; gain = 810.008
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 2323.812 ; gain = 722.285 ; free physical = 456 ; free virtual = 5693
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1474.303; parent = 1266.500; children = 208.852
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3322.215; parent = 2323.816; children = 998.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 
-ROM: Preliminary Mapping	Report
+ROM: Preliminary Mapping Report
 +------------+------------+---------------+----------------+
 |Module Name | RTL Object | Depth x Width | Implemented As | 
 +------------+------------+---------------+----------------+
@@ -417,40 +509,43 @@ ROM: Preliminary Mapping	Report
 +------------+------------+---------------+----------------+
 
 
-Distributed RAM: Preliminary Mapping	Report (see note below)
-+------------+--------------+-----------+----------------------+---------------+
-|Module Name | RTL Object   | Inference | Size (Depth x Width) | Primitives    | 
-+------------+--------------+-----------+----------------------+---------------+
-|i_0/vga     | data_buf_reg | Implied   | 4 x 32               | RAM32M16 x 3	 | 
-+------------+--------------+-----------+----------------------+---------------+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------+--------------+-----------+----------------------+-------------+
+|Module Name | RTL Object   | Inference | Size (Depth x Width) | Primitives  | 
++------------+--------------+-----------+----------------------+-------------+
+|i_0/vga     | data_buf_reg | Implied   | 4 x 32               | RAM32M x 6  | 
++------------+--------------+-----------+----------------------+-------------+
 
 Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
-INFO: [Device 21-2210] 2 Level speed models with no predriver populated from models with predrivers.  Count = 65
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:42 ; elapsed = 00:01:55 . Memory (MB): peak = 2715.074 ; gain = 1451.785
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:52 ; elapsed = 00:00:55 . Memory (MB): peak = 2323.812 ; gain = 722.285 ; free physical = 401 ; free virtual = 5599
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1546.936; parent = 1339.154; children = 208.852
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3322.215; parent = 2323.816; children = 998.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:47 ; elapsed = 00:02:00 . Memory (MB): peak = 2751.289 ; gain = 1488.000
+Finished Timing Optimization : Time (s): cpu = 00:01:11 ; elapsed = 00:01:15 . Memory (MB): peak = 2323.812 ; gain = 722.285 ; free physical = 339 ; free virtual = 5548
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1568.270; parent = 1360.503; children = 208.852
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3322.215; parent = 2323.816; children = 998.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 
-Distributed RAM: Final Mapping	Report
-+------------+--------------+-----------+----------------------+---------------+
-|Module Name | RTL Object   | Inference | Size (Depth x Width) | Primitives    | 
-+------------+--------------+-----------+----------------------+---------------+
-|i_0/vga     | data_buf_reg | Implied   | 4 x 32               | RAM32M16 x 3	 | 
-+------------+--------------+-----------+----------------------+---------------+
+Distributed RAM: Final Mapping Report
++------------+--------------+-----------+----------------------+-------------+
+|Module Name | RTL Object   | Inference | Size (Depth x Width) | Primitives  | 
++------------+--------------+-----------+----------------------+-------------+
+|i_0/vga     | data_buf_reg | Implied   | 4 x 32               | RAM32M x 6  | 
++------------+--------------+-----------+----------------------+-------------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -459,7 +554,9 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:54 ; elapsed = 00:02:08 . Memory (MB): peak = 2926.762 ; gain = 1663.473
+Finished Technology Mapping : Time (s): cpu = 00:01:20 ; elapsed = 00:01:24 . Memory (MB): peak = 2323.812 ; gain = 722.285 ; free physical = 364 ; free virtual = 5574
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1568.270; parent = 1360.503; children = 208.852
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3322.215; parent = 2323.816; children = 998.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -477,37 +574,49 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:58 ; elapsed = 00:02:12 . Memory (MB): peak = 2940.188 ; gain = 1676.898
+Finished IO Insertion : Time (s): cpu = 00:01:25 ; elapsed = 00:01:29 . Memory (MB): peak = 2323.812 ; gain = 722.285 ; free physical = 364 ; free virtual = 5572
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1568.270; parent = 1360.503; children = 208.852
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3322.215; parent = 2323.816; children = 998.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:58 ; elapsed = 00:02:12 . Memory (MB): peak = 2940.188 ; gain = 1676.898
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:25 ; elapsed = 00:01:29 . Memory (MB): peak = 2323.812 ; gain = 722.285 ; free physical = 364 ; free virtual = 5572
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1568.270; parent = 1360.503; children = 208.852
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3322.215; parent = 2323.816; children = 998.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:59 ; elapsed = 00:02:12 . Memory (MB): peak = 2940.188 ; gain = 1676.898
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:26 ; elapsed = 00:01:30 . Memory (MB): peak = 2323.812 ; gain = 722.285 ; free physical = 365 ; free virtual = 5573
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1568.270; parent = 1360.503; children = 208.852
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3322.215; parent = 2323.816; children = 998.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:59 ; elapsed = 00:02:12 . Memory (MB): peak = 2940.188 ; gain = 1676.898
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:26 ; elapsed = 00:01:30 . Memory (MB): peak = 2323.812 ; gain = 722.285 ; free physical = 365 ; free virtual = 5573
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1568.270; parent = 1360.503; children = 208.852
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3322.215; parent = 2323.816; children = 998.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:00 ; elapsed = 00:02:14 . Memory (MB): peak = 2940.188 ; gain = 1676.898
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:26 ; elapsed = 00:01:30 . Memory (MB): peak = 2323.812 ; gain = 722.285 ; free physical = 365 ; free virtual = 5573
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1568.270; parent = 1360.503; children = 208.852
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3322.215; parent = 2323.816; children = 998.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:00 ; elapsed = 00:02:14 . Memory (MB): peak = 2940.188 ; gain = 1676.898
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:26 ; elapsed = 00:01:30 . Memory (MB): peak = 2323.812 ; gain = 722.285 ; free physical = 365 ; free virtual = 5573
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1568.270; parent = 1360.503; children = 208.852
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3322.215; parent = 2323.816; children = 998.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -539,61 +648,56 @@ Report Cell Usage:
 +------+-----------+------+
 |      |Cell       |Count |
 +------+-----------+------+
-|1     |Code2Inst  |     1|
-|2     |Code2Inst_ |     4|
+|1     |Code2Inst  |     5|
 |6     |BUFG       |     6|
-|7     |LOOKAHEAD8 |    30|
-|11    |LUT1       |     9|
-|12    |LUT2       |   413|
-|13    |LUT3       |   826|
-|14    |LUT4       |   759|
-|15    |LUT5       |  1025|
-|16    |LUT6       |  4390|
-|17    |LUT6CY     |   227|
-|18    |LUT6       |    53|
-|19    |MMCME2_ADV |     1|
-|20    |RAM32M16   |     3|
-|21    |RAMB16_S1  |     1|
-|22    |SRL16E     |     8|
-|23    |FDCE       |  1270|
-|24    |FDRE       |  1608|
-|25    |FDSE       |    46|
-|26    |IBUF       |    14|
-|27    |IBUFGDS    |     1|
-|28    |OBUF       |    25|
+|7     |CARRY4     |    74|
+|8     |LUT1       |    10|
+|9     |LUT2       |   147|
+|10    |LUT3       |   652|
+|11    |LUT4       |   393|
+|12    |LUT5       |   893|
+|13    |LUT6       |  5180|
+|14    |MMCME2_ADV |     1|
+|15    |MUXF7      |   910|
+|16    |MUXF8      |   241|
+|17    |RAM32M     |     5|
+|18    |RAM32X1D   |     2|
+|19    |RAMB16_S1  |     1|
+|20    |SRL16E     |     8|
+|21    |FDCE       |  1267|
+|22    |FDRE       |  1654|
+|23    |FDSE       |    36|
+|24    |IBUF       |    14|
+|25    |IBUFGDS    |     1|
+|26    |OBUF       |    25|
 +------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:00 ; elapsed = 00:02:14 . Memory (MB): peak = 2940.188 ; gain = 1676.898
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:26 ; elapsed = 00:01:30 . Memory (MB): peak = 2323.812 ; gain = 722.285 ; free physical = 366 ; free virtual = 5574
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1568.270; parent = 1360.503; children = 208.852
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3322.215; parent = 2323.816; children = 998.398
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:43 ; elapsed = 00:02:03 . Memory (MB): peak = 2940.188 ; gain = 1416.133
-Synthesis Optimization Complete : Time (s): cpu = 00:02:00 ; elapsed = 00:02:14 . Memory (MB): peak = 2940.188 ; gain = 1676.898
+Synthesis finished with 0 errors, 0 critical warnings and 6 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:24 ; elapsed = 00:01:28 . Memory (MB): peak = 2323.812 ; gain = 566.535 ; free physical = 413 ; free virtual = 5622
+Synthesis Optimization Complete : Time (s): cpu = 00:01:26 ; elapsed = 00:01:31 . Memory (MB): peak = 2323.820 ; gain = 722.285 ; free physical = 413 ; free virtual = 5622
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.131 . Memory (MB): peak = 2948.375 ; gain = 0.000
-CRITICAL WARNING: [Netlist 29-180] Cell 'RAMB16_S1' is not a supported primitive for versal part: xcvc1802-viva1596-1LHP-i-L.  Instance 'vga/FONT_8X16/BRAM_PC_VGA_0' will be treated as a black box, not an architecture primitive [C:/Users/LENOVO/Desktop/Exp1/code/auxillary/Font816.v:10]
-Resolution: Modify instantiation of primitive to match Xilinx primitive. Please review the guidelines in the Design Methodology Guide UG949 to replace this primitive with a supported primitive.
-INFO: [Netlist 29-17] Analyzing 291 Unisim elements for replacement
-WARNING: [Netlist 29-389] Instance 'CLK_GEN/mmcm_adv_inst' of type 'MMCME2_ADV' is being converted to 'MMCME5'. A generic scaling factor is being applied in order to retarget older MMCM settings to the new cell type. It is recommended instead to use clocking wizard or directly instantiate the 'MMCME5' cell to obtain optimal settings for the target part.
+Netlist sorting complete. Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.08 . Memory (MB): peak = 2323.820 ; gain = 0.000 ; free physical = 519 ; free virtual = 5735
+INFO: [Netlist 29-17] Analyzing 1235 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-INFO: [Constraints 18-5718] GCLK Deskew mode is set to Off via param.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2975.488 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2347.824 ; gain = 0.000 ; free physical = 463 ; free virtual = 5679
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 291 instances were transformed.
-  BUFG => BUFGCE: 6 instances
+  A total of 9 instances were transformed.
   IBUFGDS => IBUFDS: 1 instance 
-  LUT6CY => LUT6CY (LUTCY1, LUTCY2): 227 instances
-  LUT6_2 => LUT6_2 (LUT5, LUT6): 53 instances
-  MMCME2_ADV => MMCME5: 1 instance 
-  RAM32M16 => RAM32M16 (RAMD32(x14), RAMS32(x2)): 3 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 5 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 2 instances
+  RAMB16_S1 => RAMB18E1: 1 instance 
 
-Synth Design complete, checksum: c3fbec4e
+Synth Design complete, checksum: 60b4fbab
 INFO: [Common 17-83] Releasing license: Synthesis
-110 Infos, 10 Warnings, 4 Critical Warnings and 0 Errors encountered.
+109 Infos, 92 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:16 ; elapsed = 00:02:33 . Memory (MB): peak = 2975.488 ; gain = 1873.105
-INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-INFO: [Common 17-1381] The checkpoint 'C:/Users/LENOVO/Desktop/Exp1/Exp1.runs/synth_1/top.dcp' has been generated.
+synth_design: Time (s): cpu = 00:01:33 ; elapsed = 00:01:35 . Memory (MB): peak = 2347.824 ; gain = 1071.266 ; free physical = 673 ; free virtual = 5890
+INFO: [Common 17-1381] The checkpoint '/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/Exp1.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Oct  9 23:41:05 2022...
+INFO: [Common 17-206] Exiting Vivado at Tue Oct 25 10:03:27 2022...

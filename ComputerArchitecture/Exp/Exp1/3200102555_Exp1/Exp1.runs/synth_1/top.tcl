@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/LENOVO/Desktop/Exp1/Exp1.runs/synth_1/top.tcl"
+  variable script "/home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/Exp1.runs/synth_1/top.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,53 +70,52 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 2
-set_param chipscope.flow 0
+set_param chipscope.maxJobs 3
 OPTRACE "Creating in-memory project" START { }
-create_project -in_memory -part xcvc1802-viva1596-1LHP-i-L
+create_project -in_memory -part xc7k160tffg676-2L
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/LENOVO/Desktop/Exp1/Exp1.cache/wt [current_project]
-set_property parent.project_path C:/Users/LENOVO/Desktop/Exp1/Exp1.xpr [current_project]
+set_property webtalk.parent_dir /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/Exp1.cache/wt [current_project]
+set_property parent.project_path /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/Exp1.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Users/LENOVO/Desktop/Exp1/Exp1.cache/ip [current_project]
+set_property ip_output_repo /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/Exp1.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog C:/Users/LENOVO/Desktop/Exp1/code/auxillary/function.vh
+read_verilog /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/function.vh
 read_verilog -library xil_defaultlib {
-  C:/Users/LENOVO/Desktop/Exp1/code/core/ALU.v
-  C:/Users/LENOVO/Desktop/Exp1/code/auxillary/CPUTEST.v
-  C:/Users/LENOVO/Desktop/Exp1/code/auxillary/Code2Inst.v
-  C:/Users/LENOVO/Desktop/Exp1/code/core/CtrlUnit.v
-  C:/Users/LENOVO/Desktop/Exp1/code/auxillary/Font816.v
-  C:/Users/LENOVO/Desktop/Exp1/code/core/HazardDetectionUnit.v
-  C:/Users/LENOVO/Desktop/Exp1/code/core/ImmGen.v
-  C:/Users/LENOVO/Desktop/Exp1/code/common/MUX2T1_32.v
-  C:/Users/LENOVO/Desktop/Exp1/code/common/MUX4T1_32.v
-  C:/Users/LENOVO/Desktop/Exp1/code/core/RAM_B.v
-  C:/Users/LENOVO/Desktop/Exp1/code/common/REG32.v
-  C:/Users/LENOVO/Desktop/Exp1/code/core/REG_EX_MEM.v
-  C:/Users/LENOVO/Desktop/Exp1/code/core/REG_ID_EX.v
-  C:/Users/LENOVO/Desktop/Exp1/code/core/REG_IF_ID.v
-  C:/Users/LENOVO/Desktop/Exp1/code/core/REG_MEM_WB.v
-  C:/Users/LENOVO/Desktop/Exp1/code/core/ROM_D.v
-  C:/Users/LENOVO/Desktop/Exp1/code/core/RV32core.v
-  C:/Users/LENOVO/Desktop/Exp1/code/core/Regs.v
-  C:/Users/LENOVO/Desktop/Exp1/code/auxillary/VGATEST.v
-  C:/Users/LENOVO/Desktop/Exp1/code/common/add_32.v
-  C:/Users/LENOVO/Desktop/Exp1/code/auxillary/btn_scan.v
-  C:/Users/LENOVO/Desktop/Exp1/code/auxillary/clk_diff.v
-  C:/Users/LENOVO/Desktop/Exp1/code/common/cmp_32.v
-  C:/Users/LENOVO/Desktop/Exp1/code/auxillary/debug_clk.v
-  C:/Users/LENOVO/Desktop/Exp1/code/auxillary/display.v
-  C:/Users/LENOVO/Desktop/Exp1/code/auxillary/my_clk_gen.v
-  C:/Users/LENOVO/Desktop/Exp1/code/auxillary/parallel2serial.v
-  C:/Users/LENOVO/Desktop/Exp1/code/auxillary/vga.v
-  C:/Users/LENOVO/Desktop/Exp1/code/auxillary/top.v
+  /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/ALU.v
+  /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/CPUTEST.v
+  /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/Code2Inst.v
+  /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/CtrlUnit.v
+  /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/Font816.v
+  /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/HazardDetectionUnit.v
+  /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/ImmGen.v
+  /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/common/MUX2T1_32.v
+  /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/common/MUX4T1_32.v
+  /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/RAM_B.v
+  /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/common/REG32.v
+  /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/REG_EX_MEM.v
+  /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/REG_ID_EX.v
+  /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/REG_IF_ID.v
+  /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/REG_MEM_WB.v
+  /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/ROM_D.v
+  /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/RV32core.v
+  /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/core/Regs.v
+  /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/VGATEST.v
+  /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/common/add_32.v
+  /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/btn_scan.v
+  /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/clk_diff.v
+  /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/common/cmp_32.v
+  /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/debug_clk.v
+  /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/display.v
+  /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/my_clk_gen.v
+  /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/parallel2serial.v
+  /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/vga.v
+  /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/auxillary/top.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -127,14 +126,14 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/LENOVO/Desktop/Exp1/code/constraint.xdc
-set_property used_in_implementation false [get_files C:/Users/LENOVO/Desktop/Exp1/code/constraint.xdc]
+read_xdc /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/constraint.xdc
+set_property used_in_implementation false [get_files /home/yunfanli/obsidian/ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/constraint.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top top -part xcvc1802-viva1596-1LHP-i-L
+synth_design -top top -part xc7k160tffg676-2L
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"

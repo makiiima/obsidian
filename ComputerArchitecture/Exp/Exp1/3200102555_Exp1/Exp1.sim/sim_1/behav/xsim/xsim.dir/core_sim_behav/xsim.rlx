@@ -1,11 +1,11 @@
 
 { 
-    crc :  10747678920653693928  , 
+    crc :  16521199917333289150  , 
     ccp_crc :  0  , 
-    cmdline : " -wto 1995affe731d4385a79f1f7a3468775d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L unisims_ver -L secureip --snapshot core_sim_behav xil_defaultlib.core_sim xil_defaultlib.glbl" , 
-    buildDate : "Apr  7 2021" , 
-    buildTime : "05:52:48" , 
-    linkCmd : "Z:\\Xili\\Vivado\\2020.3\\data\\..\\tps\\mingw\\6.2.0\\win64.o\\nt\\bin\\gcc.exe -Wa,-W  -O -Wl,--stack,104857600 -o \"xsim.dir/core_sim_behav/xsimk.exe\"   \"xsim.dir/core_sim_behav/obj/xsim_0.win64.obj\" \"xsim.dir/core_sim_behav/obj/xsim_1.win64.obj\" -L\"Z:\\Xili\\Vivado\\2020.3\\lib\\win64.o\" -lrdi_simulator_kernel   -lrdi_simbridge_kernel" , 
+    cmdline : " --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot core_sim_behav xil_defaultlib.core_sim xil_defaultlib.glbl" , 
+    buildDate : "Oct 14 2022" , 
+    buildTime : "05:07:14" , 
+    linkCmd : "/usr/bin/gcc -Wa,-W  -O -fPIC  -m64  -Wl,--no-as-needed  -Wl,--unresolved-symbols=ignore-all  -o \"xsim.dir/core_sim_behav/xsimk\"   \"xsim.dir/core_sim_behav/obj/xsim_0.lnx64.o\" \"xsim.dir/core_sim_behav/obj/xsim_1.lnx64.o\" -L\"/tools/Xilinx/Vivado/2022.2/lib/lnx64.o\" -lrdi_simulator_kernel   -lrdi_simbridge_kernel" , 
     aggregate_nets : 
     [ 
     ] 
