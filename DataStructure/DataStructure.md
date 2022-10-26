@@ -160,6 +160,10 @@ struct QueueRecord{
 ## 2 Binary Trees
 - Definition: A tree in which no node with more than two children
 ### Expression Trees
+### Properties of Binary Trees
+- The maximum number of nodes on level i is $2^{i-1},i\geq1$
+- The maximum number of nodes in a binary tree of depth k is $2^k-1,k \geq1$
+- ![[Pasted image 20221026164649.png]]
 
 ### Tree Traversals
 > visit each node exactly once
@@ -227,6 +231,7 @@ void iter_inorder(tree_ptr tree)
 ```
 ### Search Trees
 ![[Pasted image 20221025193040.png]]
+#### Definition
 
 ### Implementation
 - Find
