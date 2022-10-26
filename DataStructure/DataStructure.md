@@ -229,9 +229,16 @@ void iter_inorder(tree_ptr tree)
     }
 }
 ```
-### Search Trees
+### Binary Search Trees
 ![[Pasted image 20221025193040.png]]
 #### Definition
+A binary tree that:
+- Every node has a key which is an integer, and the keys are **distinct**
+- The keys in a nonempty left subtree must be smaller than the key in the root
+- The keys in a nonempty right subtree must be larger than the key in the root
+- The left and right subtrees are also binary search trees
+
+
 
 ### Implementation
 - Find

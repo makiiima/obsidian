@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "39c81314d728e54b",
+        "id": "8c6c91221620e45f",
         "type": "tabs",
         "children": [
           {
-            "id": "7b2e5f34d688091b",
+            "id": "749daedad5981e83",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -20,13 +20,8 @@
               ]
             },
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "DataStructure/DataStructure.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -132,7 +127,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DataStructure/DataStructure.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -158,7 +152,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "DataStructure/DataStructure.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -198,9 +191,7 @@
             },
             "state": {
               "type": "outline",
-              "state": {
-                "file": "DataStructure/DataStructure.md"
-              }
+              "state": {}
             }
           },
           {
@@ -248,10 +239,10 @@
   "ribbon": {
     "mostRecentAction": ""
   },
-  "active": "f0e3f5d3e4b1bf0f",
+  "active": "749daedad5981e83",
   "lastOpenFiles": [
-    "OperatingSystem/NJUOperatingSystem.md",
     "DataStructure/DataStructure.md",
+    "OperatingSystem/NJUOperatingSystem.md",
     "Diary/2022-10-20.md",
     "DataStructure/attachments/Pasted image 20221020023401.png",
     "ComputerNetwork/Textbooks/计算机网络_自顶向下.pdf",
