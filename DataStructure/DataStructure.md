@@ -237,10 +237,18 @@ A binary tree that:
 - The keys in a nonempty left subtree must be smaller than the key in the root
 - The keys in a nonempty right subtree must be larger than the key in the root
 - The left and right subtrees are also binary search trees
+#### ADT
+- Objects: A finite ordered list with zero or more elements
+- Operations:
+    - `SearchTree MakeEmpty( SearchTree T);`
+    - `Position Find(ElementType X, SearchTree T);`
+    - `Position FindMin(SearchTree T);`
+    - `Position FindMax(SearchTree T);`
+    - `SearchTree Insert(ElementType X, SearchTree T);`
+    - `SearchTree Delete(ElementType X, SearchTree T);`
+    - `ElementType Retrieve(Position P);`
 
-
-
-### Implementation
+#### Implementation
 - Find
 ```c
 //tail recursion
@@ -261,18 +269,46 @@ Position Iter_Find(ElementType X, SearchTree T)
 	while(T){
 		if (X==T->Element)
 			return T;
-		else if ()
+        if (X<T->Element)
+            T=T->Left;
+        else
+            T=T->Right;
 	}
+	return NULL;
 }
 ```
-$$ T(N)=X(N)=O(d), d=depth(X)$$
+$$ T(N)=S(N)=O(d), d=depth(X)$$
 - FindMin
 ```c
 Position FindMin(SearchTree T)
 {
 	if (T==NULL)
 		return NULL;
-	else if (T->Left)
+	else 
+    	if (T->Left==NULL) return T;
+    	else return FindMin(T->Left);
+}
+//loop
+Position Iter_FindMin(SearchTree T)
+{
+    while(T)
+    {
+        if(T->Left==NULL)
+            return T;
+        else
+            T=T->Left;
+    }
+    return NULL;
 }
 ```
 - FindMax
+```c
+Position FindMax(SearchTree T)
+{
+    if(T!=NULL)
+        while(T->Right!=NULL)
+            T=T->Right;
+    return T;
+}
+```
+- Insert
