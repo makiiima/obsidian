@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-struct Node;
 #define ElementType int
+
+struct Node;
 typedef struct Node *PtrToNode;
 typedef PtrToNode List;
 typedef PtrToNode Position;
@@ -11,6 +12,7 @@ struct Node
     ElementType Element;
     Position Next;
 };
+
 List MakeEmpty(List L);
 int IsEmpty(List L);
 int IsLast(Position P, List L);
@@ -23,6 +25,13 @@ Position Header(List L);
 Position First(List L);
 Position Advance(Position P);
 ElementType Retrieve(Position P);
+
+List MakeEmpty(List L)
+{
+    L=malloc(sizeof(struct Node));
+    L->Next=NULL;
+    return L;
+}
 
 int IsEmpty(List L)
 {
@@ -73,7 +82,7 @@ void Insert(ElementType X, List L, Position P)
     Position TmpCell;
     TmpCell = malloc(sizeof(struct Node));
     if (TmpCell == NULL)
-        FatalError("Out of space!");
+        // FatalError("Out of space!");
 
     TmpCell->Element = X;
     TmpCell->Next = P->Next;
@@ -90,14 +99,38 @@ void DeleteList(List L)
         L=L->Next;
         p=L;
     }
+    // wrong!! L was not freed
+    // Position p,tmp;
+    // p=L->Next;
+    // L->Next=NULL;
+    // while(p!=NULL)
+    // {
+    //     tmp=p->Next;
+    //     free(p);
+    //     p=tmp;
+    // }
 }
 
 Position Header(List L)
 {
-    
+    return L;    
 }
+
+Position First(List L)
+{
+    return L->Next;
+}
+
+Position Advance(Position P)
+{
+       
+}
+ElementType Retrieve(Position P);
 
 int main()
 {
+    Position head;
+    MakeEmpty(head);
+    head->Element=1;
     return 0;
 }
