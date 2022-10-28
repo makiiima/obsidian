@@ -22,3 +22,52 @@ Position Header(List L);
 Position First(List L);
 Position Advance(Position P);
 ElementType Retrieve(Position P);
+
+int IsEmpty(List L)
+{
+  return L->Next==NULL;
+}
+
+int IsLast(Position P,List L)
+{
+  return P->Next==NULL;
+}
+
+Position Find(ElementType X,List L)
+{
+  Position P;
+  P=L->Next;
+  while(P!=NULL&&P->Element!=X)
+    P=P->Next;
+  if (P->Next==NULL&&P->Element!=X)
+    return NULL;
+  return P;
+}
+
+void Delete(ElementType X,List L)
+{
+  Position P,TmpCell;
+  P=FindPrevious(X,L);
+  if(!IsLast(P,L))
+  {
+    TmpCell=P->Next;
+    P->Next=TmpCell->Next;
+    free(TmpCell);
+  }
+}
+
+Position FindPrevious(ElementType X,List L)
+{
+  Position P;
+  P=L;
+  while(P->Next->Element!=X&&P->Next!=NULL)
+    P=P->Next;
+  if(P->Next==NULL)
+    return NULL;
+  return P;
+}
+
+void Insert(ElementType X, List L, Position P)
+{
+
+}
