@@ -28,9 +28,23 @@ ElementType Retrieve(Position P);
 
 List MakeEmpty(List L)
 {
-    L=malloc(sizeof(struct Node));
+    L=(struct Node*) malloc(sizeof(struct Node));
     L->Next=NULL;
     return L;
+}
+
+void append(List L,ElementType X)
+{
+    Position p;
+    p=L;
+    while(p->Next!=NULL){
+        p=p->Next;
+    }
+    Position tmp;
+    tmp=(Position)malloc(sizeof(struct Node));
+    tmp->Next=NULL;
+    tmp->Element=X;
+    p=tmp;
 }
 
 int IsEmpty(List L)
@@ -129,8 +143,9 @@ ElementType Retrieve(Position P);
 
 int main()
 {
-    Position head;
-    MakeEmpty(head);
-    head->Element=1;
+    List lst;
+    lst=(List)malloc(sizeof(struct Node));
+    lst->Next=NULL;
+    append(lst,1);
     return 0;
 }
