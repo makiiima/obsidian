@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "8c6c91221620e45f",
+        "id": "453433d6267fbadf",
         "type": "tabs",
         "children": [
           {
-            "id": "749daedad5981e83",
+            "id": "f4f7b7552ef3e02c",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -245,10 +245,7 @@
     "width": 300,
     "collapsed": true
   },
-  "ribbon": {
-    "mostRecentAction": ""
-  },
-  "active": "749daedad5981e83",
+  "active": "f4f7b7552ef3e02c",
   "lastOpenFiles": [
     "DataStructure/DataStructure.md",
     "OperatingSystem/NJUOperatingSystem.md",

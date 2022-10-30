@@ -311,4 +311,35 @@ Position FindMax(SearchTree T)
     return T;
 }
 ```
+
 - Insert
+```c
+SearchTree Insert(ElementType X, SearchTree T)
+{
+    if(T==NULL)
+    {
+        T=malloc(sizeof(struct TreeNode));
+        if(T==NULL)
+            FatalError("Out of space!");
+        else{
+            T->Element=X;
+            T->Left=T->Right=NULL;
+        }
+    }
+    else
+        if(X<T->Element)
+            T->Left=Insert(X,T->Left);
+        else
+            if(X>T->Element)
+                T->Right=Insert(X,T->Right);
+    return T;
+}
+```
+
+- Delete
+    - Delete a leaf node: Reset its parent link to NULL
+    - Delete a degree 1 node: Replace the node by its single child
+    - Delete a degree 2 node: 
+```c
+
+```
