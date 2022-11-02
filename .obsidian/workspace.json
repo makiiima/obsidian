@@ -28,8 +28,31 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "2eea05d46478cc55",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ComputerArchitecture/Computer Organization.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -132,7 +155,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DataStructure/DataStructure.md",
+                "file": "ComputerArchitecture/Computer Organization.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -158,7 +181,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "DataStructure/DataStructure.md",
+                "file": "ComputerArchitecture/Computer Organization.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -199,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DataStructure/DataStructure.md"
+                "file": "ComputerArchitecture/Computer Organization.md"
               }
             }
           },
@@ -245,7 +268,7 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "f4f7b7552ef3e02c",
+  "active": "2eea05d46478cc55",
   "lastOpenFiles": [
     "DataStructure/DataStructure.md",
     "OperatingSystem/NJUOperatingSystem.md",

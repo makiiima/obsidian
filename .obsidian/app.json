@@ -10,5 +10,6 @@
   "spellcheckLanguages": [
     "zh-CN",
     "en-US"
-  ]
+  ],
+  "livePreview": true
 }

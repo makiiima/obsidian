@@ -340,6 +340,32 @@ SearchTree Insert(ElementType X, SearchTree T)
     - Delete a leaf node: Reset its parent link to NULL
     - Delete a degree 1 node: Replace the node by its single child
     - Delete a degree 2 node: 
+        1. Replace the node by the **largest** one in its left subtree or the smallest one in its right subtree
+        2. Delete the replacing node from the subtree
 ```c
-
+SearchTree Delete(ElementType X, SearchTree T)
+{
+    Position tmp;
+    if(T==NULL)
+        Error("Element not found");
+    else if(X<T->Element)
+        T->Left=Delete(X,T->Left);
+    else if(X>T->Element)
+        T->Right=Delete(X,T->Right);
+    else//Found element to be deleted
+        if(T->Left&&T->Right){//two chirldren
+            tmp=FindMin(T->Right);
+            T->Element=tmp->Element;
+            T->Right=Delete(T->Element,T->Right);
+        }
+        else{//one or zero child
+            tmp=T;
+            if(T->Left==NULL)
+                T=T->Right;
+            else
+                T=T->Left;
+            free(tmp);
+        }
+    return T;
+}
 ```
