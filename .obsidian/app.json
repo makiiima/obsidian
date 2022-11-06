@@ -11,5 +11,6 @@
     "zh-CN",
     "en-US"
   ],
-  "livePreview": true
+  "livePreview": true,
+  "alwaysUpdateLinks": true
 }

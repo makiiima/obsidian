@@ -38,6 +38,48 @@
                 {
                   "state": "{}",
                   "eState": "{}"
+                },
+                {
+                  "title": "image-20221103060633059",
+                  "icon": "lucide-image",
+                  "state": "{\"type\":\"image\",\"state\":{\"file\":\"ComputerArchitecture/attachments/image-20221103060633059.png\"}}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "image-20221103032823267",
+                  "icon": "lucide-image",
+                  "state": "{\"type\":\"image\",\"state\":{\"file\":\"ComputerArchitecture/attachments/image-20221103032823267.png\"}}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "image-20221103032616130",
+                  "icon": "lucide-image",
+                  "state": "{\"type\":\"image\",\"state\":{\"file\":\"ComputerArchitecture/attachments/image-20221103032616130.png\"}}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "image-20221103060633059",
+                  "icon": "lucide-image",
+                  "state": "{\"type\":\"image\",\"state\":{\"file\":\"ComputerArchitecture/attachments/image-20221103060633059.png\"}}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "image-20221103032823267",
+                  "icon": "lucide-image",
+                  "state": "{\"type\":\"image\",\"state\":{\"file\":\"ComputerArchitecture/attachments/image-20221103032823267.png\"}}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "image-20221103032616130",
+                  "icon": "lucide-image",
+                  "state": "{\"type\":\"image\",\"state\":{\"file\":\"ComputerArchitecture/attachments/image-20221103032616130.png\"}}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "Computer Organization",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"ComputerArchitecture/Computer Organization.md\",\"mode\":\"source\",\"backlinks\":true,\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":42,\"ch\":0},\"to\":{\"line\":42,\"ch\":0}},\"scroll\":40.48649691358025}"
                 }
               ]
             },
@@ -269,16 +311,19 @@
     "collapsed": true
   },
   "active": "2eea05d46478cc55",
+  "ophidian:layout-settings": {
+    "pane-relief:focus-lock": true
+  },
   "lastOpenFiles": [
+    "ComputerArchitecture/attachments/image-20221103060633059.png",
+    "ComputerArchitecture/attachments/image-20221103032823267.png",
+    "ComputerArchitecture/attachments/image-20221103032616130.png",
+    "ComputerArchitecture/attachments/Pasted image 20221105073950.png",
+    "ComputerArchitecture/Computer Organization.md",
     "DataStructure/DataStructure.md",
     "OperatingSystem/NJUOperatingSystem.md",
     "Diary/2022-10-20.md",
     "DataStructure/attachments/Pasted image 20221020023401.png",
-    "ComputerNetwork/Textbooks/计算机网络_自顶向下.pdf",
-    "Diary/2022-10-19.md",
-    "ComputerNetwork/Computer Network.md",
-    "Diary/2022-10-18.md",
-    "ComputerNetwork/Textbooks/Computer Networks, Global Edition (Andrew Tanenbaum, Nick Feamster etc.) (z-lib.org).pdf",
-    "ComputerArchitecture/Exp/Exp1/3200102555_Exp1/code/sim/README.md"
+    "ComputerNetwork/Textbooks/计算机网络_自顶向下.pdf"
   ]
 }
