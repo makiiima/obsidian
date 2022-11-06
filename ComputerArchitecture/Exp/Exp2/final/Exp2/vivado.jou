@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Sat Nov  5 18:38:44 2022
+# Process ID: 3976
+# Current directory: C:/Users/YunfanLi/obsidian/ComputerArchitecture/Exp/Exp2/final/Exp2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15156 C:\Users\YunfanLi\obsidian\ComputerArchitecture\Exp\Exp2\final\Exp2\Exp2.xpr
+# Log file: C:/Users/YunfanLi/obsidian/ComputerArchitecture/Exp/Exp2/final/Exp2/vivado.log
+# Journal file: C:/Users/YunfanLi/obsidian/ComputerArchitecture/Exp/Exp2/final/Exp2\vivado.jou
+# Running On: lee, OS: Windows, CPU Frequency: 2592 MHz, CPU Physical cores: 6, Host memory: 16972 MB
+#-----------------------------------------------------------
+start_gui
+open_project -part xc7k70tfbv676-1 C:/Users/YunfanLi/obsidian/ComputerArchitecture/Exp/Exp2/final/Exp2/Exp2.xpr
+update_compile_order -fileset sources_1
