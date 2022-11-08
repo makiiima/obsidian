@@ -97,8 +97,7 @@
     取决于链路的物理媒体和路由之间的距离
     
 
-dnodal=dproc+dqueue+dtrans+dpropd_{nodal}=d_{proc}+d_{queue}+d_{trans}+d_{prop} d​nodal​​=d​proc​​+d​queue​​+d​trans​​+d​prop​​
-
+$$d_{nodal}=d_{proc}+d_{queue}+d_{trans}+d_{prop} $$
 ### 排队时延和丢包
 
 分组到达队列的平均速率(分组/秒)=a
@@ -194,3 +193,15 @@ flowchart
 在每一层, 一个分组具有两种类型的字段: 首部字段和有效载荷字段(payload field), 有效载荷通常来自上一层的分组
 
 # 第二章 应用层
+
+应用程序体系结构
+- 客户-服务器体系结构（client-server architecture）
+    - 服务器：总是打开的，具有固定的、周知的IP地址
+    - 客户相互之间不直接通信
+- P2P
+    应用程序在间断连接的主机对之间使用直接通信
+    - 自拓展性
+
+### 进程通信
+
+在两个不同端系统上的进程，通过跨越计算机网络交换 报文 (message) 而相互通信 。 
