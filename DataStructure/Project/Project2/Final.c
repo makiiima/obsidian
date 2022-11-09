@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #define MAXSIZE 100
-#define _DEBUG_
+// #define _DEBUG_
 int N;
 int miss=0;
 int missnum;
@@ -13,19 +13,62 @@ int post[MAXSIZE]={0};
 int fpost[MAXSIZE]={0};
 int frequency[MAXSIZE]={0};
  
-typedef struct tNode
+typedef struct tnode
 {
     int data;
-    struct tNode *left;
-    struct tNode *right;
-} tNode;
-typedef tNode *tree;
+    struct tnode *left;
+    struct tnode *right;
+} tnode;
+typedef tnode *tree;
+
+typedef struct qnode
+{
+    tnode* data;
+    struct qnode* next;
+}qnode;
+
+typedef struct queue
+{
+    qnode* front;
+    qnode* rear;
+}queue;
+
+//to make an empty queue
+queue* initqueue()
+{
+    queue* q=(queue*)malloc(sizeof(queue));
+    q->front=(qnode*)malloc(sizeof(qnode));
+    q->front->next=NULL;
+    q->rear=q->front;
+    return q;
+}
+
+//to push in a tnode into the queue
+void push(queue* q, tnode* node)
+{
+    qnode* qn=(qnode*)malloc(sizeof(qnode));
+    qn->data=node;
+    qn->next=NULL;
+    q->rear->next=qn;
+    q->rear=qn;
+}
+
+//to pop a tnode from the queue
+tnode* pop(queue* q)
+{
+    if(q->front==q->rear)
+        return NULL;
+    qnode* p=q->front->next;
+    tnode* node=p->data;
+    q->front=p;
+    return node;
+}
 
 // make a new tree node
-tNode *newtNode(char data)
+tnode *newnode(char data)
 {
-    tNode *p;
-    p = (tNode *)malloc(sizeof(tNode));
+    tnode *p;
+    p = (tnode *)malloc(sizeof(tnode));
     p->data = data;
     p->left = NULL;
     p->right = NULL;
@@ -60,6 +103,37 @@ void printPost(tree t)
     printPre(t->left);
     printPre(t->right);
     printf("%d ", t->data);
+}
+
+//print a tree in level-order
+void printlevel(tree t)
+{
+    int curcnt=0;
+    int nextcnt=0;
+    struct queue* q=initqueue();
+    push(q,t);
+    curcnt++;
+    tnode* p;
+    while(p=pop(q))    
+    {
+        curcnt--;
+        printf("%d ",p->data);
+        if(p->left)
+        {
+            push(q,p->left);
+            nextcnt++;
+        }
+        if(p->right)
+        {
+            push(q,p->right);
+            nextcnt++;
+        }
+        if(curcnt==0)
+        {
+            curcnt=nextcnt;
+            nextcnt=0;
+        }
+    }
 }
 
 // store the input information in 3 arrays
@@ -151,7 +225,6 @@ int test(int h1,int h2,int h3,int l)
             fin[h1+l1]=missnum;
             fpre[h2]=missnum;
             fpost[h3+l-1]=missnum;
-
         }
         int flag1=test(h1,h2+1,h3,l1);
         int flag2=test(h1+l1+1,h2+l1+1,h3+l1,l2);
@@ -171,13 +244,31 @@ void printlist(int list[])
     }
     printf("\n");
 }
+
+//from the in list and pre list to make the tree
+//h1 is the head of in list
+//h2 is the head of pre list
+//l is the length of list
+tnode *makenode(int h1,int h2, int l)
+{
+    if(!l)
+        return NULL;
+    tnode *p= newnode(fpre[h2]);
+    int i;
+    for(i=h1;;i++)
+        if(fin[i]==p->data)break;
+    int l1=i-h1;
+    int l2=l-1-l1;
+    p->left=makenode(h1,h2+1,l1);
+    p->right=makenode(i+1,h2+l1+1,l2);
+    return p;
+}
+
 int main()
 {
-    scanf("%d ", &N);
+    scanf("%d\n", &N);
     store(pre, in, post);
     // 3 linked list to store the given information
-
-
     for(int i=0;i<N;i++)
     {
         if(frequency[i]==0)
@@ -194,8 +285,14 @@ int main()
         printf("Impossible");
         return 0;
     }
+    tnode* tree=makenode(0,0,N);
+    printlist(fin);
+    printlist(fpre);
+    printlist(fpost);
+    printlevel(tree);
+
 #ifdef _DEBUG_
-    printf("Here is your stored information:\n");
+    printf("Here is your input information:\n");
     printf("in:\t");
     printlist(in);
     printf("pre:\t");
@@ -216,6 +313,5 @@ int main()
     printf("fpost:\t");
     printlist(fpost);
 #endif
-
     return 0;
 }
