@@ -101,6 +101,15 @@ void store(int pre[] , int in [] , int post[])
     }
 }
 
+//return the maximum of three
+int max(int n1,int n2,int n3)
+{
+    if(n1>=n2&&n1>=n3)
+        return n1;
+    if(n2>=n1&&n2>=n3)
+        return n2;
+    return n3;
+}
 //test if test case in each order is valid
 //h1 is the head of test case of in-order
 //h2 is the head of test case of pre-order
@@ -109,7 +118,8 @@ void store(int pre[] , int in [] , int post[])
 int test(int h1,int h2,int h3,int l)
 {
     if(l==0)    return 1;
-    for(int l1=0;l1<l;l1++){
+    for(int l1=0;l1<l;l1++)
+    {
         int l2=l-1-l1;
         int n1=0,n2=0,n3=0,cnt=0;
         if(in[h1+l1]>0)
@@ -120,6 +130,8 @@ int test(int h1,int h2,int h3,int l)
             n3=post[h3+l-1],cnt++;
         if((n1*n2!=0&&n1!=n2)||(n1*n3!=0&&n1!=n3)||(n2*n3!=0&&n2!=n3))
             continue;
+
+        missnum=max(n1,n2,n3);
         if(cnt==0)//n1,n2,n3 is all '-'
         {
             if(miss==0)
@@ -132,11 +144,23 @@ int test(int h1,int h2,int h3,int l)
                 miss--;
             }
         }
+        else
+        {
+            if(cnt!=frequency[missnum-1])
+                continue;
+            fin[h1+l1]=missnum;
+            fpre[h2]=missnum;
+            fpost[h3+l-1]=missnum;
+
+        }
         int flag1=test(h1,h2+1,h3,l1);
         int flag2=test(h1+l1+1,h2+l1+1,h3+l1,l2);
-
-
+        if(!cnt)
+            miss=1;
+        if(flag1&&flag2)
+            return 1;
     }
+    return 0;
 }
 //print the information in the array
 void printlist(int list[])
@@ -149,7 +173,7 @@ void printlist(int list[])
 }
 int main()
 {
-    scanf("%d\n", &N);
+    scanf("%d ", &N);
     store(pre, in, post);
     // 3 linked list to store the given information
 
@@ -164,15 +188,33 @@ int main()
         printf("Impossible");
         return 0;
     }
+    int res=test(0,0,0,N);
+    if(!res)
+    {
+        printf("Impossible");
+        return 0;
+    }
 #ifdef _DEBUG_
     printf("Here is your stored information:\n");
+    printf("in:\t");
     printlist(in);
+    printf("pre:\t");
     printlist(pre);
+    printf("post:\t");
     printlist(post);
+    printf("The frequency is:\n");
     printlist(frequency);
-    for(int i=0;i<20;i++){
-        printf("%d ",in[i]);
+    for(int i=0;i<N;i++){
+        printf("%d ",frequency[i]);
     }
+    printf("\n");
+    printf("Heer is your final lists:\n");
+    printf("fin:\t");
+    printlist(fin);
+    printf("fpre:\t");
+    printlist(fpre);
+    printf("fpost:\t");
+    printlist(fpost);
 #endif
 
     return 0;
