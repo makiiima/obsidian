@@ -3,6 +3,8 @@
 #define MAXSIZE 100
 #define _DEBUG_
 int N;
+int miss=0;
+int missnum;
 int pre[MAXSIZE]={0};
 int fpre[MAXSIZE]={0};
 int in[MAXSIZE]={0};
@@ -109,7 +111,31 @@ int test(int h1,int h2,int h3,int l)
     if(l==0)    return 1;
     for(int l1=0;l1<l;l1++){
         int l2=l-1-l1;
-         
+        int n1=0,n2=0,n3=0,cnt=0;
+        if(in[h1+l1]>0)
+            n1=in[h1+l1],cnt++;
+        if(pre[h2]>0)
+            n2=pre[h2],cnt++;
+        if(post[h3+l-1]>0)
+            n3=post[h3+l-1],cnt++;
+        if((n1*n2!=0&&n1!=n2)||(n1*n3!=0&&n1!=n3)||(n2*n3!=0&&n2!=n3))
+            continue;
+        if(cnt==0)//n1,n2,n3 is all '-'
+        {
+            if(miss==0)
+                continue;
+            if(miss==1)//n1,n2,n3 is exactly the missed number
+            {
+                fin[h1+l1]=missnum;
+                fpre[h2]=missnum;
+                fpost[h3+l-1]=missnum;
+                miss--;
+            }
+        }
+        int flag1=test(h1,h2+1,h3,l1);
+        int flag2=test(h1+l1+1,h2+l1+1,h3+l1,l2);
+
+
     }
 }
 //print the information in the array
@@ -127,7 +153,7 @@ int main()
     store(pre, in, post);
     // 3 linked list to store the given information
 
-    int miss=0;
+
     for(int i=0;i<N;i++)
     {
         if(frequency[i]==0)
