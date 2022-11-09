@@ -40,6 +40,12 @@
                   "eState": "{}"
                 },
                 {
+                  "title": "Computer Organization",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"ComputerArchitecture/Computer Organization.md\",\"mode\":\"source\",\"backlinks\":true,\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":4},\"to\":{\"line\":0,\"ch\":4}}}"
+                },
+                {
                   "title": "image-20221103060633059",
                   "icon": "lucide-image",
                   "state": "{\"type\":\"image\",\"state\":{\"file\":\"ComputerArchitecture/attachments/image-20221103060633059.png\"}}",
@@ -86,7 +92,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ComputerArchitecture/Computer Organization.md",
+                "file": "ComputerNetwork/Top-Down Aprroach.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -197,7 +203,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ComputerArchitecture/Computer Organization.md",
+                "file": "ComputerNetwork/Top-Down Aprroach.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -223,7 +229,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ComputerArchitecture/Computer Organization.md",
+                "file": "ComputerNetwork/Top-Down Aprroach.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -264,7 +270,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ComputerArchitecture/Computer Organization.md"
+                "file": "ComputerNetwork/Top-Down Aprroach.md"
               }
             }
           },
@@ -315,11 +321,11 @@
     "pane-relief:focus-lock": true
   },
   "lastOpenFiles": [
+    "ComputerArchitecture/Computer Organization.md",
     "ComputerArchitecture/attachments/image-20221103060633059.png",
     "ComputerArchitecture/attachments/image-20221103032823267.png",
     "ComputerArchitecture/attachments/image-20221103032616130.png",
     "ComputerArchitecture/attachments/Pasted image 20221105073950.png",
-    "ComputerArchitecture/Computer Organization.md",
     "DataStructure/DataStructure.md",
     "OperatingSystem/NJUOperatingSystem.md",
     "Diary/2022-10-20.md",

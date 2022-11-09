@@ -1,0 +1,196 @@
+Building configuration...
+
+Current configuration : 1468 bytes
+!
+version 12.1
+no service pad
+service timestamps debug uptime
+service timestamps log uptime
+no service password-encryption
+!
+hostname 1234
+!
+enable secret 5 $1$E22U$J3MZwP2Dbrrk693I3Nrho/
+enable password 123456
+!
+ip subnet-zero
+!
+!
+spanning-tree mode pvst
+no spanning-tree optimize bpdu transmission
+spanning-tree extend system-id
+!
+!
+!
+!
+interface FastEthernet0/1
+!
+interface FastEthernet0/2
+!
+interface FastEthernet0/3
+ switchport access vlan 2
+!
+interface FastEthernet0/4
+ switchport access vlan 2
+!
+interface FastEthernet0/5
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface FastEthernet0/13
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+ switchport mode trunk
+ spanning-tree vlan 1 port-priority 16
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+ switchport mode trunk
+ spanning-tree vlan 1 port-priority 16
+ spanning-tree vlan 2 port-priority 16
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+!
+interface Vlan1
+ ip address 10.0.0.5 255.0.0.0
+ no ip route-cache
+!
+ip http server
+!
+line con 0
+line vty 0 4
+ password 123456
+ login
+line vty 5 15
+ password 123456
+ login
+!
+!
+!
+monitor session 1 source interface Fa0/2 - 3
+End
+
+
+
+Switch2：
+Building configuration...
+
+Current configuration : 1356 bytes
+!
+version 12.1
+no service pad
+service timestamps debug uptime
+service timestamps log uptime
+no service password-encryption
+!
+hostname Switch
+!
+enable secret 5 $1$sUKw$k2lzkcJoz9JKamDlFL/mQ0
+enable password 1234
+!
+ip subnet-zero
+!
+!
+spanning-tree mode pvst
+no spanning-tree optimize bpdu transmission
+spanning-tree extend system-id
+!
+!
+!
+!
+interface FastEthernet0/1
+!
+interface FastEthernet0/2
+!
+interface FastEthernet0/3
+!
+interface FastEthernet0/4
+ switchport access vlan 2
+!
+interface FastEthernet0/5
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface FastEthernet0/13
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+ switchport mode trunk
+ spanning-tree vlan 1 port-priority 16
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+ switchport mode trunk
+ spanning-tree vlan 1 port-priority 16
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+!
+interface Vlan1
+ ip address 10.0.0.6 255.0.0.0
+ no ip route-cache
+!
+ip http server
+!
+line con 0
+line vty 0 4
+ password 123456
+ login
+line vty 5 15
+ password 123456
+ login
+!
+!
+End
