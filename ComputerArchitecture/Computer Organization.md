@@ -33,6 +33,33 @@ bnq rs1,rs2,L1 //if rs1!=rs2, goto L1
 begu x20,x11, IndexOutOfBounds// if x20>= x11 or x20<0, goto IndexOutOfBounds
 ```
 
+case/switch语句使用编码形成指令序列的地址表的方式实现
+分支地址表： 包含了不同指令序列地址的表
+
+## 2.8 计算机硬件对过程的支持
+执行过程的六个步骤
+1. 将参数放在构成可以访问到的位置
+2. 将控制转交给过程
+3. 获取过程所需的存储资源
+4. 执行所需的任务
+5. 将结果值放在调用程序可以访问到的位置
+6. 将控制返回到初始点，因为过程可以从程序的多个点调用
+>RISCV软件为过程调用分配寄存器时：
+>    `x10-x17`:八个参数寄存器，用于传递参数或返回值
+>    `x1`：一个返回地址寄存器，用于返回初始点
+
+RISCV还包含一个仅作用于过程的指令：跳转到某个地址的同事将下一条指令的地址保存到目标寄存器`rd`
+- 跳转-链接指令`jal`
+```riscv
+jal x1,ProcedureAddress //jump to ProcedureAddress and write return address to x1
+```
+为了支持`case`跳转，使用简洁跳转
+```riscv
+jalr x0,0(x1)
+```
+
+
+
 # Chap.4 The Processor
 
 ## 4.1 Introduction
