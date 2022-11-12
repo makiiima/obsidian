@@ -29,7 +29,9 @@ bnq rs1,rs2,L1 //if rs1!=rs2, goto L1
 
 边界检查:
 为了检查是否0 <= x < y(检测数组下标是否越界)
-
+```riscv
+begu x20,x11, IndexOutOfBounds// if x20>= x11 or x20<0, goto IndexOutOfBounds
+```
 
 # Chap.4 The Processor
 

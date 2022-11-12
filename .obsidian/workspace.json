@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "b4e6549c5d4ed9cc",
+        "id": "6225f8a91746a285",
         "type": "tabs",
         "children": [
           {
-            "id": "9fe1bb08f0c04315",
+            "id": "91dad49c6bda4183",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -245,18 +245,15 @@
     "width": 300,
     "collapsed": true
   },
-  "ribbon": {
-    "mostRecentAction": ""
-  },
-  "active": "9fe1bb08f0c04315",
+  "active": "91dad49c6bda4183",
   "ophidian:layout-settings": {
     "pane-relief:focus-lock": true
   },
   "lastOpenFiles": [
+    "ComputerArchitecture/Computer Organization.md",
     "DataStructure/DataStructure.md",
     "ComputerNetwork/Computer Network.md",
     "ComputerNetwork/Top-Down Aprroach.md",
-    "ComputerArchitecture/Computer Organization.md",
     "ComputerArchitecture/attachments/image-20221103060633059.png",
     "ComputerArchitecture/attachments/image-20221103032823267.png",
     "ComputerArchitecture/attachments/image-20221103032616130.png",
