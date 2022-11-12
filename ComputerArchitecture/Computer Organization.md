@@ -1,3 +1,26 @@
+# Chap.2 Instructions
+## 2.5 计算机中的指令表示
+- 指令格式：由二进制数字字段组成的指令表示形式
+- 机器语言：用于计算机系统内通信的二进制表示
+- RISC-V字段(R型)
+  ![[attachments/Pasted image 20221112162747.png]]
+- I型
+  ![[attachments/Pasted image 20221112162852.png]]
+- S型
+  ![[attachments/Pasted image 20221112163131.png]]
+## 2.6 逻辑操作
+![[attachments/Pasted image 20221112165314.png]]
+```riscv
+slli x11,x19,4    //reg x11 = reg x19 << 4 bits
+```
+`srai`算数右移不是用0填充左边的位，而是用原来的符号位填充
+为了保持三操作数格式，使用`xor`来取代`not`
+`not == xor 1111...1111`
+
+
+
+
+
 # Chap.4 The Processor
 
 ## 4.1 Introduction
@@ -51,3 +74,7 @@
 不仅需要寄存器堆和ALU，还需要单元将指令中的12位偏移量符号拓展为64位
 ![[attachments/Pasted image 20221105102302.png]]
 
+`beq`指令有三个操作数，两个寄存器用于比较是否相等，另一个是12位偏移量
+    `beq x1,x2,offset`
+- 计算分值目标地址的基址是分支指令所在地址
+- 计算分支目标地址时，将偏移量左移1位以表示半字为单位的偏移量，这样偏移量的有效范围就扩大到两倍 

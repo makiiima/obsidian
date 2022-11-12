@@ -1,10 +1,10 @@
 {
   "accentColor": "",
-  "cssTheme": "Obsidianite",
+  "cssTheme": "Big Sur Aesthetic",
   "translucency": false,
   "theme": "system",
   "textFontFamily": "PingFang HK",
   "monospaceFontFamily": "JetBrains Mono",
-  "nativeMenus": false,
+  "nativeMenus": true,
   "baseFontSize": 15
 }
