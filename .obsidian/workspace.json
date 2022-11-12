@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "6225f8a91746a285",
+        "id": "ad9a82fee85477bc",
         "type": "tabs",
         "children": [
           {
-            "id": "91dad49c6bda4183",
+            "id": "2bf01f609833ab1d",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -20,13 +20,8 @@
               ]
             },
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ComputerArchitecture/Computer Organization.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -132,7 +127,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ComputerArchitecture/Computer Organization.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -158,7 +152,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ComputerArchitecture/Computer Organization.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -198,9 +191,7 @@
             },
             "state": {
               "type": "outline",
-              "state": {
-                "file": "ComputerArchitecture/Computer Organization.md"
-              }
+              "state": {}
             }
           },
           {
@@ -245,7 +236,7 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "91dad49c6bda4183",
+  "active": "2bf01f609833ab1d",
   "ophidian:layout-settings": {
     "pane-relief:focus-lock": true
   },

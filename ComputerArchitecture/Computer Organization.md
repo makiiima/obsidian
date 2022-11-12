@@ -58,6 +58,41 @@ jal x1,ProcedureAddress //jump to ProcedureAddress and write return address to x
 jalr x0,0(x1)
 ```
 
+> 需要一个寄存器来保存当前执行指令的地址，由于历史原因被称为PC(program counter),实际上称为IR(instruction register)更为合适
+
+`jal`指令实际上将`PC+4`保存在制定寄存器（通常为`x1`）中
+
+> 通过使用`x0`作为目标寄存器,`jal`指令也可以实现过程内的无条件跳转，由于`x0`硬连线为0，效果为丢弃返回地址
+> `jal x0,Lable	//unconditionally branch to Lable`
+
+### 使用更多Regs
+
+- 寄存器不够用，可以使用栈（stack）
+- 栈指针为`x2`，也称为`sp`
+- 栈按照从高到低的顺序“增长”，可以通过减`sp`进行压栈，通过增加`sp`进行弹栈
+
+```assembly
+addi sp, sp, -24     // adjust stack to make room for 3 items 
+sd x5, 16(sp)     // save register x5 for use afterwards 
+sd x6, 8(sp)     // save register x6 for use afterwards 
+sd x20, 0(sp)     // save register x20 for use afterwards 
+```
+
+![image-20221113061329184](./attachments/image-20221113061329184.png)
+
+在一个过程完成后，调用者所需的所有寄存器都必须恢复到调用该过程之前的值，为了避免保存和恢复一个从未被使用过的寄存器，将19个寄存器分为两组：
+
+- `x5~x7`，`x28~x31`: 临时寄存器，在过程调用中不被 被调用者 保存
+- `x8~x9`, `x18~x27`: 保存寄存器（saved register），在过程调用中必须被保存，一旦使用，由被调用者保存并恢复
+
+### 嵌套过程
+
+![image-20221113063539852](./attachments/image-20221113063539852.png)
+
+
+
+
+
 
 
 # Chap.4 The Processor
@@ -111,9 +146,10 @@ jalr x0,0(x1)
 ### 存取指令
 
 不仅需要寄存器堆和ALU，还需要单元将指令中的12位偏移量符号拓展为64位
-![[attachments/Pasted image 20221105102302.png]]
+![[./attachments/Pasted image 20221105102302.png]]
 
 `beq`指令有三个操作数，两个寄存器用于比较是否相等，另一个是12位偏移量
     `beq x1,x2,offset`
+
 - 计算分值目标地址的基址是分支指令所在地址
 - 计算分支目标地址时，将偏移量左移1位以表示半字为单位的偏移量，这样偏移量的有效范围就扩大到两倍 
