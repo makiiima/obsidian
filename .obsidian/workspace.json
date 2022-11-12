@@ -245,6 +245,9 @@
     "width": 300,
     "collapsed": true
   },
+  "ribbon": {
+    "mostRecentAction": ""
+  },
   "active": "9fe1bb08f0c04315",
   "ophidian:layout-settings": {
     "pane-relief:focus-lock": true

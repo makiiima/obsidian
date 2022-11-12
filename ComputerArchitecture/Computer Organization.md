@@ -17,8 +17,18 @@ slli x11,x19,4    //reg x11 = reg x19 << 4 bits
 为了保持三操作数格式，使用`xor`来取代`not`
 `not == xor 1111...1111`
 
+## 2.7 用于决策的指令
+```riscv
+beq rs1,rs2,L1 //if rs1==rs2, goto L1
 
+bnq rs1,rs2,L1 //if rs1!=rs2, goto L1
+```
 
+### 循环
+> 以分支结尾的指令序列称为**基本块**: 除了在序列起始处, 没有分支目标和分支标签
+
+边界检查:
+为了检查是否0 <= x < y(检测数组下标是否越界)
 
 
 # Chap.4 The Processor
