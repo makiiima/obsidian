@@ -369,3 +369,9 @@ SearchTree Delete(ElementType X, SearchTree T)
     return T;
 }
 ```
+$T(N)=O(h)$ where h is the height of the tree
+#### Average-Case Analysis
+The height depends on the order of insertion
+# Chap.5 Priority Queues(Heaps)
+>delete the element with the highest/lowest priority
+
