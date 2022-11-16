@@ -11,12 +11,13 @@ DEBUG  ?= true
 ISA     = rv64imafd
 ABI     = lp64
 INCLUDE = -I$(shell pwd)/include -I$(shell pwd)/arch/riscv/include
-CF      = -g -march=$(ISA) -mabi=$(ABI) -mcmodel=medany -ffunction-sections -fdata-sections -nostartfiles -nostdlib -nostdinc -fno-builtin -static -lgcc 
+CF      = -g -march=$(ISA) -mabi=$(ABI) -mcmodel=medany -ffunction-sections -fdata-sections -nostartfiles -nostdlib -nostdinc -fno-builtin -static -lgcc
 
 # TASK_MM = -DPRIORITY
 TASK_MM = -DSJF
 
 CFLAG   = ${CF} ${INCLUDE} ${TASK_MM}
+
 
 ifneq ($(DEBUG), )
   CFLAG += -DDEBUG_LOG
@@ -26,7 +27,7 @@ all: vmlinux
 
 .PHONY: vmlinux run debug clean
 vmlinux:
-	$(MAKE) -C arch/riscv all 
+	$(MAKE) -C arch/riscv all
 	$(LD) -T arch/riscv/kernel/vmlinux.lds arch/riscv/kernel/*.o -o vmlinux
 	$(shell test -d arch/riscv/boot || mkdir -p arch/riscv/boot)
 	$(OBJCOPY) -O binary vmlinux arch/riscv/boot/Image

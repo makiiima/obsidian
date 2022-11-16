@@ -1,5 +1,4 @@
 #include "sched.h"
-
 #include "stdio.h"
 
 #define Kernel_Page 0x80210000
@@ -15,6 +14,12 @@ extern void __init_sepc(void);
 // If next==current,do nothing; else update current and call __switch_to.
 void switch_to(struct task_struct* next) {
   // your code
+  if (next->pid != current->pid) {
+    struct task_struct* prev = current;
+    current = next;
+    __switch_to(prev , next);
+  }
+
 }
 
 int task_init_done = 0;
@@ -25,23 +30,24 @@ void task_init(void) {
   // initialize task[0]
   current = (struct task_struct*)Kernel_Page;
   current->state = TASK_RUNNING;
-  current->counter = 1;//1 or 0??
+  current->counter = 1;
   current->priority = 5;
   current->blocked = 0;
   current->pid = 0;
   task[0] = current;
   task[0]->thread.sp = (unsigned long long)task[0] + TASK_SIZE;
+  task[0]->thread.ra = &__init_sepc;
 
   // set other 4 tasks
   for (int i = 1; i <= LAB_TEST_NUM; ++i) {
     /* your code */
-    task[i]=(struct task_struct*)(Kernel_Page + i*TASK_SIZE);
+    task[i] = (struct task_struct*)(Kernel_Page + i * TASK_SIZE);
     task[i]->state = TASK_RUNNING;
-    task[i]->counter=0;
-    task[i]->priority=5;
-    task[i]->blocked=0;
-    task[i]->pid=i;
-    task[i]->thread.sp = (unsigned long long) task[i] + TASK_SIZE;
+    task[i]->counter = 0;
+    task[i]->priority = 5;
+    task[i]->blocked = 0;
+    task[i]->pid = i;
+    task[i]->thread.sp = (unsigned long long)task[i] + TASK_SIZE;
     task[i]->thread.ra = &__init_sepc;
 
     printf("[PID = %d] Process Create Successfully!\n", task[i]->pid);
@@ -56,12 +62,13 @@ void do_timer(void) {
   if (!task_init_done) return;
   if (task_test_done) return;
   printf("[*PID = %d] Context Calculation: counter = %d,priority = %d\n",
-         current->pid, current->counter, current->priority);
+  current->pid, current->counter, current->priority);
   // current process's counter -1, judge whether to schedule or go on.
   /* your code */
   current->counter--;
-  if(current->counter <= 0)
+  if (current->counter <= 0) {
     schedule();
+  }
 }
 
 // Select the next task to run. If all tasks are done(counter=0), set task0's
@@ -69,22 +76,20 @@ void do_timer(void) {
 void schedule(void) {
   unsigned char next;
   /* your code */
-   _Bool allzero = 1;
-    next = LAB_TEST_NUM;
-    for(int i = LAB_TEST_NUM; i > 0; i--){
-        if(task[i]->state == TASK_RUNNING){
-            if(task[i]->counter > 0) allzero = 0;
-            if((task[next]->counter <= 0 && task[i]->counter > 0) || 
-                (task[i]->counter > 0 && task[i]->counter < task[next]->counter))
-                next = i;
-        }
+  int flag; next = 0;
+  for (flag = LAB_TEST_NUM; flag > 0; flag--)
+    if (task[flag]->state == TASK_RUNNING && task[flag]->counter > 0) {
+        next = flag;
+        break;
     }
-
-    if(allzero){
-	printf("Current Setting is done, use task0 to initialize a new setting.\n");
-        task[0]->counter = 1;
-	next = 0;
-    }
+  for (int i = next - 1; i > 0; i--)
+    if (task[i]->state == TASK_RUNNING && task[i]->counter > 0)
+      if (task[i]->counter < task[next]->counter)
+        next = i;
+  if (next == 0) {
+    printf("All tasks are done, task0 would assign new test case.\n");
+    task[0]->counter = 1;
+  }
 
   if (current->pid != task[next]->pid) {
     printf(
@@ -110,6 +115,8 @@ void do_timer(void) {
          current->pid, current->counter, current->priority);
   // current process's counter -1, judge whether to schedule or go on.
   /* your code */
+  current->counter--;
+  schedule();
 }
 
 // Select the next task to run. If all tasks are done(counter=0), set task0's
@@ -117,6 +124,22 @@ void do_timer(void) {
 void schedule(void) {
   unsigned char next;
   /* your code */
+  int flag; next = 0;
+  for (flag = LAB_TEST_NUM; flag > 0; flag--)
+    if (task[flag]->state == TASK_RUNNING && task[flag]->counter > 0) {
+        next = flag;
+        break;
+    }
+  for (int i = next - 1; i > 0; i--)
+    if (task[i]->state == TASK_RUNNING && task[i]->counter > 0)
+        if (task[i]->priority < task[next]->priority)
+          next = i;
+        else if (task[i]->priority == task[next]->priority && task[i]->counter < task[next]->counter)
+          next = i;
+  if (next == 0) {
+    printf("All tasks are done, task0 would assign new test case.\n");
+    task[0]->counter = 1;
+  }
 
   if (current->pid != task[next]->pid) {
     printf(

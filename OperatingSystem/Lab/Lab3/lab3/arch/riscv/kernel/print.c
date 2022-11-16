@@ -5,8 +5,22 @@ extern struct sbiret sbi_call(uint64_t ext, uint64_t fid, uint64_t arg0,
                               uint64_t arg1, uint64_t arg2, uint64_t arg3,
                               uint64_t arg4, uint64_t arg5);
 
-void put_num(uint64_t num) {
-  // your code
+int put_num(uint64_t n) {
+    // your code
+    uint64_t num[100];
+    int a = 0;
+    while (n != 0){
+        num[a] = n % 10;
+        n = n / 10;
+        a++;
+    }
+    a--;
+    while (a >= 0){
+        num[a] += '0';
+        sbi_call(1, 0, num[a], 0, 0, 0, 0, 0);
+        a--;
+    }
+    return 0;
 }
 
 int putchar(int ch) {

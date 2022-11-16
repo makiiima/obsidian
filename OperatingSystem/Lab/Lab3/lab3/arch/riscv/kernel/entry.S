@@ -7,6 +7,7 @@
 .align 2
 
 trap_s:
+	# save caller-saved registers and sepc
 	addi sp, sp, -256
 	sd x1, 0(sp)
 	sd x2, 8(sp)
@@ -45,9 +46,9 @@ trap_s:
 	# call handler_s(scause)
 	csrr a0, scause
 	call handler_s
-	
-	# load sepc and callee-saved registers
-    ld t0, 248(sp)
+
+	# load sepc and caller-saved registers
+	ld t0, 248(sp)
     csrw sepc, t0
     ld x1, 0(sp)
     ld x2, 8(sp)
@@ -81,21 +82,48 @@ trap_s:
 	ld x30, 232(sp)
 	ld x31, 240(sp)
 	addi sp, sp, 256
-	sret	
-
+	sret
 
 
 .globl __switch_to
 __switch_to:
-	li    a4,  40 
+	li    a4,  40
 	add   a3, a0, a4
 	add   a4, a1, a4
 	# Save context into prev->thread
 	# your code
+	sd ra, 0(a3)
+	sd sp, 8(a3)
+	sd s0, 16(a3)
+	sd s1, 24(a3)
+	sd s2, 32(a3)
+	sd s3, 40(a3)
+	sd s4, 48(a3)
+	sd s5, 56(a3)
+	sd s6, 64(a3)
+	sd s7, 72(a3)
+	sd s8, 80(a3)
+	sd s9, 88(a3)
+	sd s10, 96(a3)
+	sd s11, 104(a3)
 
 	# Restore context from next->thread
 	# your code
-
+	ld ra, 0(a4)
+	ld sp, 8(a4)
+	ld s0, 16(a4)
+	ld s1, 24(a4)
+	ld s2, 32(a4)
+	ld s3, 40(a4)
+	ld s4, 48(a4)
+	ld s5, 56(a4)
+	ld s6, 64(a4)
+	ld s7, 72(a4)
+	ld s8, 80(a4)
+	ld s9, 88(a4)
+	ld s10, 96(a4)
+	ld s11, 104(a4)
+	
 	# return to ra
 	ret
 
