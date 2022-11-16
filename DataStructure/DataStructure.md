@@ -375,3 +375,94 @@ The height depends on the order of insertion
 # Chap.5 Priority Queues(Heaps)
 >delete the element with the highest/lowest priority
 
+## 1 ADT Model
+- Objects: A finite ordered list with zero or more elements
+- Operations:
+    - `PriorityQueue Initialize(int MaxElements)`
+    - `void Insert(ElementType X, ProrityQueue H)`
+    - `ElementType DeleteMin(PriorityQueue H)`
+    - `ElementType FindMin(PriorityQueue H)`
+## 2 Simple Implementations
+
+### Array
+- Insertion: O(1)
+- Deletion: find->O(n)+remove and shift array->O(n)
+### Linked List(Better)
+- Insertion: O(1)
+- Deletion: find->O(n)+remove->O(1)
+### Ordered Array
+- Insertion: find->O(n)+shift array and add->O(n)
+- Deletion: O(1)
+### Ordered Linked List
+- Insertion: find->O(n)+add->O(1)
+- Deletion: O(1)
+### Binary Search Tree
+
+## Binary Heap
+Structure Property
+### Complete Binary tree
+- Definition: A binary tree with n nodes and height h is complete iff its nodes correspond to the nodes numbered from 1 to n in the perfect binary tree of height h
+- A complete binary tree of teight h has between $2^h - 2^{h+1}$ nodes
+#### Array Representation
+![[attachments/Pasted image 20221116063743.png]]
+BT[0] is sentinel(哨兵)
+![[attachments/Pasted image 20221116070254.png]]
+
+Heap Order Property
+### Min Heap
+- Definition: A min tree is a tree in which the key value in each node is no larger than the key values in its children (if any). 
+- A min heap is a complete binary tree that is also a min tree.
+### Basic Heap
+- Insertion
+新插入的节点和父节点比较并一路交换上去到合适的位置（如果必要）
+```c
+void Insert(ElementType X,PriorityQueue H)
+{
+    int i;
+    if(IsFull(H)){
+        Error("Priority queue is full");
+        return;
+    }
+    for(i=++H->Size;H->Elements[i/2]>X;i/=2)//Percolate up
+        H->Elements[i]=H->Elements[i/2];//Faster than swap
+    H->Elements[i]=X;
+}
+```
+T(N)=O(log N)
+- DeleteMin
+```c
+ElementType DeleteMin(PriorityQueue H)
+{
+    int i,Child;
+    ElementType MinElement,LastElement;
+    if(IsEmpty(H))
+    {
+        Error("PriorityQueue is empty");
+        return H->Elements[0];
+      }
+    MinElement=H->Elements[1];//save the min element
+    LastElement=H->Elements[H->Size--];//take last and reset size
+    for(i=1;i*2<=H->Size;i=Child)
+    {
+        Child=i*2;
+        if(Child!=H->Size&&H->Elements[Child+1]<H->Elements[Child])
+            Child++;
+        if(LastElement>H->Elements[Child])//Percolate one level
+            H->Elements[i]=H->Elements[Child];
+        else
+            break;//find the proper position
+    }
+    H->Elements[i]=LastElement;
+    return MinElement;
+  }
+```
+### Other Heap Operations
+> Finding any key except the minimum one will have to tak a linear scan through the entire heap
+
+- DecreaseKey(P,Delta,H)
+- IncreaseKey(P,Delta,H)
+- Delete(P,H)
+  - DecreaseKey(P,INF,H);DeleteMIn(H)
+- BuildHeap(H)
+  - Place all elements into an empty heap directly
+  - then PercolateDown every node that is not a leaf node(所有非叶节点)
