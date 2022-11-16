@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "ad9a82fee85477bc",
+        "id": "22ad385ca903f7ee",
         "type": "tabs",
         "children": [
           {
-            "id": "2bf01f609833ab1d",
+            "id": "65bac0d972e94008",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -245,13 +245,13 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "2bf01f609833ab1d",
+  "active": "65bac0d972e94008",
   "ophidian:layout-settings": {
     "pane-relief:focus-lock": true
   },
   "lastOpenFiles": [
-    "ComputerArchitecture/Computer Organization.md",
     "DataStructure/DataStructure.md",
+    "ComputerArchitecture/Computer Organization.md",
     "ComputerNetwork/Computer Network.md",
     "ComputerNetwork/Top-Down Aprroach.md",
     "ComputerArchitecture/attachments/image-20221103060633059.png",

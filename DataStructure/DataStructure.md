@@ -466,3 +466,200 @@ ElementType DeleteMin(PriorityQueue H)
 - BuildHeap(H)
   - Place all elements into an empty heap directly
   - then PercolateDown every node that is not a leaf node(所有非叶节点)
+  - T(N)=O(N)
+
+**Theorem**: For the perfect binary tree of height h containing $2^{h+1}-1$ nodes, the sum of the heights of the nodes is $2^{h+1}-1-(h+1)$.
+## 4 Applications of Priority Queues
+
+- Given a list of N elements and an integer k. Find the kth largest element.
+
+## d-Heaps
+
+All nodes have d children
+- DeleteMin will take d-1 comparisons to find the smallest child. Hence the total time comlexity would be $O(d \log_{d}{N})$
+- *2 or /2 is merelt a bit shift, but *d or /d is not
+- When the priority queue is too large to fit entirely in main memory, a d-heap will become interesting
+
+# Chap.8 The Disjoint Set ADT
+
+不相交集
+
+## 1 Equivalence Relations
+
+- Definition: A *relation R* is defined on a set S if for every pair of elements(a,b),a,b∈S, a R b is either true or false. If a R b is true, then we say that a is related to b
+- A relation ~ over a set S is said to be an equivalence relation(等价关系) over S iff it is symmetric, reflexive and transitive over S
+  - refexive: any a∈S, a~a
+  - symmeric: any a,b∈S, a~b iff b~a
+  - transitive: any a,b,c∈S, a~b and b~c -> a~c 
+- Two members x and y of a set S are said to be in the same equivalence class(等价类) iff x~y
+
+## 2 The Dynamic Equivalence Problem
+
+Given an quivalence relation ~, decide for ant a and b if a~b
+
+```pseudocode
+{
+    //step1: read the relations in
+    Initialize N disjoint sets;
+    while(read in a~b)
+    {
+        if(!(Find(a)==Find(b)))
+            Union the two sets;
+    }
+    //step2: decide if a~b
+    while(read in a and b)
+        if(Find(a)==Find(b))
+            output(true);
+        else
+            output(false);
+}
+```
+- Elements of the sets: 1,2,3, ..., N
+- Sets: S1, S2, ... and Si ∩ Sj = ∅(if i!=j)
+
+![image-20221116085908267](./attachments/image-20221116085908267.png)
+
+- Operations:
+  - Union(i,j)::= Replace Si and Sj by S=Si∩Sj
+  - Find(i)::= Find the set Sk which contains the element i
+
+Union
+
+Idea: Make Si a subtree of Sj or vice versa.
+![image-20221116090528444](./attachments/image-20221116090528444.png)
+
+- Implementation 1: Linked lists
+
+- Implementation 2: Array
+
+  - `S[element] = the element's parent`
+  - `S[root] = 0 and set name = root index`
+
+  ```c
+  void SetUnion(DisSet S, SetType Rt1, SetType Rt2)
+  {
+      S[Rt2]=Rt1;
+  }
+  ```
+
+Find
+
+- Linked lists
+
+- Array
+
+  ```c
+  SetType Find(ElementType X, DisSet S)
+  {
+      for(;S[X]>0;X=S[X]);
+      return X;
+  }
+  ```
+
+### Analysis
+
+Union and find are always paired. Thus we consider the performance of a sequence of union-find operations.
+
+```pseudocode
+{
+//Suppose given N elements and k relations
+	Initialize Si={i} for i=1,...,N;
+	for(j=1;j<=k;j++){
+		if(Find(i)!=Find(j))
+			SetUnion(Find(i),Find(j));
+	}
+}
+```
+
+## 4 Smart Union Algorithm
+
+#### Union-by-Size: 
+
+Always change the smaller tree
+
+`S[Root]=-size;` Initialized to be -1
+
+**Lemma**: Let T be a tree created by union-by-size with N nodes, then $height(T) \leq \lfloor \log _2N \rfloor +1$
+
+**Proof**: By induction. Each element can have its set name changed at most $\log_2N$ times
+
+Time complexity of N Union and M Find operations is now $O(N+M\log_2N)$.
+
+#### Union-by-Height
+
+Always change the shallow tree
+
+## 5 Path Compression
+
+```c
+SetType Find(ElementType X,DisjSet S)
+{
+    if(S[X]<=0)	return X;
+    else return S[X] = Find (S[X],S);
+}
+```
+
+```c
+SetType Find(ElementType X, DisjSet S)
+{
+    ElementType root,trail,lead;
+    for(root=X;S[root]>0;root=S[root]);//find the root
+	for(trail=X;trail!=root;trail=lead){
+        lead=S[trail];
+        S[trail]=root;
+    }//collapsing
+    return root;
+}
+```
+
+![image-20221116094840971](./attachments/image-20221116094840971.png)
+
+# Chap.9 Graph
+
+## 1 Definitions
+
+- G(V,E)
+  where G::=graph, V=V(G)::=finite nonempty set of vertices and E = E(G)::= finite set of edges
+- Undirected graph
+  (vi,vj)=(vj,vi)::= the same edge
+- Directed graph
+  <vi,vj> ::= vi->vj, != <vj,vi>
+- Restrictions:
+  - Self loop is illegal
+  - Multigraph is not considered
+- Complete graph
+  a graph that has the maximum number of egdes
+  - Undirected: $E=C^2_n=\frac{n(n-1)}{2}$
+  - Directed: $E=P^2_n=n(n-1)$
+- vi--vj: vi and vj are **adjacent**(相邻的); (vi,vj) is **incident on**(关联于) vi and vj
+- vi->vj: vi is adjacent to vj; vj is adjacent from vi;<vi,vj> is **incident on** vi and vj
+- Subgraph $G' \subset G$
+- Path from vp to vq
+- Length of path
+- Simple path: any nodes can't be passed twice, except it's a cycle
+- Cycle: simple path with vp=vq
+- vi and vj in an undirected G are **connected** if there is a path from vi to vj(and vice versa)
+- G is **connected** if every pair of distince vi and vj are connected
+- **(Connected) Component of an undirected G** ::= the maximal connected subgraph
+- **A tree** ::= a graph is connected and *acyclic*(无环的)
+- **A DAG** ::= a directed acyclic graph
+- **Strongly connected directed graph G** ::= for every pair of vi and vj in V(G), there exist directed paths from vi to vj and from vj to vi. If the graph is connected without direction to the edges, then it is said to be **weakly connected**
+- **Strongly connected component** ::= the maximal subgraph that is strongly connected
+- **Degree(v)** ::= number of edges incident to v. For a directed G, we have **in-degree** and **out-degree**.
+- Given G with n vertices and e edges, then
+  $ e=(\sum_{i=0}^{n-1}d_i)/2$ where di = degree(vi)
+
+### Representations of Graphs
+
+Adjacency Matrix
+
+`adj_mat[n][n]` is defined for G(V,E) with n vertices, n>=1
+
+`adj_mat[i][j]=1 if (vi,vj) or <vi,vj> ∈ E(G), else =0`
+
+> If G is undirected, then adj_mat[][] is symmetric. Thus we can save space by storing only half of the matrix.
+
+$$degree(i) = \sum_{j=0}^{n-1}{adj\_mat[i][j]}\ (+\sum_{j=0}^{n-1}{adj\_mat[j][i]}, if\ G\  is\ directed)$$
+
+
+
