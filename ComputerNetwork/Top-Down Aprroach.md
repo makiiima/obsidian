@@ -59,15 +59,15 @@
 > 若经过一条R bits/s 的链路发送一个L bits的分组, 则需要L/R秒
 
 1.  存储转发传输(store-and-forward transmission)
-    
+  
     交换机能够开始向输出链路传输该分组的第一个比特之前, 必须接收到整个分组, 故通过N条速率均为R的链路组成的路径(N-1台路由器), 从源到目的地发送一个分组的端到端时延为$$d_{端到端}=N\frac{L}{R}$$
     
 2.  排队时延和分组丢失
-    
+  
     对于每条链路, 分组交换机具有一个**输出缓存**(output buffer), 也称为**输出队列**(output queue); 到达的分组如果不能通过该链路传输出去, 则要承受输出缓存的排队时延(queuing delay), 若缓存已满, 则可能会丢包(packet loss), 排队的分组或者到达的分组之一会被丢弃
     
 3.  转发表和路由选择协议
-    
+  
     每个端系统具有一个IP地址, 分组的首部包含了目的地的IP地址, 当一个分组到达路由器时, 路由器检查目的地地址的一部分并转发给另一个路由器, **转发表**(forwarding table)用于将目的地址(或其一部分)映射为输出链路, **路由转发协议**(routing protocol)用于自动地设置这些转发表
     
 
@@ -85,15 +85,15 @@
 ### 时延
 
 -   处理时延(processing delay)
-    
+  
 -   排队时延(queuing delay)
-    
+  
 -   传输时延(transmission delay)
-    
+  
     路由器推出分组所需要的时间, 是分组长度和链路传输速率的函数, 与两台路由器之间的距离无关
     
 -   传播时延(propagation delay)
-    
+  
     取决于链路的物理媒体和路由之间的距离
     
 
@@ -110,12 +110,13 @@ $$d_{nodal}=d_{proc}+d_{queue}+d_{trans}+d_{prop} $$
 
 流量强度(traffic\ intensity)=\frac{La}{R}
 
--   如果流量强度>1, 则到达速率超过输出速率, 队列将趋向于无限增加, 排队时延将趋向无穷大, 所以**流量强度不能>1**
+- 如果流量强度>1, 则到达速率超过输出速率, 队列将趋向于无限增加, 排队时延将趋向无穷大, 所以**流量强度不能>1**
+
 -   考虑流量强度≤1的情况
     -   周期性到达: 如果每L/R秒到达一个分组, 则每个分组都降到打一个空队列, 不会有排队时延
     -   突发形式到达: 如果每(L/R)*N秒同时到达N个分组, 则第一个分组没有排队时延, 第二个分组就有L/R秒的排队时延, 第n个传输的分组具有(n-1)*L/R的排队时延
-
-![](https://secure2.wostatic.cn/static/cYduQ3PXBK5Rrv3goPT6WG/image.png?auth_key=1666070190-iwi8cXF8e9NQdQYZECuoVY-0-7cc1006aacd47776b7a887feae2d5541)
+    
+    ![image_P_yJZczrt3](./attachments/image_P_yJZczrt3-8644739.png)
 
 ### 端到端时延
 
@@ -178,7 +179,7 @@ dend−end=N(dproc+dtrans+dprop)d_{end-end}=N(d_{proc}+d_{trans}+d_{prop}) d​e
 
 ### 封装(encapsulation)
 
-![](https://secure2.wostatic.cn/static/9khSgXZ58AD2zpzaGKdvqc/image.png?auth_key=1666070192-96KvvFN5cUEH2BLcepoCYx-0-5b52d17b441b3c5314a738e1b9ea5e32)
+![image_P_yJZczrt3](./attachments/image_fcjjthRo3c.png)
 
 ```Mermaid
 flowchart 
@@ -205,3 +206,7 @@ flowchart
 ### 进程通信
 
 在两个不同端系统上的进程，通过跨越计算机网络交换 报文 (message) 而相互通信 。 
+
+1. 客户和服务器进程
+> 在一对进程之间的通信会话场景中,发起通信的进程被标识为客户,在会话开始时等待联系的进程是服务器
+
