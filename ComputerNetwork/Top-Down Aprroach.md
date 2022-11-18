@@ -250,3 +250,42 @@ flowchart
 ### 2.2.1 HTTP
 
 超文本传输协议(HyperText Transfer Protocol, HTTP)
+HTTP使用TCP作为他的支撑运输协议
+HTTP不保存关于客户的任何信息, 被称为**无状态协议**(stateless protocol)
+
+### 非持续连接和持续连接
+
+- **往返时间**(Round-Trip Time, RTT): 一个段分组从客户到服务器然后再返回所花费的时间
+- "三次握手"
+  1. 客户向服务器发送一个小TCP报文段
+  2. 服务器用一个小TCP报文段做出确认和响应
+  3. 客户向服务器返回确认
+     ![[attachments/Pasted image 20221118174649.png]]
+
+> 三次握手中前两个部分耗费的时间占用了一个RTT, 之后客户结合第三部分向TCP连接发送一个HTTP请求报文, 请求报文到达服务器之后服务器在该TCP连接上发送HTML文件. 粗略计算, 总响应时间就是两个RTT加上传输HTML文件的时间
+
+1. 非持续连接的HTTP
+
+   - 缺点: 服务器负担重; 每一个对象经受两倍RTT的交付时延
+
+2. 持续连接的HTTP
+
+### HTTP报文格式
+
+1. HTTP请求报文
+
+```http
+GET /somedir/page.html HTTP/1.1  
+Host: www.someschool.edu 
+Connection: close 
+User - agent: Mozilla/5.0  
+Accept-language:fr
+```
+   
+>第一行为**请求行**(request line), 有三个字段:方法字段,URL字段,HTTP版本字段
+>方法字段可以取GET,POST,HEAD,PUT,DELETE
+>后继的为**首部行**(header line)
+
+标准格式如下
+![[attachments/Pasted image 20221118225307.png]]
+
