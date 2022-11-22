@@ -1,5 +1,4 @@
 #notes #in-class
-dia
 
 ### 2.1.1 Persistent Storage
 
