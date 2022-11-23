@@ -26,3 +26,18 @@
 
 ## Chap.2 The Physical Layer
 
+### The Maximum Data Rate of a Channel
+
+- Nyquist's theorem(理论情况, 无噪声)
+    Maximum data rate = $2Blog_2  V$ bits/sec
+    B是带宽, V是每个信号对应的比特数(多进制编码)
+- Shannon's formula for capacity of a noisy channel
+    Maximum data rate = $Blog_2(1+S/N)$ bits/sec
+    S/N -> signal/noise, 信噪比
+
+### Multiplexing
+
+- Frequency Division Multiplexing
+- Time Division Multiplexing
+- Code Division Multiplexing
+- Wavelength Division Multiplexing
