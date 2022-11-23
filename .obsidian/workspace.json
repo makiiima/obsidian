@@ -18,12 +18,6 @@
                   "eState": "{}"
                 },
                 {
-                  "title": "Computer Organization",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"ComputerArchitecture/Computer Organization.md\",\"mode\":\"source\",\"backlinks\":true,\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
                   "title": "Top-Down Aprroach",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"ComputerNetwork/Top-Down Aprroach.md\",\"mode\":\"source\",\"backlinks\":true,\"source\":false}}",
@@ -40,28 +34,6 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ComputerNetwork/Computer Network.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "60d7d38ba05460cc",
-            "type": "leaf",
-            "pane-relief:history-v1": {
-              "pos": 0,
-              "stack": [
-                {
-                  "state": "{}",
-                  "eState": "{}"
-                }
-              ]
-            },
-            "state": {
-              "type": "markdown",
-              "state": {
                 "file": "ComputerNetwork/Class-notes.md",
                 "mode": "source",
                 "backlinks": true,
@@ -69,8 +41,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -286,20 +257,20 @@
     "width": 200,
     "collapsed": true
   },
-  "active": "60d7d38ba05460cc",
+  "active": "bf59cb2f62c3e6a9",
   "ophidian:layout-settings": {
     "pane-relief:focus-lock": true
   },
   "lastOpenFiles": [
-    "ComputerNetwork/Computer Network.md",
-    "ComputerNetwork/Class-notes.md",
-    "ComputerArchitecture/Computer Organization.md",
     "ComputerNetwork/Top-Down Aprroach.md",
     "DataStructure/DataStructure.md",
+    "ComputerArchitecture/Computer Organization.md",
+    "ComputerNetwork/Computer Network.md",
     "ComputerArchitecture/attachments/image-20221103060633059.png",
     "ComputerArchitecture/attachments/image-20221103032823267.png",
     "ComputerArchitecture/attachments/image-20221103032616130.png",
     "ComputerArchitecture/attachments/Pasted image 20221105073950.png",
-    "OperatingSystem/NJUOperatingSystem.md"
+    "OperatingSystem/NJUOperatingSystem.md",
+    "Diary/2022-10-20.md"
   ]
 }
