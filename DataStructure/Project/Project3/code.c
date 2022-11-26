@@ -54,6 +54,11 @@ void debugforinput()
 }
 #endif
 
+int judge(int t1, int t2)
+{
+    
+}
+
 int main()
 {
     input();
