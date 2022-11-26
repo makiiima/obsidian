@@ -13,5 +13,7 @@
   ],
   "livePreview": true,
   "alwaysUpdateLinks": true,
-  "newLinkFormat": "relative"
+  "newLinkFormat": "relative",
+  "showInlineTitle": false,
+  "useMarkdownLinks": true
 }

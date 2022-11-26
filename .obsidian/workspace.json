@@ -18,6 +18,24 @@
                   "eState": "{}"
                 },
                 {
+                  "title": "Class-notes",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"ComputerNetwork/Class-notes.md\",\"mode\":\"source\",\"backlinks\":true,\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":42,\"ch\":33},\"to\":{\"line\":42,\"ch\":33}},\"scroll\":35.73192321678511}"
+                },
+                {
+                  "title": "DataStructure",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"DataStructure/DataStructure.md\",\"mode\":\"source\",\"backlinks\":true,\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":666,\"ch\":33},\"to\":{\"line\":666,\"ch\":33}},\"scroll\":666.0740787363076}"
+                },
+                {
+                  "title": "Class-notes",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"ComputerNetwork/Class-notes.md\",\"mode\":\"source\",\"backlinks\":true,\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
                   "title": "Top-Down Aprroach",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"ComputerNetwork/Top-Down Aprroach.md\",\"mode\":\"source\",\"backlinks\":true,\"source\":false}}",
@@ -34,7 +52,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ComputerNetwork/Class-notes.md",
+                "file": "DataStructure/DataStructure.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -118,7 +136,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 371.50271224975586,
     "collapsed": true
   },
   "right": {
@@ -144,7 +162,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ComputerNetwork/Class-notes.md",
+                "file": "DataStructure/DataStructure.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -170,7 +188,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ComputerNetwork/Class-notes.md",
+                "file": "DataStructure/DataStructure.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -211,7 +229,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ComputerNetwork/Class-notes.md"
+                "file": "DataStructure/DataStructure.md"
               }
             }
           },
@@ -249,8 +267,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "horizontal",
@@ -262,15 +279,15 @@
     "pane-relief:focus-lock": true
   },
   "lastOpenFiles": [
-    "ComputerNetwork/Top-Down Aprroach.md",
+    "ComputerNetwork/Class-notes.md",
     "DataStructure/DataStructure.md",
+    "ComputerNetwork/Top-Down Aprroach.md",
     "ComputerArchitecture/Computer Organization.md",
     "ComputerNetwork/Computer Network.md",
     "ComputerArchitecture/attachments/image-20221103060633059.png",
     "ComputerArchitecture/attachments/image-20221103032823267.png",
     "ComputerArchitecture/attachments/image-20221103032616130.png",
     "ComputerArchitecture/attachments/Pasted image 20221105073950.png",
-    "OperatingSystem/NJUOperatingSystem.md",
-    "Diary/2022-10-20.md"
+    "OperatingSystem/NJUOperatingSystem.md"
   ]
 }
