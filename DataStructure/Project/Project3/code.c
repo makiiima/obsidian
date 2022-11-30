@@ -6,7 +6,7 @@
 #define MAXSIZE 1000
 
 #include"queue.h"
-
+#include"list.h"
 
 int s[MAXSIZE][MAXSIZE];
 int d[MAXSIZE][MAXSIZE];
@@ -99,7 +99,6 @@ int judge()
             int now=front(q);
             cnt++;
             pop(q);
-            for(int i=0;i<)
         }
     }
 }
