@@ -1,4 +1,3 @@
-
 # Chap.3 Lists, Stacks and Queues
 
 ## 1 Abstract Data Type
@@ -109,16 +108,17 @@ struct StackRecord{
 ### Applications
 
 - Balancing Symbols(check if brackets are balanced)
-
 - Postfix Evaluation
-  
+
   ![Pasted image 20221020033536](./attachments/Pasted image 20221020033536.png)
-  
-  >Infix to Postfix Conversion
-  >    The order of operands is the same in infix and post fix
-  >    Operators with higher precedence appear before those with lower precedence
-  
+
+  > Infix to Postfix Conversion
+  > The order of operands is the same in infix and post fix
+  > Operators with higher precedence appear before those with lower precedence
+  >
+
   Solutions
+
   - Never pop a `(` from a stack except when processing a `)`
   - Observe that when `(` is not in the stack, its precedence is the highest; but when it is in the stack, its precedence is the lowest. Define in-stack precedence and incoming precedence for symbols, and each time use the corresponding precedence for comparison
 
@@ -166,9 +166,10 @@ struct QueueRecord{
 - Definition: A tree is a collection of nodes. The collection can be empty; otherwise, a tree consists of
   - a distinguished node r, called the root
   - and zero or more nonempty (sub)trees T1, ... , Tk, each of whose roots are connected by a directed edge from r
-    >Subtrees must not connect together. Therefore every node in the tree is the root of some subtree
-    >There are N-1 edges in a tree with N nodes
-    >Normally the root is drawn at the top
+    > Subtrees must not connect together. Therefore every node in the tree is the root of some subtree
+    > There are N-1 edges in a tree with N nodes
+    > Normally the root is drawn at the top
+    >
 - degree of a node: = the number of the subtrees of the node
 - degree of a tree : = max{degree(node)}
 - parent: a node that has subtrees
@@ -331,7 +332,9 @@ Position Iter_Find(ElementType X, SearchTree T)
 }
 ```
 
-$$ T(N)=S(N)=O(d), d=depth(X)$$
+$$
+T(N)=S(N)=O(d), d=depth(X)
+$$
 
 - FindMin
 
@@ -399,8 +402,8 @@ SearchTree Insert(ElementType X, SearchTree T)
   - Delete a leaf node: Reset its parent link to NULL
   - Delete a degree 1 node: Replace the node by its single child
   - Delete a degree 2 node:
-        1. Replace the node by the **largest** one in its left subtree or the smallest one in its right subtree
-        2. Delete the replacing node from the subtree
+    1. Replace the node by the **largest** one in its left subtree or the smallest one in its right subtree
+    2. Delete the replacing node from the subtree
 
 ```c
 SearchTree Delete(ElementType X, SearchTree T)
@@ -438,7 +441,7 @@ The height depends on the order of insertion
 
 # Chap.5 Priority Queues(Heaps)
 
->delete the element with the highest/lowest priority
+> delete the element with the highest/lowest priority
 
 ## 1 ADT Model
 
@@ -498,7 +501,7 @@ Heap Order Property
 ### Basic Heap
 
 - Insertion
-新插入的节点和父节点比较并一路交换上去到合适的位置（如果必要）
+  新插入的节点和父节点比较并一路交换上去到合适的位置（如果必要）
 
 ```c
 void Insert(ElementType X,PriorityQueue H)
@@ -622,7 +625,6 @@ Idea: Make Si a subtree of Sj or vice versa.
 ![image-20221116090528444](./attachments/image-20221116090528444.png)
 
 - Implementation 1: Linked lists
-
 - Implementation 2: Array
 
   - `S[element] = the element's parent`
@@ -638,7 +640,6 @@ Idea: Make Si a subtree of Sj or vice versa.
 Find
 
 - Linked lists
-
 - Array
 
   ```c
@@ -740,7 +741,9 @@ SetType Find(ElementType X, DisjSet S)
 - **Strongly connected component** ::= the maximal subgraph that is strongly connected
 - **Degree(v)** ::= number of edges incident to v. For a directed G, we have **in-degree** and **out-degree**.
 - Given G with n vertices and e edges, then
-  $$e=(\sum_{i=0}^{n-1}d_i)/2 $$ where di = degree(vi)
+  $$
+  e=(\sum_{i=0}^{n-1}d_i)/2 $$ where di = degree(vi)
+  $$
 
 ### Representations of Graphs
 
@@ -753,7 +756,9 @@ SetType Find(ElementType X, DisjSet S)
 > If G is undirected, then adj_mat[][] is symmetric. Thus we can save space by storing only half of the matrix.
 > The trick is to store the matrix as a 1-D array: `adj_mat[n(n+1)/2]`=${a_{11},a_{21},a_{22}, ..., a_{n1}, ..., a_{nn}}$. The index for $a_{ij}$ is `(i*(i-1)/2)+ j`
 
-$$degree(i) = \sum_{j=0}^{n-1}{adj\_mat[i][j]}\ (+\sum_{j=0}^{n-1}{adj\_mat[j][i]}, if\ G\  is\ directed)$$
+$$
+degree(i) = \sum_{j=0}^{n-1}{adj\_mat[i][j]}\ (+\sum_{j=0}^{n-1}{adj\_mat[j][i]}, if\ G\  is\ directed)
+$$
 
 #### Adjacency Lists
 
@@ -810,3 +815,5 @@ Given a digraph F=(V,E), and a cost function c(e) for e∈E(G). The length of a 
    > If there is a negative-cost cycle then there is no answer for the problem.
    >
    > If there is no negative-cost cycle the shortest path from s to s is defined to be 0.
+   >
+2. 
