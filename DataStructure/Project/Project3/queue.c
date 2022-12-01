@@ -1,3 +1,5 @@
+#include "queue.h"
+
 int is_empty(queue q)
 {
     return (q.top==q.rear);
