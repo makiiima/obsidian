@@ -48,8 +48,8 @@ int push(queue q, int n)
     }
     else
     {
-        q.rear++;
         q.data[q.rear]=n;
+        q.rear++;
         return 1;
     }
 }
