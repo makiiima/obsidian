@@ -165,6 +165,16 @@ int judge()
             push(q,i);
         }
     }
+    while(!is_empty(q))
+    {
+        int t=front(q);
+        pop(q);
+        num++;
+        for (int i=0;i<n;i++)
+        {
+            in[]
+        }
+    }
 }
 
 int main()
