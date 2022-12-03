@@ -5,15 +5,81 @@
 #define INF 0x7fffffff
 #define MAXSIZE 1000
 
-#include"queue.h"
-#include"list.h"
-
 int s[MAXSIZE][MAXSIZE];
 int d[MAXSIZE][MAXSIZE];
 int test[MAXSIZE];
 int n,m,k;
 int in[MAXSIZE];
 int in_cp[MAXSIZE];
+int in_queue[MAXSIZE];
+
+typedef struct{
+    int data[MAXSIZE];
+    int top;
+    int rear;
+}queue;
+
+int is_empty(queue q)
+{
+    return (q.top==q.rear);
+}
+
+int front(queue q)
+{
+    return q.data[q.top];
+}
+
+int pop(queue q)
+{
+    if (is_empty(q)){
+        return -1;
+    }
+    else
+    {
+        q.top++;
+        return q.data[q.top-1];
+    }
+}
+
+int push(queue q, int n)
+{
+    if(q.rear>=MAXSIZE-1){
+        return -1;
+    }
+    else
+    {
+        q.rear++;
+        q.data[q.rear]=n;
+        return 1;
+    }
+}
+
+typedef struct lnode* list;
+typedef struct lnode{
+    int data;
+    struct lnode* next;
+}lnode;
+
+list make_empty()
+{
+    lnode* head=malloc(sizeof(lnode));
+    head->next=NULL;
+    return head;
+}
+
+list append(list l,int n)
+{
+    lnode* p=l; 
+    while(!p){
+        p=p->next;
+    }
+    lnode* new=malloc(sizeof(lnode));
+    new->next=NULL;
+    new->data=n;
+    p->next=new;
+    return l;
+}
+
 
 void init()
 {
@@ -89,16 +155,14 @@ void debugforinput()
 int judge()
 {
     queue q;
+    int num=0;
+    //enqueue all nodes that indegree==0
     for(int i=0;i<n;i++)
     {
-        if(in_cp[i]==0)
-            push(q,i);
-        int cnt=0;
-        while(!is_empty(q))
+        if (in[i]==0)
         {
-            int now=front(q);
-            cnt++;
-            pop(q);
+            in_queue[i]=1;
+            push(q,i);
         }
     }
 }
