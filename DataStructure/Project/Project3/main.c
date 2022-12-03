@@ -108,9 +108,42 @@ void input()
         scanf("%d",&test[i]);
 }
 
+int judge()
+{
+    queue q;
+    int num=0;
+    //enqueue all nodes that indegree==0
+    for(int i=0;i<n;i++)
+    {
+        if (in[i]==0)
+        {
+            in_queue[i]=1;
+            push(q,i);
+        }
+    }
+    while(!is_empty(q))
+    {
+        int t=front(q);
+        pop(q);
+        num++;
+        for (int i=0;i<n;i++)
+        {
+            if(s[t][i]!=INF)
+                in[i]--;
+            if(in[i]==0)
+                push(q,i);
+        }
+    }
+    if(num==n)
+        return 1;
+    else
+        return 0;
+}
+
 void output()
 {
-    if(judge())
+    int isok=judge();
+    if(isok==1)
         printf("Okay.\n");
     else
         printf("Impossible.\n");
@@ -119,7 +152,8 @@ void output()
         if (in[test[i]]==0)
             printf("You may take test %d directly.\n",test[i]);
         else
-            output_path(test[i]);
+            //output_path(test[i]);
+            ;
     }
 }
 
@@ -152,30 +186,7 @@ void debugforinput()
 }
 #endif
 
-int judge()
-{
-    queue q;
-    int num=0;
-    //enqueue all nodes that indegree==0
-    for(int i=0;i<n;i++)
-    {
-        if (in[i]==0)
-        {
-            in_queue[i]=1;
-            push(q,i);
-        }
-    }
-    while(!is_empty(q))
-    {
-        int t=front(q);
-        pop(q);
-        num++;
-        for (int i=0;i<n;i++)
-        {
-            in[]
-        }
-    }
-}
+
 
 int main()
 {
@@ -184,6 +195,6 @@ int main()
 #ifdef DEBUG
     debugforinput();    
 #endif
-
+    printf("%d\n",judge());
     return 0;
 }
