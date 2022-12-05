@@ -1,5 +1,5 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 // #define DEBUG
 
 #define INF 0x7fffffff
@@ -8,83 +8,88 @@
 int s[MAXSIZE][MAXSIZE];
 int d[MAXSIZE][MAXSIZE];
 int test[MAXSIZE];
-int n,m,k;
+int n, m, k;
 int in[MAXSIZE];
 int in_cp[MAXSIZE];
 int in_queue[MAXSIZE];
 
-typedef struct{
+typedef struct
+{
     int data[MAXSIZE];
     int top;
     int rear;
-}queue;
+} queue;
 
-int is_empty(queue* q)
+int is_empty(queue *q)
 {
-    return (q->top==q->rear);
+    return (q->top == q->rear);
 }
 
-int front(queue* q)
+int front(queue *q)
 {
     return q->data[q->top];
 }
 
-int pop(queue* q)
+int pop(queue *q)
 {
-    if (is_empty(q)){
+    if (is_empty(q))
+    {
         return -1;
     }
     else
     {
         q->top++;
-        return q->data[q->top-1];
+        return q->data[q->top - 1];
     }
 }
 
-int push(queue* q, int n)
+int push(queue *q, int n)
 {
-    if(q->rear>=MAXSIZE-1){
+    if (q->rear >= MAXSIZE - 1)
+    {
         return -1;
     }
     else
     {
-        q->data[q->rear]=n;
+        q->data[q->rear] = n;
         q->rear++;
         return 1;
     }
 }
 
-typedef struct lnode* list;
-typedef struct lnode{
+typedef struct lnode *list;
+typedef struct lnode
+{
     int data;
-    struct lnode* next;
-}lnode;
+    struct lnode *next;
+} lnode;
 
 list make_empty()
 {
-    lnode* head=malloc(sizeof(lnode));
-    head->next=NULL;
+    lnode *head = malloc(sizeof(lnode));
+    head->next = NULL;
     return head;
 }
 
-list append(list l,int n)
+list append(list l, int n)
 {
-    lnode* p=l; 
-    while(!p){
-        p=p->next;
+    lnode *p = l;
+    while (!p)
+    {
+        p = p->next;
     }
-    lnode* new=malloc(sizeof(lnode));
-    new->next=NULL;
-    new->data=n;
-    p->next=new;
+    lnode *new = malloc(sizeof(lnode));
+    new->next = NULL;
+    new->data = n;
+    p->next = new;
     return l;
 }
 
-
 void init()
 {
-    for(int i=0;i<n;i++)
-        for(int j=0;j<n;j++){
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
+        {
             s[i][j] = INF;
             d[i][j] = INF;
         }
@@ -92,51 +97,51 @@ void init()
 
 void input()
 {
-    scanf("%d %d",&n,&m);
-    int t1,t2,tmp_s,tmp_d;
+    scanf("%d %d", &n, &m);
+    int t1, t2, tmp_s, tmp_d;
     init();
-    for(int i=0;i<m;i++)
+    for (int i = 0; i < m; i++)
     {
-        scanf("%d %d %d %d",&t1,&t2,&tmp_s,&tmp_d);
-        s[t1][t2]=tmp_s;
-        d[t1][t2]=tmp_d;
+        scanf("%d %d %d %d", &t1, &t2, &tmp_s, &tmp_d);
+        s[t1][t2] = tmp_s;
+        d[t1][t2] = tmp_d;
         in[t2]++;
         in_cp[t2]++;
     }
-    scanf("%d",&k);
-    for(int i=0;i<k;i++)
-        scanf("%d",&test[i]);
+    scanf("%d", &k);
+    for (int i = 0; i < k; i++)
+        scanf("%d", &test[i]);
 }
 
 int judge()
 {
-    queue* q=malloc(sizeof(queue));
-    q->top=0;
-    q->rear=0;
-    int num=0;
-    //enqueue all nodes that indegree==0
-    for(int i=0;i<n;i++)
+    queue *q = malloc(sizeof(queue));
+    q->top = 0;
+    q->rear = 0;
+    int num = 0;
+    // enqueue all nodes that indegree==0
+    for (int i = 0; i < n; i++)
     {
-        if (in[i]==0)
+        if (in[i] == 0)
         {
-            in_queue[i]=1;
-            push(q,i);
+            in_queue[i] = 1;
+            push(q, i);
         }
     }
-    while(!is_empty(q))
+    while (!is_empty(q))
     {
-        int t=front(q);
+        int t = front(q);
         pop(q);
         num++;
-        for (int i=0;i<n;i++)
+        for (int i = 0; i < n; i++)
         {
-            if(s[t][i]!=INF)
+            if (s[t][i] != INF)
                 in[i]--;
-            if(in[i]==0)
-                push(q,i);
+            if (in[i] == 0)
+                push(q, i);
         }
     }
-    if(num==n)
+    if (num == n)
         return 1;
     else
         return 0;
@@ -144,17 +149,17 @@ int judge()
 
 void output()
 {
-    int isok=judge();
-    if(isok==1)
+    int isok = judge();
+    if (isok == 1)
         printf("Okay.\n");
     else
         printf("Impossible.\n");
-    for(int i=0; i<k;i++)
+    for (int i = 0; i < k; i++)
     {
-        if (in[test[i]]==0)
-            printf("You may take test %d directly.\n",test[i]);
+        if (in[test[i]] == 0)
+            printf("You may take test %d directly.\n", test[i]);
         else
-            //output_path(test[i]);
+            // output_path(test[i]);
             ;
     }
 }
@@ -163,40 +168,38 @@ void output()
 void debugforinput()
 {
     printf("s matrix is:\n");
-    for(int i=0;i<n;i++)
+    for (int i = 0; i < n; i++)
     {
         printf("\n");
-        for(int j=0;j<n;j++)
+        for (int j = 0; j < n; j++)
         {
-            printf("%d ",s[i][j]);
+            printf("%d ", s[i][j]);
         }
     }
     printf("\nd matrix is:\n");
-    for(int i=0;i<n;i++)
+    for (int i = 0; i < n; i++)
     {
         printf("\n");
-        for(int j=0;j<n;j++)
+        for (int j = 0; j < n; j++)
         {
-            printf("%d ",d[i][j]);
+            printf("%d ", d[i][j]);
         }
     }
     printf("\ntest list is:\n");
-    for(int i=0;i<k;i++)
+    for (int i = 0; i < k; i++)
     {
-        printf("%d ",test[i]);
+        printf("%d ", test[i]);
     }
 }
 #endif
-
-
 
 int main()
 {
     input();
 
 #ifdef DEBUG
-    debugforinput();    
+    debugforinput();
 #endif
-    printf("%d\n",judge());
+    printf("%d\n", judge());
     return 0;
 }
