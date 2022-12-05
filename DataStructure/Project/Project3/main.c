@@ -19,37 +19,37 @@ typedef struct{
     int rear;
 }queue;
 
-int is_empty(queue q)
+int is_empty(queue* q)
 {
-    return (q.top==q.rear);
+    return (q->top==q->rear);
 }
 
-int front(queue q)
+int front(queue* q)
 {
-    return q.data[q.top];
+    return q->data[q->top];
 }
 
-int pop(queue q)
+int pop(queue* q)
 {
     if (is_empty(q)){
         return -1;
     }
     else
     {
-        q.top++;
-        return q.data[q.top-1];
+        q->top++;
+        return q->data[q->top-1];
     }
 }
 
-int push(queue q, int n)
+int push(queue* q, int n)
 {
-    if(q.rear>=MAXSIZE-1){
+    if(q->rear>=MAXSIZE-1){
         return -1;
     }
     else
     {
-        q.data[q.rear]=n;
-        q.rear++;
+        q->data[q->rear]=n;
+        q->rear++;
         return 1;
     }
 }
@@ -110,7 +110,9 @@ void input()
 
 int judge()
 {
-    queue q;
+    queue* q=malloc(sizeof(queue));
+    q->top=0;
+    q->rear=0;
     int num=0;
     //enqueue all nodes that indegree==0
     for(int i=0;i<n;i++)
