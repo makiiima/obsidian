@@ -1,8 +1,10 @@
+# Class_notes
+
 ## Introduction
 
 ### The OSI Reference Model
 
-- Physical Layer ->bit, byte
+- Physical Layer -> bit, byte
 - Datalink  -> frame
 - Network -> packet
 - Transport, Session, Presentation, Application -> message
@@ -11,6 +13,7 @@
 ### The TCP/IP Reference Model
 
 常见协议
+
 - Link: HTTP. SMTP, RTP, DNS
 - Internet: TCP, UDP
 - Transport: IP, ICMP
@@ -31,19 +34,4 @@
 - Nyquist's theorem(理论情况, 无噪声)
     Maximum data rate = $2Blog_2  V$ bits/sec
     B是带宽, V是每个信号对应的比特数(多进制编码)
-- Shannon's formula for capacity of a noisy channel
-    Maximum data rate = $Blog_2(1+S/N)$ bits/sec
-    S/N -> signal/noise, 信噪比
-
-### Multiplexing
-
-- Frequency Division Multiplexing
-- Time Division Multiplexing
-- Code Division Multiplexing
-- Wavelength Division Multiplexing
-
-### Design Goals
-
-- Reliability
--  
-
+- Shannon's formula for capacity o

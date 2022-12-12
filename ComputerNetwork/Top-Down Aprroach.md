@@ -245,9 +245,13 @@ flowchart
 - 字段的语义
 - 确定一个进程合适以及如何发送报文, 对报文进行响应的规划
 
-## Web, HTTP
+## 2.2 Web, HTTP
 
 ### 2.2.1 HTTP
+
+- web页：由一些对象组成
+- web页有一个基本的HTML文件，包含若干对象的引用
+- 通过URL对每个对象进行引用
 
 超文本传输协议(HyperText Transfer Protocol, HTTP)
 HTTP使用TCP作为他的支撑运输协议
@@ -281,7 +285,7 @@ Connection: close
 User - agent: Mozilla/5.0  
 Accept-language:fr
 ```
-   
+
 >第一行为**请求行**(request line), 有三个字段:方法字段,URL字段,HTTP版本字段
 >方法字段可以取GET,POST,HEAD,PUT,DELETE
 >后继的为**首部行**(header line)
@@ -289,6 +293,7 @@ Accept-language:fr
 标准格式如下
 ![[attachments/Pasted image 20221118225307.png]]
 2. HTTP 响应报文
+
 ```http
 HTTP/1.1 200 OK
 
@@ -306,16 +311,23 @@ Content-Type: text/html
 
 (data data data data data ...)
 ```
+
 ![[attachments/Pasted image 20221119105151.png]]
+
 ### 用户与服务器的交互:cookie
+
 4个组件:
+
 - 在HTTP响应报文中的一个cookie首部行
 - 在HTTP请求报文中的一个cookie首部行
 - 在用户端系统中保留有一个cookie文件, 并由用户的浏览器进行管理
 - 位于web站点的一个后端数据库
   ![[attachments/Pasted image 20221119105421.png]]
+
 ### Web缓存
+
 **Web缓存器**(Web cache)也叫**代理服务器**(proxy server), 能代表初始web服务器满足http请求
+
 - 大大减少了对客户请求的响应时间
 - 大大减少一个机构接入链路到因特网的通信量, 降低费用
 **内容分发网络**(Content Distribution Network, CDN)
@@ -323,6 +335,7 @@ Content-Type: text/html
 ### 条件GET方法
 
 防止放在缓存中的对象副本可能是陈旧的
+
 1. 请求报文使用GET方法
 2. 请求报文中包含一个`If-Modified-Since`
 3. 缓存器在储存该对象时也存储了最后修改日期, 当用户请求时, 缓存器通过发送一个条件GET执行最新检查
