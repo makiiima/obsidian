@@ -4,63 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "e6443d42f5a21c30",
+        "id": "3e4c064e49f242e2",
         "type": "tabs",
         "children": [
           {
-            "id": "bf59cb2f62c3e6a9",
-            "type": "leaf",
-            "pane-relief:history-v1": {
-              "pos": 0,
-              "stack": [
-                {
-                  "state": "{}",
-                  "eState": "{}"
-                },
-                {
-                  "title": "Class-notes",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"ComputerNetwork/Class-notes.md\",\"mode\":\"source\",\"backlinks\":true,\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":42,\"ch\":33},\"to\":{\"line\":42,\"ch\":33}},\"scroll\":35.73192321678511}"
-                },
-                {
-                  "title": "DataStructure",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"DataStructure/DataStructure.md\",\"mode\":\"source\",\"backlinks\":true,\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":666,\"ch\":33},\"to\":{\"line\":666,\"ch\":33}},\"scroll\":666.0740787363076}"
-                },
-                {
-                  "title": "Class-notes",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"ComputerNetwork/Class-notes.md\",\"mode\":\"source\",\"backlinks\":true,\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "Top-Down Aprroach",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"ComputerNetwork/Top-Down Aprroach.md\",\"mode\":\"source\",\"backlinks\":true,\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "DataStructure",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"DataStructure/DataStructure.md\",\"mode\":\"preview\",\"backlinks\":true,\"source\":false}}",
-                  "eState": "{}"
-                }
-              ]
-            },
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "DataStructure/DataStructure.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "6fb4806b6a178947",
+            "id": "ea487fff669f773c",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -74,15 +22,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TheoryofComputation/Theory_of_Computation.md",
+                "file": "SelfLearning/lua.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -185,7 +132,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "TheoryofComputation/Theory_of_Computation.md",
+                "file": "SelfLearning/lua.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -211,7 +158,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "TheoryofComputation/Theory_of_Computation.md",
+                "file": "SelfLearning/lua.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -252,7 +199,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "TheoryofComputation/Theory_of_Computation.md"
+                "file": "SelfLearning/lua.md"
               }
             }
           },
@@ -297,20 +244,20 @@
     "width": 200,
     "collapsed": true
   },
-  "active": "6fb4806b6a178947",
+  "active": "ea487fff669f773c",
   "ophidian:layout-settings": {
     "pane-relief:focus-lock": true
   },
   "lastOpenFiles": [
-    "DataStructure/DataStructure.md",
     "ComputerNetwork/Class-notes.md",
+    "ComputerNetwork/Computer Network.md",
+    "DataStructure/DataStructure.md",
+    "TheoryofComputation/Theory_of_Computation.md",
     "ComputerNetwork/Top-Down Aprroach.md",
     "ComputerArchitecture/Computer Organization.md",
-    "ComputerNetwork/Computer Network.md",
     "ComputerArchitecture/attachments/image-20221103060633059.png",
     "ComputerArchitecture/attachments/image-20221103032823267.png",
     "ComputerArchitecture/attachments/image-20221103032616130.png",
-    "ComputerArchitecture/attachments/Pasted image 20221105073950.png",
-    "OperatingSystem/NJUOperatingSystem.md"
+    "ComputerArchitecture/attachments/Pasted image 20221105073950.png"
   ]
 }

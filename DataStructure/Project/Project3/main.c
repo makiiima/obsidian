@@ -20,6 +20,7 @@ typedef struct
     int rear;
 } queue;
 
+
 int is_empty(queue *q)
 {
     return (q->top == q->rear);

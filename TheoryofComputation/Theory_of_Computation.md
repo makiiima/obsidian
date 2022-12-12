@@ -6,7 +6,7 @@ An alphabet is a *finite* set of symbols.
 
 A string is a *finite* sequence of symbols from some alphabet.
 
-> $ \Sigma={0,1} $,so 0,1,01,10,010,... are strings over$\Sigma$
+>$\Sigma=\{0,1\}$  ,so 0,1,01,10,010,... are strings over $\Sigma$
 
 The length of $|w |$= number of symbols in $w$.
 
