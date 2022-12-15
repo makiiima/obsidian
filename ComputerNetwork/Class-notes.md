@@ -41,3 +41,9 @@
 - Time Division Multiplexing
 - Code Division Multiplexing
 - Wavelength Division Multiplexing
+
+### Design Goals
+
+- Reliability
+-  
+

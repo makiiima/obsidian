@@ -4,11 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "e6443d42f5a21c30",
+        "id": "3e4c064e49f242e2",
         "type": "tabs",
         "children": [
           {
+<<<<<<< HEAD
             "id": "bf59cb2f62c3e6a9",
+=======
+            "id": "ea487fff669f773c",
+>>>>>>> cfbd6417a9c51f450fda98e64966224094b9148d
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -16,6 +20,7 @@
                 {
                   "state": "{}",
                   "eState": "{}"
+<<<<<<< HEAD
                 },
                 {
                   "title": "Class-notes",
@@ -46,13 +51,19 @@
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"DataStructure/DataStructure.md\",\"mode\":\"preview\",\"backlinks\":true,\"source\":false}}",
                   "eState": "{}"
+=======
+>>>>>>> cfbd6417a9c51f450fda98e64966224094b9148d
                 }
               ]
             },
             "state": {
               "type": "markdown",
               "state": {
+<<<<<<< HEAD
                 "file": "DataStructure/DataStructure.md",
+=======
+                "file": "SelfLearning/lua.md",
+>>>>>>> cfbd6417a9c51f450fda98e64966224094b9148d
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -162,7 +173,11 @@
             "state": {
               "type": "backlink",
               "state": {
+<<<<<<< HEAD
                 "file": "DataStructure/DataStructure.md",
+=======
+                "file": "SelfLearning/lua.md",
+>>>>>>> cfbd6417a9c51f450fda98e64966224094b9148d
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -188,7 +203,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+<<<<<<< HEAD
                 "file": "DataStructure/DataStructure.md",
+=======
+                "file": "SelfLearning/lua.md",
+>>>>>>> cfbd6417a9c51f450fda98e64966224094b9148d
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -229,7 +248,11 @@
             "state": {
               "type": "outline",
               "state": {
+<<<<<<< HEAD
                 "file": "DataStructure/DataStructure.md"
+=======
+                "file": "SelfLearning/lua.md"
+>>>>>>> cfbd6417a9c51f450fda98e64966224094b9148d
               }
             }
           },
@@ -274,17 +297,26 @@
     "width": 200,
     "collapsed": true
   },
+<<<<<<< HEAD
   "active": "bf59cb2f62c3e6a9",
+=======
+  "active": "ea487fff669f773c",
+>>>>>>> cfbd6417a9c51f450fda98e64966224094b9148d
   "ophidian:layout-settings": {
     "pane-relief:focus-lock": true
   },
   "lastOpenFiles": [
+<<<<<<< HEAD
     "TheoryofComputation/Theory_of_Computation.md",
     "DataStructure/DataStructure.md",
+=======
+>>>>>>> cfbd6417a9c51f450fda98e64966224094b9148d
     "ComputerNetwork/Class-notes.md",
+    "ComputerNetwork/Computer Network.md",
+    "DataStructure/DataStructure.md",
+    "TheoryofComputation/Theory_of_Computation.md",
     "ComputerNetwork/Top-Down Aprroach.md",
     "ComputerArchitecture/Computer Organization.md",
-    "ComputerNetwork/Computer Network.md",
     "ComputerArchitecture/attachments/image-20221103060633059.png",
     "ComputerArchitecture/attachments/image-20221103032823267.png",
     "ComputerArchitecture/attachments/image-20221103032616130.png",
