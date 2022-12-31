@@ -109,6 +109,16 @@ void foo(){
 
 - `compare_and_swap`
 
+  ```pseudocode
+  function cas(p: pointer to int, old: int, new: int) returns boll{
+    if *p != old{
+      return false;
+    }
+    *p <-new
+    return true;
+  }
+  ```
+
   ```c
   int compare_and_swap(int *value, it expected, int new_value){
     int temp = *value;

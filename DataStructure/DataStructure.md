@@ -810,10 +810,63 @@ void Topsort( Graph G )
 Given a digraph F=(V,E), and a cost function c(e) for e∈E(G). The length of a path P from source to destination is $ \sum_{e_i \in P}c(e_i)$ (also called weighted path length)
 
 1. Single-Source Shortest-Path Problem
+
    Given as input a weighted graph, G=(V,E),a and a distinguished vertex, s, find the shortest weighted path from s to every other vertex in G.
 
    > If there is a negative-cost cycle then there is no answer for the problem.
    >
    > If there is no negative-cost cycle the shortest path from s to s is defined to be 0.
-   >
-2. 
+2. Unweighted Shortest Paths
+
+   **Breadth-first search**
+   
+   Implementation
+    - `Table[i].Dist`::=distance from $s$ to $v_i$
+    - `Table[i].Known`::=1 if $v_i$ is checked; or 0 if not
+    - `Table[i].Path`::= for tracking the path
+
+    ```c
+    void Unweighted (Table T)
+    {
+        int currDist;
+        Vertex V, W;
+        for (CurrDist = 0;CurrDist < NumVertex; CurrDist){
+            for(each vertex V)
+                if(!T[V].Known && T[V].Dist == CurrDist){
+                    T[V].Known = true;
+                    for (each W adjacent to V)
+                        if(T[W].Dist == Infinity){
+                            T[W].Dist = CurrDist + 1;
+                            W[W].Path = V;
+                        }//end-if Dist == Inf
+                }//end-if !Known & Dist == CurrDist
+        }//end-for CurrDist
+    }
+    ```
+     
+    $T=O(|V|^2)$
+
+    ```c
+    void Unweighted (Table T)
+    {
+        //T is initialized with the source vertex S given
+        Queue Q;
+        Vertex V, W;
+        Q = CerateQueue(NumVertex); MakeEmpty(Q);
+        Enqueue(S, Q);//Enqueue the source vertex
+        while(!IsEmpty(Q))
+        {
+            V = Dequeue(Q);
+            T[V].Known = true;//not necessary
+            for ( each W adjacent to V)
+                if(W[W].Dist == Infinity){
+                    T[w].Dist = T[V].Dist+1;
+                    T[W].Path = V;
+                    Enqueue(W, Q);
+                }//end-if Dist==Inf
+        }//end while
+        DisposeQueue(Q);//free memory
+    }
+    ```
+
+    $T=O(|V|+|E|)$
