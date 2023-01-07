@@ -35,7 +35,7 @@ webServer::webServer()
 {
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
     sin.sin_family = AF_INET;
-    sin.sin_port = htons(5876); 
+    sin.sin_port = htons(2555); 
     sin.sin_addr.s_addr = htonl(INADDR_ANY); 
     bind(sockfd, (sockaddr*)&sin, sizeof(sin)); 
     listen(sockfd, MAXCLIENT);
@@ -88,22 +88,22 @@ void* clientHandler(void* cfd)
         bool notfound = false;  
         if (path == "/login/noimg.html") 
         {
-            realPath = "/Users/hejiajun/desktop/network2022/lab8/rt/html/noimg.html";
+            realPath = "/Users/liyunfan/Documents/obsidian/ComputerNetwork/Labs/lab8/rt/html/noimg.html";
             content_type = "text/html";
         }
         else if (path == "/login/test.html") 
         {
-            realPath = "/Users/hejiajun/desktop/network2022/lab8/rt/html/test.html";
+            realPath = "/Users/liyunfan/Documents/obsidian/ComputerNetwork/Labs/lab8/rt/html/test.html";
             content_type = "text/html";
         } 
         else if (path == "/login/test.txt") 
         {
-            realPath = "/Users/hejiajun/desktop/network2022/lab8/rt/txt/test.txt";
+            realPath = "/Users/liyunfan/Documents/obsidian/ComputerNetwork/Labs/lab8/rt/txt/test.txt";
             content_type = "text/plain";
         }
         else if (path == "/image/logo.jpg") 
         {
-            realPath = "/Users/hejiajun/desktop/network2022/lab8/rt/img/logo.jpg";
+            realPath = "/Users/liyunfan/Documents/obsidian/ComputerNetwork/Labs/lab8/rt/img/logo.jpg";
             content_type = "image/jpeg";
         }
         else notfound = true;
@@ -125,7 +125,7 @@ void* clientHandler(void* cfd)
         {
             std::string response = "<html><body><h1>404 Page not found</h1></body></html>\n";
             reply.append("HTTP/1.1 404 Not Found\n");
-            reply.append("Server: Jiajun\n");
+            reply.append("Server: Yunfan\n");
             reply.append("Content-Type: text/html\n");
             reply.append("Content-Length: " + std::to_string(response.size()) + "\n\n"); 
             reply.append(response);
@@ -142,11 +142,11 @@ void* clientHandler(void* cfd)
         name = data.substr(pos_login+6, pos_pwd - pos_login - 7);
         passwd = data.substr(pos_pwd + 5);
         reply.append("HTTP/1.1 200 OK\n");
-        reply.append("Server: Hejiajun\n");
+        reply.append("Server: Yunfan\n");
         reply.append("Content-Type: text/html\n");
-        if (name == "Jiajun" && passwd == "5876" ) 
+        if (name == "Yunfan" && passwd == "2555" ) 
         {
-            std::string response = "<html><body>Hello, Jiajun!</body></html>\n";
+            std::string response = "<html><body>Hello, Yunfan!</body></html>\n";
             reply.append("Content-Length: " + std::to_string(response.size()) + "\n\n");
             reply.append(response);
             reply.append("\n");

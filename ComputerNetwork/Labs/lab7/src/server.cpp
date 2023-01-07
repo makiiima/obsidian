@@ -14,7 +14,7 @@ socketServer::socketServer()
 {
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
     sin.sin_family = AF_INET;
-    sin.sin_port = htons(5876); // magic number: my student ID
+    sin.sin_port = htons(2555); // magic number: my student ID
     sin.sin_addr.s_addr = htonl(INADDR_ANY);
 
     bind(sockfd, (sockaddr*)&sin, sizeof(sin));

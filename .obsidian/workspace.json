@@ -1,18 +1,14 @@
 {
   "main": {
-    "id": "3a274d9e63e98d39",
+    "id": "1aae17f763e38f1c",
     "type": "split",
     "children": [
       {
-        "id": "3e4c064e49f242e2",
+        "id": "880ad2539d980a1c",
         "type": "tabs",
         "children": [
           {
-<<<<<<< HEAD
-            "id": "bf59cb2f62c3e6a9",
-=======
-            "id": "ea487fff669f773c",
->>>>>>> cfbd6417a9c51f450fda98e64966224094b9148d
+            "id": "431a2785019523ec",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -20,50 +16,13 @@
                 {
                   "state": "{}",
                   "eState": "{}"
-<<<<<<< HEAD
-                },
-                {
-                  "title": "Class-notes",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"ComputerNetwork/Class-notes.md\",\"mode\":\"source\",\"backlinks\":true,\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":42,\"ch\":33},\"to\":{\"line\":42,\"ch\":33}},\"scroll\":35.73192321678511}"
-                },
-                {
-                  "title": "DataStructure",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"DataStructure/DataStructure.md\",\"mode\":\"source\",\"backlinks\":true,\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":666,\"ch\":33},\"to\":{\"line\":666,\"ch\":33}},\"scroll\":666.0740787363076}"
-                },
-                {
-                  "title": "Class-notes",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"ComputerNetwork/Class-notes.md\",\"mode\":\"source\",\"backlinks\":true,\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "Top-Down Aprroach",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"ComputerNetwork/Top-Down Aprroach.md\",\"mode\":\"source\",\"backlinks\":true,\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "DataStructure",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"DataStructure/DataStructure.md\",\"mode\":\"preview\",\"backlinks\":true,\"source\":false}}",
-                  "eState": "{}"
-=======
->>>>>>> cfbd6417a9c51f450fda98e64966224094b9148d
                 }
               ]
             },
             "state": {
               "type": "markdown",
               "state": {
-<<<<<<< HEAD
                 "file": "DataStructure/DataStructure.md",
-=======
-                "file": "SelfLearning/lua.md",
->>>>>>> cfbd6417a9c51f450fda98e64966224094b9148d
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -76,15 +35,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "c079b29152bb4fcf",
+    "id": "fc8b8c28159e9bb5",
     "type": "split",
     "children": [
       {
-        "id": "91731cd8e907be98",
+        "id": "a564622accef323c",
         "type": "tabs",
         "children": [
           {
-            "id": "f0e3f5d3e4b1bf0f",
+            "id": "846137b1396144bb",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -103,17 +62,8 @@
             }
           },
           {
-            "id": "8e4c0564b2c10ac0",
+            "id": "b27422fdfb53f345",
             "type": "leaf",
-            "pane-relief:history-v1": {
-              "pos": 0,
-              "stack": [
-                {
-                  "state": "{}",
-                  "eState": "{}"
-                }
-              ]
-            },
             "state": {
               "type": "search",
               "state": {
@@ -127,17 +77,8 @@
             }
           },
           {
-            "id": "eb700eae359a460a",
+            "id": "2102708b74691ccd",
             "type": "leaf",
-            "pane-relief:history-v1": {
-              "pos": 0,
-              "stack": [
-                {
-                  "state": "{}",
-                  "eState": "{}"
-                }
-              ]
-            },
             "state": {
               "type": "starred",
               "state": {}
@@ -147,37 +88,32 @@
       }
     ],
     "direction": "horizontal",
-    "width": 371.50271224975586,
+    "width": 300,
     "collapsed": true
   },
   "right": {
-    "id": "544e3be013c1692f",
+    "id": "3e0b2cedeb139f8c",
     "type": "split",
     "children": [
       {
-        "id": "d6cc9888cd03096e",
+        "id": "f1dda3d109f1f14e",
         "type": "tabs",
         "children": [
           {
-            "id": "6ded484b9f27a687",
+            "id": "2a44de9a499306b3",
             "type": "leaf",
-            "pane-relief:history-v1": {
-              "pos": 0,
-              "stack": [
-                {
-                  "state": "{}",
-                  "eState": "{}"
-                }
-              ]
-            },
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "32d3893278c36eec",
+            "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-<<<<<<< HEAD
                 "file": "DataStructure/DataStructure.md",
-=======
-                "file": "SelfLearning/lua.md",
->>>>>>> cfbd6417a9c51f450fda98e64966224094b9148d
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -189,42 +125,20 @@
             }
           },
           {
-            "id": "11fb8668391f8068",
+            "id": "6f956cfa1cb63ec3",
             "type": "leaf",
-            "pane-relief:history-v1": {
-              "pos": 0,
-              "stack": [
-                {
-                  "state": "{}",
-                  "eState": "{}"
-                }
-              ]
-            },
             "state": {
               "type": "outgoing-link",
               "state": {
-<<<<<<< HEAD
                 "file": "DataStructure/DataStructure.md",
-=======
-                "file": "SelfLearning/lua.md",
->>>>>>> cfbd6417a9c51f450fda98e64966224094b9148d
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "141abb8e31d74325",
+            "id": "bde55a8101f05b3b",
             "type": "leaf",
-            "pane-relief:history-v1": {
-              "pos": 0,
-              "stack": [
-                {
-                  "state": "{}",
-                  "eState": "{}"
-                }
-              ]
-            },
             "state": {
               "type": "tag",
               "state": {
@@ -234,92 +148,22 @@
             }
           },
           {
-            "id": "4e352bd19ea45fe2",
+            "id": "d9b28ed08b7f430f",
             "type": "leaf",
-            "pane-relief:history-v1": {
-              "pos": 0,
-              "stack": [
-                {
-                  "state": "{}",
-                  "eState": "{}"
-                }
-              ]
-            },
             "state": {
               "type": "outline",
               "state": {
-<<<<<<< HEAD
                 "file": "DataStructure/DataStructure.md"
-=======
-                "file": "SelfLearning/lua.md"
->>>>>>> cfbd6417a9c51f450fda98e64966224094b9148d
               }
-            }
-          },
-          {
-            "id": "ba3a758211f41362",
-            "type": "leaf",
-            "pane-relief:history-v1": {
-              "pos": 0,
-              "stack": [
-                {
-                  "state": "{}",
-                  "eState": "{}"
-                }
-              ]
-            },
-            "state": {
-              "type": "calendar",
-              "state": {}
-            }
-          },
-          {
-            "id": "41678d19f408d2b7",
-            "type": "leaf",
-            "pane-relief:history-v1": {
-              "pos": 0,
-              "stack": [
-                {
-                  "state": "{}",
-                  "eState": "{}"
-                }
-              ]
-            },
-            "state": {
-              "type": "advanced-tables-toolbar",
-              "state": {}
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 200,
+    "width": 300,
     "collapsed": true
   },
-<<<<<<< HEAD
-  "active": "bf59cb2f62c3e6a9",
-=======
-  "active": "ea487fff669f773c",
->>>>>>> cfbd6417a9c51f450fda98e64966224094b9148d
-  "ophidian:layout-settings": {
-    "pane-relief:focus-lock": true
-  },
-  "lastOpenFiles": [
-<<<<<<< HEAD
-    "TheoryofComputation/Theory_of_Computation.md",
-    "DataStructure/DataStructure.md",
-=======
->>>>>>> cfbd6417a9c51f450fda98e64966224094b9148d
-    "ComputerNetwork/Class-notes.md",
-    "ComputerNetwork/Computer Network.md",
-    "DataStructure/DataStructure.md",
-    "TheoryofComputation/Theory_of_Computation.md",
-    "ComputerNetwork/Top-Down Aprroach.md",
-    "ComputerArchitecture/Computer Organization.md",
-    "ComputerArchitecture/attachments/image-20221103060633059.png",
-    "ComputerArchitecture/attachments/image-20221103032823267.png",
-    "ComputerArchitecture/attachments/image-20221103032616130.png",
-    "ComputerArchitecture/attachments/Pasted image 20221105073950.png"
-  ]
+  "active": "846137b1396144bb",
+  "lastOpenFiles": []
 }

@@ -178,7 +178,7 @@ void socketClient::help()
              <<"- exit\n"
              <<"- help\n"
              <<"If you need any other heap\n"
-             <<"mail to jiajunhe@zju.edu.cn\n";
+             <<"mail to 3200102555@zju.edu.cn\n";
 }
 
 void connection_handle(int cfd)

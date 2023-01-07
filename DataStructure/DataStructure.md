@@ -743,7 +743,6 @@ SetType Find(ElementType X, DisjSet S)
 - Given G with n vertices and e edges, then
   $$
   e=(\sum_{i=0}^{n-1}d_i)/2 $$ where di = degree(vi)
-  $$
 
 ### Representations of Graphs
 
