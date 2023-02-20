@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "880ad2539d980a1c",
+        "id": "37149dedb6ddc7ec",
         "type": "tabs",
         "children": [
           {
-            "id": "431a2785019523ec",
+            "id": "be4588303723d2b8",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -22,7 +22,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DataStructure/DataStructure.md",
+                "file": "TheoryofComputation/Theory_of_Computation.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -64,6 +64,15 @@
           {
             "id": "b27422fdfb53f345",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "search",
               "state": {
@@ -79,6 +88,15 @@
           {
             "id": "2102708b74691ccd",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "starred",
               "state": {}
@@ -102,6 +120,15 @@
           {
             "id": "2a44de9a499306b3",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "calendar",
               "state": {}
@@ -110,10 +137,19 @@
           {
             "id": "32d3893278c36eec",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DataStructure/DataStructure.md",
+                "file": "TheoryofComputation/Theory_of_Computation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,10 +163,19 @@
           {
             "id": "6f956cfa1cb63ec3",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "DataStructure/DataStructure.md",
+                "file": "TheoryofComputation/Theory_of_Computation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,6 +184,15 @@
           {
             "id": "bde55a8101f05b3b",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "tag",
               "state": {
@@ -150,10 +204,19 @@
           {
             "id": "d9b28ed08b7f430f",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "outline",
               "state": {
-                "file": "DataStructure/DataStructure.md"
+                "file": "TheoryofComputation/Theory_of_Computation.md"
               }
             }
           }
@@ -164,6 +227,22 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "846137b1396144bb",
-  "lastOpenFiles": []
+  "left-ribbon": {
+    "hiddenItems": {
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-stille:Toggle Stille": false,
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "be4588303723d2b8",
+  "lastOpenFiles": [
+    "DataStructure/DataStructure.md",
+    "TheoryofComputation/Theory_of_Computation.md",
+    "SelfLearning/CS61B.md"
+  ]
 }

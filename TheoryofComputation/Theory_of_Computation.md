@@ -70,7 +70,7 @@ $(q_1,1010)\vdash_M(q_2,010)\vdash_M(q_3,10)\vdash_M(q_2,0)\vdash_M(q_3,e)$
 
 $\vdash_M$: yields in one step
 
-$(q,w)\vdash_M(q',w)$ if $w=aw'$ for some $a\in\Sigma$ and $\delta(q,a)=q'$\
+$(q,w)\vdash_M(q',w)$ if $w=aw'$ for some $a\in\Sigma$ and $\delta(q,a)=q'$
 
 $(q,w)\vdash_M^*(q',w)$ if $(q',w')=(q,w)$ or $(q,w)\vdash_M...\vdash_M(q',w')$
 
@@ -79,6 +79,8 @@ $M\ \text{accept} \ w\in\Sigma^*\  \text{if}\ (s,w)\vdash^*_M(q,e)\ \text{for so
 $L(M)=\{w\in\Sigma^*,\ \text{M accepts w}\}$
 
 M accepts L(M), and L(M) is unique
+
+**A language is regular if it is accepted by some FA.**
 
 
 
@@ -90,7 +92,7 @@ Regular Operations
 
 Theorem
 
-​	If A and B are regular, so is $A\cup B$. (The class of regular languages is closed under union)
+​	If A and B are regular, so is $A\cup B$. (The class of regular languages is closed under **union**)
 
 Idea
 $$
