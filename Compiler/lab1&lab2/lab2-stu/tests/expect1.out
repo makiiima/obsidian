@@ -1,0 +1,12 @@
+/* This is a
+   multi-line comment. */
+
+#include <stdio.h>
+
+INT main() {
+    INT i;
+    FOR(i = 0; i < 10; i++) {
+        printf("Hello, world!\n");
+    }
+    RETURN 0;
+}

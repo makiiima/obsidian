@@ -1,0 +1,5 @@
+// test int in comment
+
+int main() {
+    return 0;
+}
