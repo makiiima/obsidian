@@ -16,13 +16,19 @@
                 {
                   "state": "{}",
                   "eState": "{}"
+                },
+                {
+                  "title": "Theory_of_Computation",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"TheoryofComputation/Theory_of_Computation.md\",\"mode\":\"source\",\"backlinks\":true,\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
                 }
               ]
             },
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TheoryofComputation/Theory_of_Computation.md",
+                "file": "ComputerOrganization/Computer Organization.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -149,7 +155,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "TheoryofComputation/Theory_of_Computation.md",
+                "file": "ComputerOrganization/Computer Organization.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -175,7 +181,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "TheoryofComputation/Theory_of_Computation.md",
+                "file": "ComputerOrganization/Computer Organization.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -216,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "TheoryofComputation/Theory_of_Computation.md"
+                "file": "ComputerOrganization/Computer Organization.md"
               }
             }
           }
@@ -239,10 +245,10 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "846137b1396144bb",
+  "active": "be4588303723d2b8",
   "lastOpenFiles": [
-    "DataStructure/DataStructure.md",
     "TheoryofComputation/Theory_of_Computation.md",
+    "DataStructure/DataStructure.md",
     "SelfLearning/CS61B.md"
   ]
 }
