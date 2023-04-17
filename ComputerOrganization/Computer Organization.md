@@ -238,14 +238,18 @@ jal x0,Lable
 - 库例程在程序运行之前不会被链接和加载
 - 需要额外的空间来存储动态链接所需的信息, 不要求复制或链接整个库. 在第一次调用例程时会付出大量的开销, 之后只需要一个简介跳转
 
+## Chap.3 Arithmetic for Computers
+
+### 3.5 Floating numbers
 
 
 
-# Chap.4 The Processor
 
-## 4.1 Introduction
+## Chap.4 The Processor
 
-### A Basic RISC-V Implementation
+### 4.1 Introduction
+
+#### A Basic RISC-V Implementation
 - memory access instruction `ld`, `sd`
 - 算数指令`add, sub, and, or`
 - conditional branch instruction *branch if equal* `beq`

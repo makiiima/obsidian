@@ -1,29 +1,25 @@
 %{
-	#include"calc.tab.h"
-%}
-%{
-   #include <stdio.h>
-   void yyerror(const char* msg) {
-      fprintf(stderr, "%s\n", msg);
-   }
-   int yylex();
+#include <stdio.h>
+#include "calc.tab.h"
 %}
 
 %%
-[0-9]+ {
-	yylval = atoi(yytext);
-	return INTEGER;
-}
 
-["+""-""*""/""=""("")"\n] {
-	return *yytext;
-}
-
-[ \t] {
-}
+"+" { return PLUS; }
+"-" { return MINUS; }
+"*" { return TIMES; }
+"/" { return DIVIDE; }
+"^" { return POWER; }
+"(" { return LP; }
+")" { return RP; }
+[0-9]+ { yylval = atoi(yytext); return NUM; }
+[ \t] { ; }
+\n { return EOL; }
+. { printf("Invalid character %c\n", *yytext); }
 
 %%
 
-int yywrap(){
-	return 1;
+int yywrap()
+{
+    return 1;
 }

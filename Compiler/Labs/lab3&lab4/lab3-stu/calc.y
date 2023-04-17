@@ -1,41 +1,58 @@
 %{
-	#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
-	int yylex(void);
-	int yyerror(char* s);
+int yylex(void);
+void yyerror(char *);
+
 %}
-%token INTEGER
-%left '+' '-'
-%left '*' '/'
+
+%token NUM
+%token PLUS MINUS TIMES DIVIDE POWER UMINUS LP RP EOL
 
 %%
 
-lines:
-	 lines state '\n'
-	 |
-	 ;
+input:
+    | input line
+    ;
 
-state:
-	 expr			{ printf("%d\n",$1); }
-	 |
-	 ;
+line:
+    exp EOL { printf("%d\n", (int)$1); }
+    ;
 
-expr:
-	INTEGER
-	| expr '+' INTEGER	{ $$ = $1 + $3; }
-	| expr '-' INTEGER	{ $$ = $1 - $3; }
-	| expr '*' INTEGER{ $$ = $1 * $3; }
-	| expr '/' INTEGER	{ $$ = $1 / $3; }
-	| expr '^' INTEGER	{ $$ = $1 ^ $3; }
-	| '-' INTEGER		{ $$ = -$2; }
-	| '(' expr ')'	{ $$ = $2; }
-	;
+exp:
+    term
+    | exp PLUS term { $$ = $1 + $3; }
+    | exp MINUS term { $$ = $1 - $3; }
+    ;
+
+term:
+    factor
+    | term TIMES factor { $$ = $1 * $3; }
+    | term DIVIDE factor { $$ = $1 / $3; }
+    ;
+
+factor:
+    base
+    | base POWER factor { $$ = pow($1, $3); }
+    ;
+
+base:
+    NUM
+    | MINUS base %prec UMINUS { $$ = -$2; }
+    | LP exp RP { $$ = $2; }
+    ;
 
 %%
 
-
-int main(int argc, const char *argv[]) {
-	yyparse();
-	return 0;
+void yyerror(char *s)
+{
+    fprintf(stderr, "%s\n", s);
 }
 
+int main()
+{
+    yyparse();
+    return 0;
+}
