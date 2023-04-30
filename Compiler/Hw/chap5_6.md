@@ -177,3 +177,25 @@ void pop(struct bucket **table, int size, string key) {
 `d`: registers; Because it's a single integer andonly used in a few instructions and its value is not needed across functions calls.
 
 `e`: registers; Similar to `d`. But the return value of `g` should be kept in memory.
+
+## 6-7
+
+a.
+
+```assembly
+mov r1, fp        // move frame pointer to register r1
+addi r1, r1, #offset // add offset of `output` variable to r1
+ldr r0, [r1]      // load the value of `output` into register r0
+
+```
+
+b.
+
+```assembly
+ldr r1, [fp, #display_offset] // load display pointer from current activation record
+ldr r1, [r1, #depth_offset]   // load frame pointer for `prettyprint` from display
+addi r1, r1, #offset          // add offset of `output` variable to r1
+ldr r0, [r1]                  // load the value of `output` into register r0
+
+```
+
