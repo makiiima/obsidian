@@ -1,6 +1,8 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
+
 
 data = pd.read_csv('data/train.csv')
 
@@ -43,4 +45,33 @@ plt.ylabel('SalePrice')
 
 # 显示图表
 plt.savefig('SalePrice Distribution by BldgType.png')
+
+df = pd.read_csv('data/train.csv')
+df = df[['SalePrice', 'OverallQual', 'GrLivArea', 'MSSubClass', 'LotArea', 'OverallCond', 'YearBuilt', 'YearRemodAdd', 'MasVnrArea', 'BsmtFinSF1', 'BsmtFinSF2', 'BsmtUnfSF', 'TotalBsmtSF', '1stFlrSF', '2ndFlrSF', 'LowQualFinSF', 'BsmtFullBath', 'BsmtHalfBath', 'FullBath', 'HalfBath', 
+        'BedroomAbvGr', 'KitchenAbvGr', 'TotRmsAbvGrd', 'Fireplaces', 'GarageYrBlt', 'GarageCars', 'GarageArea', 'WoodDeckSF', 'OpenPorchSF', 'EnclosedPorch', '3SsnPorch', 'ScreenPorch', 'PoolArea', 'MiscVal', 'MoSold', 'YrSold']]
+
+corrmat = df.corr()
+
+f, ax = plt.subplots(figsize=(12, 9))
+
+
+k = 11
+cols = corrmat.nlargest(k, df.columns[0]).index
+cm = np.corrcoef(df[cols].values.T)
+
+hm = sns.heatmap(cm,
+                 cbar=True,
+                 annot=True,
+                 square=True,
+                 fmt=".3f",
+                 vmin=0,             
+                 vmax=1,
+                 linewidths=.5,
+                 cmap='Blues',
+                 annot_kws={"size": 10},
+                 xticklabels=cols,
+                 yticklabels=cols)    
+
+
+plt.savefig('corr.png')
 
