@@ -1,0 +1,4 @@
+1. 详见 `train_normalized.csv`
+2. ![1685410906424](image/result/1685410906424.png)
+3. ![1685410942553](image/result/1685410942553.png)
+4. ![1685410956295](image/result/1685410956295.png)![1685410967697](image/result/1685410967697.png)
