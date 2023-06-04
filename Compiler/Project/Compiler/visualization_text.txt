@@ -1,0 +1,125 @@
+a0 [label= "program:"]
+
+a0 -> a1
+a1 [label= "Define_List "]
+
+a1 -> a2
+a2 [label= "Define_Block main"]
+
+a2 -> a3
+a3 [label= "specifier:INT"]
+
+a2 -> a4
+a4 [label= "Block"]
+
+a4 -> a5
+a5 [label= "Stat_List "]
+
+a5 -> a6
+a6 [label= "Var_Dec: a"]
+
+a6 -> a7
+a7 [label= "specifier:INT"]
+
+a5 -> a8
+a8 [label= "Exp_Assign "]
+
+a8 -> a9
+a9 [label= "Exp_ID:a"]
+
+a8 -> a10
+a10 [label= "Constant_Int:250"]
+
+a5 -> a11
+a11 [label= "Var_Dec: b"]
+
+a11 -> a12
+a12 [label= "specifier:INT"]
+
+a5 -> a13
+a13 [label= "Exp_Assign "]
+
+a13 -> a14
+a14 [label= "Exp_ID:b"]
+
+a13 -> a15
+a15 [label= "Constant_Int:50"]
+
+a5 -> a16
+a16 [label= "Var_Dec: temp"]
+
+a16 -> a17
+a17 [label= "specifier:INT"]
+
+a5 -> a18
+a18 [label= "Stat_While"]
+
+a18 -> a19
+a19 [label= "Exp_Bin : NEQ"]
+
+a19 -> a20
+a20 [label= "Exp_ID:b"]
+
+a19 -> a21
+a21 [label= "Constant_Int:0"]
+
+a18 -> a22
+a22 [label= "Block"]
+
+a22 -> a23
+a23 [label= "Stat_List "]
+
+a23 -> a24
+a24 [label= "Exp_Assign "]
+
+a24 -> a25
+a25 [label= "Exp_ID:temp"]
+
+a24 -> a26
+a26 [label= "Exp_ID:b"]
+
+a23 -> a27
+a27 [label= "Exp_Assign "]
+
+a27 -> a28
+a28 [label= "Exp_ID:b"]
+
+a27 -> a29
+a29 [label= "Exp_Bin : MOD"]
+
+a29 -> a30
+a30 [label= "Exp_ID:a"]
+
+a29 -> a31
+a31 [label= "Exp_ID:b"]
+
+a23 -> a32
+a32 [label= "Exp_Assign "]
+
+a32 -> a33
+a33 [label= "Exp_ID:a"]
+
+a32 -> a34
+a34 [label= "Exp_ID:temp"]
+
+a5 -> a35
+a35 [label= "Exp_Func : printf"]
+
+a35 -> a36
+a36 [label= "Exp_List "]
+
+a36 -> a37
+a37 [label= "Constant_String:"%d""]
+
+a36 -> a38
+a38 [label= "Exp_ID:a"]
+
+a5 -> a39
+a39 [label= "Stat_Return"]
+
+a39 -> a40
+a40 [label= "Constant_Int:0"]
+
+a2 -> a41
+a41 [label= " void "]
+

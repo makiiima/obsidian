@@ -35,7 +35,7 @@
    calling an (NIdentifier*). It makes the compiler happy.
  */
 %type <ident> ident
-%type <expr> numeric expr
+%type <expr> numeric expr 
 %type <varvec> func_decl_args
 %type <exprvec> call_args
 %type <block> program stmts block
@@ -69,7 +69,7 @@ var_decl : ident ident { $$ = new NVariableDeclaration(*$1, *$2); }
          | ident ident TEQUAL expr { $$ = new NVariableDeclaration(*$1, *$2, $4); }
          ;
 
-func_decl : ident ident TLPAREN func_decl_args TRPAREN block
+func_decl : ident ident TLPAREN func_decl_args TRPAREN block 
             { $$ = new NFunctionDeclaration(*$1, *$2, *$4, *$6); delete $4; }
           ;
 
@@ -98,7 +98,7 @@ call_args : /*blank*/  { $$ = new ExpressionList(); }
           | call_args TCOMMA expr  { $1->push_back($3); }
           ;
 
-comparison : TCEQ | TCNE | TCLT | TCLE | TCGT | TCGE
+comparison : TCEQ | TCNE | TCLT | TCLE | TCGT | TCGE 
            | TPLUS | TMINUS | TMUL | TDIV
            ;
 
