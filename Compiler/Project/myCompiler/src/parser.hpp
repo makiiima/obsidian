@@ -39,35 +39,70 @@
    /* Put the tokens into the symbol table, so that GDB and other debuggers
       know about them.  */
    enum yytokentype {
-     INT = 258,
-     MAIN = 259,
-     RETURN = 260,
-     NUMBER = 261,
-     LBRACE = 262,
-     RBRACE = 263
+     TIDENTIFIER = 258,
+     TINTEGER = 259,
+     TDOUBLE = 260,
+     TCEQ = 261,
+     TCNE = 262,
+     TCLT = 263,
+     TCLE = 264,
+     TCGT = 265,
+     TCGE = 266,
+     TEQUAL = 267,
+     TLPAREN = 268,
+     TRPAREN = 269,
+     TLBRACE = 270,
+     TRBRACE = 271,
+     TCOMMA = 272,
+     TDOT = 273,
+     TPLUS = 274,
+     TMINUS = 275,
+     TMUL = 276,
+     TDIV = 277
    };
 #endif
 /* Tokens.  */
-#define INT 258
-#define MAIN 259
-#define RETURN 260
-#define NUMBER 261
-#define LBRACE 262
-#define RBRACE 263
+#define TIDENTIFIER 258
+#define TINTEGER 259
+#define TDOUBLE 260
+#define TCEQ 261
+#define TCNE 262
+#define TCLT 263
+#define TCLE 264
+#define TCGT 265
+#define TCGE 266
+#define TEQUAL 267
+#define TLPAREN 268
+#define TRPAREN 269
+#define TLBRACE 270
+#define TRBRACE 271
+#define TCOMMA 272
+#define TDOT 273
+#define TPLUS 274
+#define TMINUS 275
+#define TMUL 276
+#define TDIV 277
 
 
 
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union YYSTYPE
-#line 13 "src/compiler.y"
+#line 10 "parser.y"
 {
-    std::string* str_val;
-    int int_val;
-    BaseAST* ast_val;
+    Node *node;
+    NBlock *block;
+    NExpression *expr;
+    NStatement *stmt;
+    NIdentifier *ident;
+    NVariableDeclaration *var_decl;
+    std::vector<NVariableDeclaration*> *varvec;
+    std::vector<NExpression*> *exprvec;
+    std::string *string;
+    int token;
 }
 /* Line 1529 of yacc.c.  */
-#line 71 "build/compiler.tab.h"
+#line 106 "parser.hpp"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
