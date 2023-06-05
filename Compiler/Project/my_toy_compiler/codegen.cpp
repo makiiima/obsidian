@@ -1,210 +1,244 @@
-#include "node.h"
-#include "codegen.h"
-#include "parser.hpp"
+#include "codegen.hpp"
 
-using namespace std;
+llvm::LLVMContext Context;
+llvm::IRBuilder<> IRBuilder(Context);
+CodeGenerator::CodeGenerator(void) :
+	Module(new llvm::Module("main", Context)),
+	DL(new llvm::DataLayout(Module)),
+	CurrFunction(NULL),
+	SymbolTableStack(),
+	ContinueBlockStack(),
+	BreakBlockStack(),
+	TmpBB(NULL),
+	TmpFunc(NULL),
+	printf(getPrintf())
+{}
 
-/* Compile the AST into a module */
-void CodeGenContext::generateCode(NBlock& root)
+
+void CodeGenerator::DumpIRCode(std::string FileName) 
 {
-	std::cout << "Generating code...\n";
-	
-	/* Create the top level interpreter function to call as entry */
-	vector<Type*> argTypes;
-	FunctionType *ftype = FunctionType::get(Type::getVoidTy(MyContext), makeArrayRef(argTypes), false);
-	mainFunction = Function::Create(ftype, GlobalValue::InternalLinkage, "main", module);
-	BasicBlock *bblock = BasicBlock::Create(MyContext, "entry", mainFunction, 0);
-	
-	/* Push a new variable/block context */
-	pushBlock(bblock);
-	root.codeGen(*this); /* emit bytecode for the toplevel block */
-	ReturnInst::Create(MyContext, bblock);
-	popBlock();
-	
-	/* Print the bytecode in a human-readable format 
-	   to see if our program compiled properly
-	 */
-	std::cout << "Code is generated.\n";
-	// module->dump();
-
-	legacy::PassManager pm;
-	// TODO:
-	pm.add(createPrintModulePass(outs()));
-	pm.run(*module);
+	if (FileName == "") FileName = "-";
+	std::error_code EC;
+	llvm::raw_fd_ostream Out(FileName, EC);
+	Out << "*****************  IRCode  ****************\n";
+	this->Module->print(Out, NULL);
+	Out << "***************  Verification  ***************\n";
+	if (llvm::verifyModule(*this->Module, &Out) == 0) Out << "No errors.\n";
 }
 
-/* Executes the AST by running the main function */
-GenericValue CodeGenContext::runCode() {
-	std::cout << "Running code...\n";
-	ExecutionEngine *ee = EngineBuilder( unique_ptr<Module>(module) ).create();
-	ee->finalizeObject();
-	vector<GenericValue> noargs;
-	GenericValue v = ee->runFunction(mainFunction, noargs);
-	std::cout << "Code was run.\n";
-	return v;
+//add
+bool CodeGenerator::AddFunction(std::string nm, llvm::Function* Function) 
+{
+	if(this->SymbolTableStack.size() == 0) return false;
+
+	auto& TT = *(this->SymbolTableStack.back());
+	auto Pi = TT.find(nm);
+	if (Pi != TT.end()) return false;
+	TT[nm] = Symbol(Function);
+	return true;
+}
+bool CodeGenerator::AddVariable(std::string NM, llvm::Value* Variable) 
+{
+	if (this->SymbolTableStack.size() == 0) return false;
+	auto& TT = *(this->SymbolTableStack.back());
+	auto Pi = TT.find(NM);
+	if (Pi != TT.end()) return false;
+	TT[NM] = Symbol(Variable, false);
+	return true;
+}
+bool CodeGenerator::AddConstant(std::string NM, llvm::Value* Constant) 
+{
+	if (this->SymbolTableStack.size() == 0) return false;
+	auto& TT = *(this->SymbolTableStack.back());
+	auto Pi = TT.find(NM);
+	if (Pi != TT.end()) return false;
+	TT[NM] = Symbol(Constant, true);
+	return true;
 }
 
-/* Returns an LLVM type based on the identifier */
-static Type *typeOf(const NIdentifier& type) 
+//push&pop
+void CodeGenerator::PushSymbolTable(void) 
 {
-	if (type.name.compare("int") == 0) {
-		return Type::getInt64Ty(MyContext);
-	}
-	else if (type.name.compare("double") == 0) {
-		return Type::getDoubleTy(MyContext);
-	}
-	return Type::getVoidTy(MyContext);
+	//this->SymbolTableStack.push_back(SymbolTable);
+	this->SymbolTableStack.push_back(new SymbolTable);
+}
+void CodeGenerator::PopSymbolTable(void) 
+{
+	if (this->SymbolTableStack.size() <= 0) return;
+	delete this->SymbolTableStack.back();
+	this->SymbolTableStack.pop_back();
 }
 
-/* -- Code Generation -- */
-
-Value* NInteger::codeGen(CodeGenContext& context)
+void CodeGenerator::GenObjectCode(std::string FileName) 
 {
-	std::cout << "Creating integer: " << value << endl;
-	return ConstantInt::get(Type::getInt64Ty(MyContext), value, true);
+  llvm::InitializeAllTargetInfos();
+  llvm::InitializeAllTargets();
+  llvm::InitializeAllTargetMCs();
+  llvm::InitializeAllAsmParsers();
+  llvm::InitializeAllAsmPrinters();
+  auto TargetTriple = llvm::sys::getDefaultTargetTriple();
+  Module->setTargetTriple(TargetTriple);
+  std::string Error;
+  auto Target = llvm::TargetRegistry::lookupTarget(TargetTriple, Error);
+  if (!Target) 
+  {
+    std::cout << Error;
+    return ;
+  }
+  auto CPU = "generic";
+  auto Features = "";
+  llvm::TargetOptions opt;
+  auto RM = llvm::Optional<llvm::Reloc::Model>();
+  auto TheTargetMachine = Target->createTargetMachine(TargetTriple, CPU, Features, opt, RM);
+  Module->setDataLayout(TheTargetMachine->createDataLayout());
+//Module->setDataLayout(TheTargetMachine->createDataLayout());
+  auto Filename = "output.o";
+
+  std::error_code EC;
+  llvm::raw_fd_ostream dest(Filename, EC, llvm::sys::fs::OF_None);
+
+  if(EC) 
+  {
+    std::cout << "Could not open file: " << EC.message();
+    return ;
+  }
+
+  llvm::legacy::PassManager pass;
+  auto FileType = llvm::CGFT_ObjectFile;
+
+  pass.run(*Module);
+  dest.flush();
+  std::cout<< "Wrote " << Filename << "\n";
 }
 
-Value* NDouble::codeGen(CodeGenContext& context)
+//about lp
+void CodeGenerator::EnterLoop(llvm::BasicBlock* CBB, llvm::BasicBlock* BBB) 
 {
-	std::cout << "Creating double: " << value << endl;
-	return ConstantFP::get(Type::getDoubleTy(MyContext), value);
+	this->ContinueBlockStack.push_back(CBB);
+	this->BreakBlockStack.push_back(BBB);
+}
+void CodeGenerator::LeaveLoop(void) 
+{
+	//empty
+	if (this->ContinueBlockStack.size() == 0 || this->BreakBlockStack.size() == 0) return;
+	this->ContinueBlockStack.pop_back();
+	this->BreakBlockStack.pop_back();
 }
 
-Value* NIdentifier::codeGen(CodeGenContext& context)
+//find
+llvm::Function* CodeGenerator::FindFunction(std::string Name) 
 {
-	std::cout << "Creating identifier reference: " << name << endl;
-	if (context.locals().find(name) == context.locals().end()) {
-		std::cerr << "undeclared variable " << name << endl;
-		return NULL;
-	}
-
-	// return nullptr;  
-	return new LoadInst(context.locals()[name]->getType(),context.locals()[name], name, false, context.currentBlock());
-}
-
-Value* NMethodCall::codeGen(CodeGenContext& context)
-{
-	Function *function = context.module->getFunction(id.name.c_str());
-	if (function == NULL) {
-		std::cerr << "no such function " << id.name << endl;
-	}
-	std::vector<Value*> args;
-	ExpressionList::const_iterator it;
-	for (it = arguments.begin(); it != arguments.end(); it++) {
-		args.push_back((**it).codeGen(context));
-	}
-	CallInst *call = CallInst::Create(function, makeArrayRef(args), "", context.currentBlock());
-	std::cout << "Creating method call: " << id.name << endl;
-	return call;
-}
-
-Value* NBinaryOperator::codeGen(CodeGenContext& context)
-{
-
-	std::cout << "Creating binary operation " << op << endl;
-	Instruction::BinaryOps instr;
-	switch (op) {
-		case TPLUS: 	instr = Instruction::Add; goto math;
-		case TMINUS: 	instr = Instruction::Sub; goto math;
-		case TMUL: 		instr = Instruction::Mul; goto math;
-		case TDIV: 		instr = Instruction::SDiv; goto math;
-				
-		/* TODO comparison */
+	//empty
+	if(this->SymbolTableStack.size() == 0) return NULL;
+	//for(auto iter = this->SymbolTableStack.end() - 1; iter >= this->SymbolTableStack.begin(); --TableIter)
+	for (auto TableIter = this->SymbolTableStack.end() - 1; TableIter >= this->SymbolTableStack.begin(); --TableIter) 
+	{
+		auto PairIter = (**TableIter).find(Name);
+		if (PairIter != (**TableIter).end()) return PairIter->second.GetFunction();
 	}
 	return NULL;
-math:
-	return BinaryOperator::Create(instr, lhs.codeGen(context), 
-		rhs.codeGen(context), "", context.currentBlock());
 }
 
-Value* NAssignment::codeGen(CodeGenContext& context)
+llvm::Value* CodeGenerator::FindVariable(std::string Name) 
 {
-	std::cout << "Creating assignment for " << lhs.name << endl;
-	if (context.locals().find(lhs.name) == context.locals().end()) {
-		std::cerr << "undeclared variable " << lhs.name << endl;
-		return NULL;
+	//emtpy
+	if(this->SymbolTableStack.size() == 0) return NULL;
+	for(auto TableIter = this->SymbolTableStack.end() - 1; TableIter >= this->SymbolTableStack.begin(); --TableIter) 
+	{
+		auto PairIter = (**TableIter).find(Name);
+		if(PairIter != (**TableIter).end())
+			return PairIter->second.GetVariable();
 	}
-	return new StoreInst(rhs.codeGen(context), context.locals()[lhs.name], false, context.currentBlock());
+	return NULL;
 }
-
-Value* NBlock::codeGen(CodeGenContext& context)
+llvm::Value* CodeGenerator::FindConstant(std::string Name) 
 {
-	StatementList::const_iterator it;
-	Value *last = NULL;
-	for (it = statements.begin(); it != statements.end(); it++) {
-		std::cout << "Generating code for " << typeid(**it).name() << endl;
-		last = (**it).codeGen(context);
+	//emtpy
+	if(this->SymbolTableStack.size() == 0) return NULL;
+	for(auto TableIter = this->SymbolTableStack.end() - 1; TableIter >= this->SymbolTableStack.begin(); --TableIter) 
+	{
+		auto PairIter = (**TableIter).find(Name);
+		if(PairIter != (**TableIter).end())
+			return PairIter->second.GetConstant();
 	}
-	std::cout << "Creating block" << endl;
-	return last;
+	return NULL;
 }
 
-Value* NExpressionStatement::codeGen(CodeGenContext& context)
+void CodeGenerator::XIPBB(void) 
 {
-	std::cout << "Generating code for " << typeid(expression).name() << endl;
-	return expression.codeGen(context);
+	auto Tmp = IRBuilder.GetInsertBlock();
+	IRBuilder.SetInsertPoint(this->TmpBB);
+	this->TmpBB = Tmp;
 }
 
-Value* NReturnStatement::codeGen(CodeGenContext& context)
+void CodeGenerator::EnterFunction(llvm::Function* Func) 
 {
-	std::cout << "Generating return code for " << typeid(expression).name() << endl;
-	Value *returnValue = expression.codeGen(context);
-	context.setCurrentReturnValue(returnValue);
-	return returnValue;
+	this->CurrFunction = Func;
+}
+void CodeGenerator::LeaveFunction(void) 
+{
+	this->CurrFunction = NULL;
+}
+llvm::Function* CodeGenerator::GetCurrentFunction(void) 
+{
+	return this->CurrFunction;
 }
 
-Value* NVariableDeclaration::codeGen(CodeGenContext& context)
+llvm::BasicBlock* CodeGenerator::GetContinueBlock(void) 
 {
-	std::cout << "Creating variable declaration " << type.name << " " << id.name << endl;
-	AllocaInst *alloc = new AllocaInst(typeOf(type),4, id.name.c_str(), context.currentBlock());
-	context.locals()[id.name] = alloc;
-	if (assignmentExpr != NULL) {
-		NAssignment assn(id, *assignmentExpr);
-		assn.codeGen(context);
+	if (this->ContinueBlockStack.size()) return this->ContinueBlockStack.back();
+	else return NULL;
+}
+llvm::BasicBlock* CodeGenerator::GetBreakBlock(void) 
+{
+	if (this->BreakBlockStack.size()) return this->BreakBlockStack.back();
+	else return NULL;
+}
+
+void CodeGenerator::GenerateCode(AST::Program& Root, const std::string& OptimizeLevel) 
+{
+
+	//Module->setDataLayout(TheTargetMachine->createDataLayout());
+	this->PushSymbolTable();
+	this->TmpFunc = llvm::Function::Create(llvm::FunctionType::get(IRBuilder.getVoidTy(), false), llvm::GlobalValue::InternalLinkage, "0Tmp", this->Module);
+	this->TmpBB = llvm::BasicBlock::Create(Context, "Temp", this->TmpFunc);
+	Root.codegen(*this);
+	//gensuc
+	std::cout << "Gen Successfully" << std::endl;
+	std::cout << "Write IR to test.ll" << std::endl;
+
+	//module
+	this->TmpBB->eraseFromParent();
+	this->TmpFunc->eraseFromParent();
+	this->PopSymbolTable();
+
+	if (OptimizeLevel != "") 
+	{
+		llvm::LoopAnalysisManager LAM;
+		llvm::FunctionAnalysisManager FAM;
+		llvm::CGSCCAnalysisManager CGAM;
+		llvm::ModuleAnalysisManager MAM;
+		llvm::PassBuilder PB;
+		PB.registerModuleAnalyses(MAM);
+		PB.registerCGSCCAnalyses(CGAM);
+		PB.registerFunctionAnalyses(FAM);
+		PB.registerLoopAnalyses(LAM);
+		PB.crossRegisterProxies(LAM, FAM, CGAM, MAM);
+		//Create the pass manager.
+		const llvm::OptimizationLevel* OptLevel; OptLevel = &llvm::OptimizationLevel::O1;
+		llvm::ModulePassManager MPM = PB.buildPerModuleDefaultPipeline(*OptLevel);
+		std::cout<<"optimize done\n";
 	}
-	return alloc;
 }
 
-Value* NExternDeclaration::codeGen(CodeGenContext& context)
+llvm::Function* CodeGenerator::getPrintf()
 {
-    vector<Type*> argTypes;
-    VariableList::const_iterator it;
-    for (it = arguments.begin(); it != arguments.end(); it++) {
-        argTypes.push_back(typeOf((**it).type));
-    }
-    FunctionType *ftype = FunctionType::get(typeOf(type), makeArrayRef(argTypes), false);
-    Function *function = Function::Create(ftype, GlobalValue::ExternalLinkage, id.name.c_str(), context.module);
-    return function;
-}
+  std::vector<llvm::Type*> printf_arg_types; //printf内参数的类型
+  printf_arg_types.push_back(IRBuilder.getInt8PtrTy()); //8位代表void*
 
-Value* NFunctionDeclaration::codeGen(CodeGenContext& context)
-{
-	vector<Type*> argTypes;
-	VariableList::const_iterator it;
-	for (it = arguments.begin(); it != arguments.end(); it++) {
-		argTypes.push_back(typeOf((**it).type));
-	}
-	FunctionType *ftype = FunctionType::get(typeOf(type), makeArrayRef(argTypes), false);
-	Function *function = Function::Create(ftype, GlobalValue::InternalLinkage, id.name.c_str(), context.module);
-	BasicBlock *bblock = BasicBlock::Create(MyContext, "entry", function, 0);
+  llvm::FunctionType* printf_type = llvm::FunctionType::get(IRBuilder.getInt32Ty(),printf_arg_types,true);
+  llvm::Function* printf_func = llvm::Function::Create(printf_type,llvm::Function::ExternalLinkage,llvm::Twine("printf"),this->Module);
 
-	context.pushBlock(bblock);
-
-	Function::arg_iterator argsValues = function->arg_begin();
-    Value* argumentValue;
-
-	for (it = arguments.begin(); it != arguments.end(); it++) {
-		(**it).codeGen(context);
-		
-		argumentValue = &*argsValues++;
-		argumentValue->setName((*it)->id.name.c_str());
-		StoreInst *inst = new StoreInst(argumentValue, context.locals()[(*it)->id.name], false, bblock);
-	}
-	
-	block.codeGen(context);
-	ReturnInst::Create(MyContext, context.getCurrentReturnValue(), bblock);
-
-	context.popBlock();
-	std::cout << "Creating function: " << id.name << endl;
-	return function;
+  printf_func->setCallingConv(llvm::CallingConv::C);
+  return printf_func;
 }

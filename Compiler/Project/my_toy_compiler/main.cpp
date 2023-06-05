@@ -1,35 +1,35 @@
 #include <iostream>
-#include "codegen.h"
-#include "node.h"
-
-using namespace std;
-
+#include <fstream>
+#include "AST.hpp"
+#include "CodeGeneration.hpp"
 extern int yyparse();
-extern NBlock* programBlock;
+extern AST::Program* root;
+//extern llvm::Module * TheModule;
 
-void open_file(const char* filename) {
-	// openfile
-	freopen(filename, "r", stdin);
-}
-
-void createCoreFunctions(CodeGenContext& context);
-
-int main(int argc, char **argv)
+int main()
 {
-	if (argc > 1) {
-		open_file(argv[1]);
-	}
-	yyparse();
-	cout << programBlock << endl;
-    // see http://comments.gmane.org/gmane.comp.compilers.llvm.devel/33877
-	InitializeNativeTarget();
-	InitializeNativeTargetAsmPrinter();
-	InitializeNativeTargetAsmParser();
-	CodeGenContext context;
-	createCoreFunctions(context);
-	context.generateCode(*programBlock);
-	context.runCode();
-	
-	return 0;
+    CodeGenerator Gen;
+    std::string input_path = "../test/input.c";
+    freopen(input_path.c_str(), "r", stdin);
+    yyparse();
+    root->visualization(0, "../visualization_text.txt");
+    try
+    {
+        Gen.GenerateCode(*root, "O0");
+    }
+    catch(std::exception& e)
+    {
+        #if defined(__unix__)
+		//Unix platform
+		std::cout << "\033[31m" << e.what() << std::endl;
+    #endif
+    }
+    Gen.GenObjectCode("Compiler.o");
+    llvm::StringRef outputStr = "../test.ll";
+	std::error_code EC;
+	llvm::raw_fd_ostream output(outputStr, EC);
+    Gen.Module->print(output,NULL);
+    std::cout<<"gen down\n";
+    //root->codegen(Gen);
+    //TheModule->print(llvm::outs(),NULL);
 }
-

@@ -1,19 +1,17 @@
-all: parser
-
-OBJS = parser.o  \
-       codegen.o \
-       main.o    \
-       tokens.o  \
-       corefn.o  \
-	   native.o  \
+SRCS = $(wildcard *.cpp)
+OBJS = $(SRCS:.cpp=.o)
 
 LLVMCONFIG = llvm-config
 CPPFLAGS = `$(LLVMCONFIG) --cppflags` -std=c++17
 LDFLAGS = `$(LLVMCONFIG) --ldflags` -lpthread -ldl -lz -lncurses -rdynamic
 LIBS = `$(LLVMCONFIG) --libs`
 
+.PHONY: all clean
+
+all: compiler
+
 clean:
-	$(RM) -rf parser.cpp parser.hpp parser tokens.cpp $(OBJS) 
+	$(RM) -rf parser.cpp parser.hpp parser tokens.cpp $(OBJS) compiler
 
 parser.cpp: parser.y
 	bison -d -o $@ $^
@@ -24,11 +22,10 @@ tokens.cpp: tokens.l parser.hpp
 	flex -o $@ $^
 
 %.o: %.cpp
-	clang++ -gfull -c $(CPPFLAGS) -o $@ $<
+	clang++ -g -c $(CPPFLAGS) -o $@ $<
 
+compiler: $(OBJS)
+	clang++ -g -o $@ $(OBJS) $(LIBS) $(LDFLAGS)
 
-parser: $(OBJS)
-	clang++  -gfull -o $@ $(OBJS) $(LIBS) $(LDFLAGS)
-
-test: parser example.txt
-	cat example.txt | ./parser
+test: compiler example.txt
+	cat example.txt | ./compiler
