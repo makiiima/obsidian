@@ -1,0 +1,30 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "/home/yunfanli/obsidian/Compiler/Project/compiler/**",
+                "/usr/include/llvm-14/llvm/**",
+                "/usr/include/llvm-14/llvm-c/**",
+                "/usr/include/llvm-14/**",
+                "/usr/lib/llvm-14/include/llvm-c/**",
+                "/usr/include/llvm-c-14/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c17",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "linux-clang-x64",
+            "compilerPathInCppPropertiesJson": "/usr/bin/clang",
+            "mergeConfigurations": false,
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/**",
+                    "/usr/include/llvm-14/llvm/**"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        }
+    ],
+    "version": 4
+}
