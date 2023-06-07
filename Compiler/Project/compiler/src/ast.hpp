@@ -85,7 +85,7 @@ namespace AST{
     class Exp: public Stat
     {
         public:
-        virtual llvm::Value *codegen(codegenerator& __generator) = 0;
+        virtual llvm::Value* codegenPtr(codegenerator& __generator) = 0;
     };
 
     class Exp_Bin: public Exp
@@ -102,6 +102,38 @@ namespace AST{
         llvm::Value *codegen(codegenerator& __generator) override;
         llvm::Value* codegenPtr(codegenerator& __generator) override {return nullptr;}
     };
+
+    class Exp_Uni: public Exp
+    {
+        public:
+        std::string uni_op;
+        Exp* exp;
+        Exp_Uni(const std::string& __uni_op, Exp* __exp){
+            uni_op = __uni_op;
+            exp = __exp;
+        }
+        llvm::Value *codegen(codegenerator& __generator) override;
+        llvm::Value* codegenPtr(codegenerator& __generator) override {return nullptr;}
+    };
+
+    class Exp_Con:public Exp//a?b:c
+    {
+        public:
+        Exp* cond;
+        Exp* left;
+        Exp* right;
+        Exp_Con(Exp* __cond, Exp* __left, Exp* __right){
+            cond = __cond;
+            left = __left;
+            right = __right;
+        }
+        llvm::Value *codegen(codegenerator& __generator) override{return nullptr;}
+        llvm::Value* codegenPtr(codegenerator& __generator) override {return nullptr;}
+    };
+
+    class Exp_List:s
+    }
+    
     }
     }
 }
