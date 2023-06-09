@@ -32,108 +32,165 @@
 #include <llvm/Target/TargetMachine.h>
 
 class codegenerator;
-namespace AST{
+namespace AST
+{
     class Node
     {
-        public:
+    public:
         virtual ~Node() = default;
-        //virtual Value *codegen() = 0;
+        // virtual Value *codegen() = 0;
     };
 
-    class Stat:public Node
+    class Stat : public Node
     {
-        public:
-        virtual llvm::Value *codegen(codegenerator& __generator) = 0;
+    public:
+        virtual llvm::Value *codegen(codegenerator &__generator) = 0;
     };
 
-    class Define_Block: public Stat
+    class Define_Block : public Stat
     {
-        public:
-        virtual llvm::Value *codegen(codegenerator& __generator) = 0;
+    public:
+        virtual llvm::Value *codegen(codegenerator &__generator) = 0;
     };
 
-    class Define_List: public Node
+    class Define_List : public Node
     {
-        public:
-            std::vector<Define_Block*> define_list;
-            llvm::Value *codegen(codegenerator& __generator);
-            void add_define(Define_Block* __define_block){
-                define_list.push_back(__define_block);
-            }
+    public:
+        std::vector<Define_Block *> define_list;
+        llvm::Value *codegen(codegenerator &__generator);
+        void add_define(Define_Block *__define_block)
+        {
+            define_list.push_back(__define_block);
+        }
     };
 
-    class Program: public Node
+    class Program : public Node
     {
-        public:
-            Define_List* define_list;
-            llvm::Value *codegen(codegenerator& __generator);
-            Program(Define_List* __define_list){
-                define_list = __define_list;
-            }
+    public:
+        Define_List *define_list;
+        llvm::Value *codegen(codegenerator &__generator);
+        Program(Define_List *__define_list)
+        {
+            define_list = __define_list;
+        }
     };
 
-    class Specifier: public Node
+    class Specifier : public Node
     {
-        public:
+    public:
         std::string type;
-        Specifier(const std::string& __type){
+        Specifier(const std::string &__type)
+        {
             type = __type;
         }
-        llvm::Type* gettype();
+        llvm::Type *gettype();
     };
 
-    class Exp: public Stat
+    class Exp : public Stat
     {
-        public:
-        virtual llvm::Value* codegenPtr(codegenerator& __generator) = 0;
+    public:
+        virtual llvm::Value *codegenPtr(codegenerator &__generator) = 0;
     };
 
-    class Exp_Bin: public Exp
+    class Exp_Bin : public Exp
     {
-        public:
+    public:
         std::string bin_op;
-        Exp* left;
-        Exp* right;
-        Exp_Bin(const std::string& __bin_op, Exp* __left, Exp* __right){
+        Exp *left;
+        Exp *right;
+        Exp_Bin(const std::string &__bin_op, Exp *__left, Exp *__right)
+        {
             bin_op = __bin_op;
             left = __left;
             right = __right;
         }
-        llvm::Value *codegen(codegenerator& __generator) override;
-        llvm::Value* codegenPtr(codegenerator& __generator) override {return nullptr;}
+        llvm::Value *codegen(codegenerator &__generator) override;
+        llvm::Value *codegenPtr(codegenerator &__generator) override { return nullptr; }
     };
 
-    class Exp_Uni: public Exp
+    class Exp_Uni : public Exp
     {
-        public:
+    public:
         std::string uni_op;
-        Exp* exp;
-        Exp_Uni(const std::string& __uni_op, Exp* __exp){
+        Exp *exp;
+        Exp_Uni(const std::string &__uni_op, Exp *__exp)
+        {
             uni_op = __uni_op;
             exp = __exp;
         }
-        llvm::Value *codegen(codegenerator& __generator) override;
-        llvm::Value* codegenPtr(codegenerator& __generator) override {return nullptr;}
+        llvm::Value *codegen(codegenerator &__generator) override;
+        llvm::Value *codegenPtr(codegenerator &__generator) override { return nullptr; }
     };
 
-    class Exp_Con:public Exp//a?b:c
+    class Exp_Con : public Exp // a?b:c
     {
-        public:
-        Exp* cond;
-        Exp* left;
-        Exp* right;
-        Exp_Con(Exp* __cond, Exp* __left, Exp* __right){
+    public:
+        Exp *cond;
+        Exp *left;
+        Exp *right;
+        Exp_Con(Exp *__cond, Exp *__left, Exp *__right)
+        {
             cond = __cond;
             left = __left;
             right = __right;
         }
-        llvm::Value *codegen(codegenerator& __generator) override{return nullptr;}
-        llvm::Value* codegenPtr(codegenerator& __generator) override {return nullptr;}
+        llvm::Value *codegen(codegenerator &__generator) override { return nullptr; }
+        llvm::Value *codegenPtr(codegenerator &__generator) override { return nullptr; }
     };
 
-    class Exp_List:s
-    }
-    
-    }
-    }
+    class Exp_List : public Exp
+    {
+    public:
+        std::vector<Exp *> exp_list;
+        Exp_List()
+        {
+            exp_list.clear();
+        }
+        void add_exp(Exp *__exp)
+        {
+            exp_list.push_back(__exp);
+        }
+        llvm::Value *codegen(codegenerator &__generator) override { return nullptr; }
+        llvm::Value *codegenPtr(codegenerator &__generator) override { return nullptr; }
+    };
+
+    class Exp_Func : public Exp
+    {
+    public:
+        std::string func_name;
+        Exp_List *parameters;
+        Exp_Func(const std::string &__func_name, Exp_List *__parameters)
+        {
+            func_name = __func_name;
+            parameters = __parameters;
+        }
+        llvm::Value *codegen(codegenerator &__generator) override;
+        llvm::Value *codegenPtr(codegenerator &__generator) override { return nullptr; }
+    };
+
+    class Exp_Assign : public Exp
+    {
+    public:
+        Exp *left, *right;
+        Exp_Assign(Exp *__left, Exp *__right)
+        {
+            left = __left;
+            right = __right;
+        }
+        llvm::Value *codegen(codegenerator &__generator) override;
+        llvm::Value *codegenPtr(codegenerator &__generator) override;
+    };
+
+    class Exp_Id : public Exp
+    {
+    public:
+        std::string id;
+        Exp_Id(const std::string &__id)
+        {
+            id = __id;
+        }
+        llvm::Value *codegen(codegenerator &__generator) override;
+        llvm::Value *codegenPtr(codegenerator &__generator) override;
+    };
+
 }
