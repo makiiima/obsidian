@@ -5,7 +5,6 @@
             "includePath": [
                 "/home/yunfanli/obsidian/Compiler/Project/compiler/**",
                 "/usr/include/llvm-14/llvm/**",
-                "/usr/include/llvm-14/llvm-c/**",
                 "/usr/include/llvm-14/**",
                 "/usr/lib/llvm-14/include/llvm-c/**",
                 "/usr/include/llvm-c-14/**"

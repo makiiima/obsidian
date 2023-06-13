@@ -1,4 +1,3 @@
-#pragma once
 #include <iostream>
 #include <vector>
 #include <map>
@@ -193,4 +192,232 @@ namespace AST
         llvm::Value *codegenPtr(codegenerator &__generator) override;
     };
 
+    class Const : public Exp
+    {
+    public:
+        virtual llvm::Value *codegenPtr(codegenerator &__generator) = 0;
+    };
+
+    class Const_Int : public Const
+    {
+    public:
+        int value;
+        Const_Int(int __value)
+        {
+            value = __value;
+        }
+        llvm::Value *codegen(codegenerator &__generator) override;
+        llvm::Value *codegenPtr(codegenerator &__generator) override { return nullptr; }
+    };
+
+    class Const_Char : public Const
+    {
+    public:
+        char value;
+        Const_Char(char __value)
+        {
+            value = __value;
+        }
+        llvm::Value *codegen(codegenerator &__generator) override;
+        llvm::Value *codegenPtr(codegenerator &__generator) override { return nullptr; }
+    };
+
+    class Const_String : public Const
+    {
+    public:
+        std::string value;
+        Const_String(const std::string &__value)
+        {
+            value = __value;
+        }
+        llvm::Value *codegen(codegenerator &__generator) override;
+        llvm::Value *codegenPtr(codegenerator &__generator) override { return nullptr; }
+    };
+
+    class Stat_List : public Node
+    {
+    public:
+        std::vector<Stat *> stat_list;
+        Stat_List()
+        {
+            stat_list.clear();
+        }
+        void add_stat(Stat *__stat)
+        {
+            stat_list.push_back(__stat);
+        }
+        llvm::Value *codegen(codegenerator &__generator);
+    };
+
+    class Block : public Node
+    {
+    public:
+        Stat_List *stat_list;
+        Block(Stat_List *__stat_list)
+        {
+            stat_list = __stat_list;
+        }
+        llvm::Value *codegen(codegenerator &__generator);
+    };
+
+    class Stat_Exp : public Stat
+    {
+    public:
+        Exp *exp;
+        Stat_Exp(Exp *__exp)
+        {
+            exp = __exp;
+        }
+    };
+
+    class Stat_Return : public Stat
+    {
+    public:
+        Exp *exp;
+        Stat_Return(Exp *__exp)
+        {
+            exp = __exp;
+        }
+        llvm::Value *codegen(codegenerator &__generator) override;
+    };
+
+    class Stat_If : public Stat
+    {
+    public:
+        Exp *exp;
+        Block *block;
+        Stat_If(Exp *__exp, Block *__block)
+        {
+            exp = __exp;
+            block = __block;
+        }
+        llvm::Value *codegen(codegenerator &__generator) override;
+    };
+
+    class Stat_IfElse : public Stat
+    {
+    public:
+        Exp *exp;
+        Block *block1, *block2;
+        Stat_IfElse(Exp *__exp, Block *__block1, Block *__block2)
+        {
+            exp = __exp;
+            block1 = __block1;
+            block2 = __block2;
+        }
+        llvm::Value *codegen(codegenerator &__generator) override;
+    };
+
+    class Stat_For : public Stat
+    {
+    public:
+        Exp *exp1, *exp2, *exp3;
+        Block *block;
+        Stat_For(Exp *__exp1, Exp *__exp2, Exp *__exp3, Block *__block)
+        {
+            exp1 = __exp1;
+            exp2 = __exp2;
+            exp3 = __exp3;
+            block = __block;
+        }
+        llvm::Value *codegen(codegenerator &__generator) override;
+    };
+
+    class Stat_While : public Stat
+    {
+    public:
+        Exp *exp;
+        Block *block;
+        Stat_While(Exp *__exp, Block *__block)
+        {
+            exp = __exp;
+            block = __block;
+        }
+        llvm::Value *codegen(codegenerator &__generator) override;
+    };
+
+    class Stat_DoWhile : public Stat
+    {
+    public:
+        Exp *exp;
+        Block *block;
+        Stat_DoWhile(Exp *__exp, Block *__block)
+        {
+            exp = __exp;
+            block = __block;
+        }
+        llvm::Value *codegen(codegenerator &__generator) override;
+    };
+
+    class Var_Dec : public Define_Block
+    {
+    public:
+        std::string type;
+        std::string id;
+        Exp *exp;
+        Var_Dec(const std::string &__type, const std::string &__id, Exp *__exp)
+        {
+            type = __type;
+            id = __id;
+            exp = __exp;
+        }
+        llvm::Value *codegen(codegenerator &__generator) override;
+    };
+
+    class Para_List : public Node
+    {
+    public:
+        std::vector<Var_Dec *> para_list;
+        Para_List()
+        {
+            para_list.clear();
+        }
+        void add_para(Var_Dec *__para)
+        {
+            para_list.push_back(__para);
+        }
+    };
+
+    class Fun_Imp : public Define_Block
+    {
+    public:
+        std::string type;
+        std::string id;
+        Para_List *parameters;
+        Block *block;
+        Fun_Imp(const std::string &__type, const std::string &__id, Para_List *__parameters, Block *__block)
+        {
+            type = __type;
+            id = __id;
+            parameters = __parameters;
+            block = __block;
+        }
+        llvm::Value *codegen(codegenerator &__generator) override;
+    };
+
+    class Var_Init : public Node
+    {
+    public:
+        Exp_Id *id;
+        Exp *exp;
+        Var_Init(Exp_Id *__id, Exp *__exp)
+        {
+            id = __id;
+            exp = __exp;
+        }
+    };
+
+    class Var_List : public Node
+    {
+    public:
+        std::vector<Var_Init *> var_list;
+        Var_List()
+        {
+            var_list.clear();
+        }
+        void add_var(Var_Init *__var)
+        {
+            var_list.push_back(__var);
+        }
+    };
 }
