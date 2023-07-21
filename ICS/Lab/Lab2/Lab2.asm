@@ -82,7 +82,32 @@
         ADD R1, R1, #1
         BRnzp LOOP2
         
-    CHECK:                                                                                          
+    CHECK:                      
+        LD R2, addr3
+        LD R4, base5
+    
+    LOOP3:
+        LDR R3, R2, #0
+        ADD R3, R3, #0
+        BRz END_LOOP3
+        BRnp FALSE
+        
+    END_LOOP3:
+        ADD R2, R2, #1
+        ADD R4, R4, #-1
+        BRz TRUE
+        BRp LOOP3
+        
+    FALSE:
+        LD R0, no_addr
+        PUTS
+        HALT
+    
+    TRUE:
+        LD R0, yes_addr
+        PUTS
+        HALT
+        
     
     HALT
     
@@ -93,15 +118,21 @@
     base2   .FILL #-32; ' ' ASCII value
     base3   .FILL #-65; 'A' ASCII value
     base4   .FILL #32
+    base5   .FILL #26
+    yes_addr    .FILL str_yes
+    no_addr     .FILL str_no
+    str_yes .STRINGZ "YES"
+    str_no  .STRINGZ "NO"
+    cnt  .BLKW 26
+        .FILL 0
 .END
         
 .ORIG x4000
     str1_addr    .FILL str1
     str2_addr    .FILL str2
-    str1    .STRINGZ "abcdef gHiJklmnopqrstuvwxyz"
-    str2    .STRINGZ ""
-    cnt  .BLKW 26
-        .FILL 0
+    str1    .STRINGZ " "
+    str2    .STRINGZ "Z"
+
 .END
 
 
