@@ -130,8 +130,8 @@
 .ORIG x4000
     str1_addr    .FILL str1
     str2_addr    .FILL str2
-    str1    .STRINGZ " "
-    str2    .STRINGZ "Z"
+    str1    ;.STRINGZ " "
+    str2    ;.STRINGZ "Z"
 
 .END
 
