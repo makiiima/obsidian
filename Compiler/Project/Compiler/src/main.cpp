@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include "AST.hpp"
-#include "codegen.hpp"
+#include "CodeGeneration.hpp"
 extern int yyparse();
 extern AST::Program* root;
 //extern llvm::Module * TheModule;

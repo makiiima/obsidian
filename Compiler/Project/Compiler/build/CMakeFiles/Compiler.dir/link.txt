@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/Compiler.dir/src/AST.cpp.o CMakeFiles/Compiler.dir/src/CodeGeneration.cpp.o CMakeFiles/Compiler.dir/src/lexer.cpp.o CMakeFiles/Compiler.dir/src/main.cpp.o CMakeFiles/Compiler.dir/src/parser.cpp.o CMakeFiles/Compiler.dir/src/visualization.cpp.o -o Compiler  -lLLVM-14 

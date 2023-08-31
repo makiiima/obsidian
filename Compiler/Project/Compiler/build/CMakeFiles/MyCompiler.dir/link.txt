@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/MyCompiler.dir/src/AST.cpp.o CMakeFiles/MyCompiler.dir/src/lexer.cpp.o CMakeFiles/MyCompiler.dir/src/main.cpp.o CMakeFiles/MyCompiler.dir/src/parser.cpp.o CMakeFiles/MyCompiler.dir/src/visualization.cpp.o -o MyCompiler 
