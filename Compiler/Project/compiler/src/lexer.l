@@ -1,17 +1,21 @@
 %{
-  #include <stdio.h>
-  #include <stdlib.h>
-  #include <iostream>
-  #include "parser.hpp"
+    #include <stdio.h>
+    #include <stdlib.h>
+    #include<iostream>
+    #include "AST.hpp"
+    #include "parser.hpp"
+    
 %}
 
-DIGIT [0-9]
-IDENTIFIER [a-zA-Z_][a-zA-Z_{DIGIT}]*
+D [0-9]
+H [0-9a-fA-F]
 
 %option yylineno
-%option outfile+"lexer.cpp"
+%option outfile="lexer.cpp"
 
 %%
+
+
 
 "["           {return LBRACKET;}
 "]"           {return RBRACKET;}
@@ -92,8 +96,15 @@ IDENTIFIER [a-zA-Z_][a-zA-Z_{DIGIT}]*
 "default"     {return DEFAULT;}
 "return"      {return RETURN;}
 
-IDENTIFIER    {yylval.id = new std::string(yytext, yyleng);}
-0|[1-9]{DIGIT}*                      {yylval.intval = atoi(yytext);return INT_CONST;}       
+"#define"     {return DEFINE;}
+
+[a-zA-Z_][a-zA-Z_{D}]*           {yylval.id = new std::string(yytext, yyleng);return IDENTIFIER;}
+0|[1-9]{D}*                      {yylval.intval = atoi(yytext);return INT_CONST;}       
+0[0-7]*                          {yylval.intval = atoi(yytext);return INT_CONST;}
+0[xX]{H}+                        {yylval.intval = atoi(yytext);return INT_CONST;}
+0b[01]*                          {yylval.intval = atoi(yytext);return INT_CONST;}
+{D}*\.{D}+                       {yylval.doubleval = atof(yytext);return DOUBLE_CONST;}
+{D}+\.{D}+[eE][+-]?{D}+          {yylval.doubleval = atof(yytext);return DOUBLE_CONST;}
 \'.'\|\'\\.'\                    {yylval.charval = yytext[1];return CHAR_CONST;}
 \"(\\.|[^"\\])*\"                {yylval.stringval = new std::string(yytext, yyleng);return STRING_CONST;}
 

@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <vector>
 #include <map>
@@ -30,394 +31,383 @@
 #include <llvm/Support/DynamicLibrary.h>
 #include <llvm/Target/TargetMachine.h>
 
-class codegenerator;
-namespace AST
-{
-    class Node
+class CodeGenerator;
+namespace AST{
+    class Node 
     {
     public:
         virtual ~Node() = default;
-        // virtual Value *codegen() = 0;
+        //virtual Value *codegen() = 0;
+        void visualization(int n){return;}
     };
 
-    class Stat : public Node
+    class Stat: public Node
     {
+    // Value *codegen() override;
     public:
-        virtual llvm::Value *codegen(codegenerator &__generator) = 0;
+        virtual void visualization(int n)=0;
+        virtual llvm::Value *codegen(CodeGenerator& __Generator) = 0;
     };
 
-    class Define_Block : public Stat
+    class Define_Block: public Stat
     {
     public:
-        virtual llvm::Value *codegen(codegenerator &__generator) = 0;
+        virtual llvm::Value *codegen(CodeGenerator& __Generator) = 0;
+        virtual void visualization(int n)=0;
     };
 
-    class Define_List : public Node
+    class Define_List: public Node
     {
     public:
-        std::vector<Define_Block *> define_list;
-        llvm::Value *codegen(codegenerator &__generator);
-        void add_define(Define_Block *__define_block)
-        {
-            define_list.push_back(__define_block);
-        }
+        std::vector<Define_Block*> DefineList_ ;
+        //DefineList(std::vector<Define_Block*> DefineList_):DefineList_(DefineList_){}
+        llvm::Value *codegen(CodeGenerator& __Generator) ;
+        void adddefine(Define_Block* a){DefineList_.push_back(a);}
+        void visualization(int n);
     };
 
     class Program : public Node
     {
     public:
-        Define_List *define_list;
-        llvm::Value *codegen(codegenerator &__generator);
-        Program(Define_List *__define_list)
-        {
-            define_list = __define_list;
-        }
+        Define_List* Define_List_;
+        llvm::Value *codegen(CodeGenerator& __Generator) ;
+        Program(Define_List* Define_List_): Define_List_(Define_List_) {}
+        void visualization(int n, std::string file_path);
     };
 
-    class Specifier : public Node
+    class Specifier : public Node 
     {
-    public:
+    public:    
         std::string type;
-        Specifier(const std::string &__type)
-        {
-            type = __type;
-        }
-        llvm::Type *gettype();
+        Specifier(const std::string& type) : type(type) {}
+        llvm::Type*getType() ;
+        void visualization(int n);
     };
+
+
 
     class Exp : public Stat
     {
     public:
-        virtual llvm::Value *codegenPtr(codegenerator &__generator) = 0;
+        virtual llvm::Value* CodeGenPtr(CodeGenerator& __Generator) = 0;
     };
 
+    /*
+                    Exp ADD Exp
+                    | Exp SUB Exp
+                    | Exp MUL_PTR Exp
+                    | Exp DIV Exp
+                    | Exp MOD Exp
+                    | Exp BITAND_ADDRESS Exp
+                    | Exp AND Exp
+                    | Exp OR Exp
+                    | Exp BITOR Exp
+                    | Exp XOR Exp
+                    | Exp LSHIFT Exp
+                    | Exp RSHIFT Exp
+                    | Exp ADDEQ Exp
+                    | Exp SUDEQ Exp
+                    | Exp MULEQ Exp
+                    | Exp DIVEQ Exp
+                    | Exp MODEQ Exp
+                    | Exp BITANDEQ Exp
+                    | Exp BITOREQ Exp
+                    | Exp BITXOR Exp
+                    | Exp LSHIFTEQ Exp
+                    | Exp RSHIFTEQ Exp
+    */
     class Exp_Bin : public Exp
     {
     public:
-        std::string bin_op;
-        Exp *left;
-        Exp *right;
-        Exp_Bin(const std::string &__bin_op, Exp *__left, Exp *__right)
-        {
-            bin_op = __bin_op;
-            left = __left;
-            right = __right;
-        }
-        llvm::Value *codegen(codegenerator &__generator) override;
-        llvm::Value *codegenPtr(codegenerator &__generator) override { return nullptr; }
+        std::string bin_operation;
+        Exp *a,*b;
+        Exp_Bin(std::string bin_operation,Exp *a,Exp *b): bin_operation(bin_operation),a(a),b(b) {}
+        llvm::Value *codegen(CodeGenerator& __Generator) override;
+        llvm::Value* CodeGenPtr(CodeGenerator& __Generator)override{return NULL;}
+        void visualization(int n);
     };
 
     class Exp_Uni : public Exp
     {
     public:
-        std::string uni_op;
-        Exp *exp;
-        Exp_Uni(const std::string &__uni_op, Exp *__exp)
-        {
-            uni_op = __uni_op;
-            exp = __exp;
-        }
-        llvm::Value *codegen(codegenerator &__generator) override;
-        llvm::Value *codegenPtr(codegenerator &__generator) override { return nullptr; }
+        std::string uni_operation;
+        Exp *a;
+        Exp_Uni(std::string uni_operation,Exp* a): uni_operation(uni_operation),a(a) {}
+        llvm::Value *codegen(CodeGenerator& __Generator) override;
+        llvm::Value* CodeGenPtr(CodeGenerator& __Generator)override{return NULL;};
+        void visualization(int n);
     };
 
-    class Exp_Con : public Exp // a?b:c
+    class Exp_Con : public Exp // a?b :c
     {
     public:
-        Exp *cond;
-        Exp *left;
-        Exp *right;
-        Exp_Con(Exp *__cond, Exp *__left, Exp *__right)
-        {
-            cond = __cond;
-            left = __left;
-            right = __right;
-        }
-        llvm::Value *codegen(codegenerator &__generator) override { return nullptr; }
-        llvm::Value *codegenPtr(codegenerator &__generator) override { return nullptr; }
+        Exp *a,*b,*c;
+        Exp_Con(Exp *a,Exp *b,Exp* c): a(a),b(b),c(c) {}
+        void visualization(int n);
+        llvm::Value *codegen(CodeGenerator& __Generator) override {return NULL;}
+        llvm::Value* CodeGenPtr(CodeGenerator& __Generator)override{return NULL;}
     };
 
     class Exp_List : public Exp
     {
     public:
-        std::vector<Exp *> exp_list;
-        Exp_List()
-        {
-            exp_list.clear();
-        }
-        void add_exp(Exp *__exp)
-        {
-            exp_list.push_back(__exp);
-        }
-        llvm::Value *codegen(codegenerator &__generator) override { return nullptr; }
-        llvm::Value *codegenPtr(codegenerator &__generator) override { return nullptr; }
+        std::vector<Exp*> Exp_List_ ;
+        //Exp_List(std::vector<Exp*> Exp_List_):Exp_List_(Exp_List_){}
+        void addexp(Exp* a){Exp_List_.push_back(a);}
+        void visualization(int n);
+        llvm::Value *codegen(CodeGenerator& __Generator) override {return NULL;}
+        llvm::Value* CodeGenPtr(CodeGenerator& __Generator)override{return NULL;}
     };
 
     class Exp_Func : public Exp
     {
     public:
-        std::string func_name;
-        Exp_List *parameters;
-        Exp_Func(const std::string &__func_name, Exp_List *__parameters)
-        {
-            func_name = __func_name;
-            parameters = __parameters;
-        }
-        llvm::Value *codegen(codegenerator &__generator) override;
-        llvm::Value *codegenPtr(codegenerator &__generator) override { return nullptr; }
+        std::string Func_Name;
+        Exp_List* Parameters;
+        Exp_Func(std::string Func_Name,Exp_List* Parameters):Func_Name(Func_Name),Parameters(Parameters){}
+        void visualization(int n);
+        llvm::Value *codegen(CodeGenerator& __Generator) override ;
+        llvm::Value* CodeGenPtr(CodeGenerator& __Generator)override{return NULL;}
+    };
+
+    class Exp_Comma : public Exp
+    {
+    public:
+        Exp *a, *b;
+        Exp_Comma(Exp *a, Exp* b):a(a),b(b) {}
+        void visualization(int n);
+        llvm::Value *codegen(CodeGenerator& __Generator) override;
+        llvm::Value* CodeGenPtr(CodeGenerator& __Generator)override{return NULL;}
     };
 
     class Exp_Assign : public Exp
     {
     public:
-        Exp *left, *right;
-        Exp_Assign(Exp *__left, Exp *__right)
-        {
-            left = __left;
-            right = __right;
-        }
-        llvm::Value *codegen(codegenerator &__generator) override;
-        llvm::Value *codegenPtr(codegenerator &__generator) override;
+        Exp *a, *b;
+        Exp_Assign(Exp *a, Exp *b):a(a),b(b) {}
+        void visualization(int n);
+        llvm::Value *codegen(CodeGenerator& __Generator) override;
+        llvm::Value* CodeGenPtr(CodeGenerator& __Generator)override{return NULL;}
+        
     };
 
-    class Exp_Id : public Exp
+    class Exp_ID : public Exp
     {
     public:
-        std::string id;
-        Exp_Id(const std::string &__id)
-        {
-            id = __id;
-        }
-        llvm::Value *codegen(codegenerator &__generator) override;
-        llvm::Value *codegenPtr(codegenerator &__generator) override;
+        std::string ID_Name;
+        Exp_ID(std::string ID_Name):ID_Name(ID_Name){}
+        void visualization(int n);
+        llvm::Value *codegen(CodeGenerator& __Generator) override;
+        llvm::Value* CodeGenPtr(CodeGenerator& __Generator)override;
     };
 
-    class Const : public Exp
+    class Constant : public Exp
     {
     public:
-        virtual llvm::Value *codegenPtr(codegenerator &__generator) = 0;
+        virtual llvm::Value *codegen(CodeGenerator& __Generator) = 0;
+        llvm::Value* CodeGenPtr(CodeGenerator& __Generator)override{return NULL;}
     };
 
-    class Const_Int : public Const
+    class Constant_Int : public Constant
     {
     public:
-        int value;
-        Const_Int(int __value)
-        {
-            value = __value;
-        }
-        llvm::Value *codegen(codegenerator &__generator) override;
-        llvm::Value *codegenPtr(codegenerator &__generator) override { return nullptr; }
+        int Val;
+        Constant_Int(int Val):Val(Val){}
+        llvm::Value *codegen(CodeGenerator& __Generator) override;
+        void visualization(int n);
     };
 
-    class Const_Char : public Const
+    class Constant_Double : public Constant
     {
     public:
-        char value;
-        Const_Char(char __value)
-        {
-            value = __value;
-        }
-        llvm::Value *codegen(codegenerator &__generator) override;
-        llvm::Value *codegenPtr(codegenerator &__generator) override { return nullptr; }
+        double Val;
+        Constant_Double(double Val):Val(Val){}
+        llvm::Value *codegen(CodeGenerator& __Generator) override;
+        void visualization(int n);
     };
 
-    class Const_String : public Const
+    class Constant_Bool : public Constant
     {
     public:
-        std::string value;
-        Const_String(const std::string &__value)
-        {
-            value = __value;
-        }
-        llvm::Value *codegen(codegenerator &__generator) override;
-        llvm::Value *codegenPtr(codegenerator &__generator) override { return nullptr; }
+        bool Val;
+        Constant_Bool(bool Val):Val(Val){}
+        llvm::Value *codegen(CodeGenerator& __Generator) override;
+        void visualization(int n);
     };
+
+    class Constant_Char : public Constant
+    {
+    public:
+        char Val;
+        Constant_Char(char Val):Val(Val){}
+        llvm::Value *codegen(CodeGenerator& __Generator) override;
+        void visualization(int n);
+    };
+
+    class Constant_String : public Constant
+    {
+    public:
+        std::string Val;
+        Constant_String(std::string Val):Val(Val){}
+        llvm::Value *codegen(CodeGenerator& __Generator) override;
+        void visualization(int n);
+    };
+
+
 
     class Stat_List : public Node
     {
     public:
-        std::vector<Stat *> stat_list;
-        Stat_List()
-        {
-            stat_list.clear();
-        }
-        void add_stat(Stat *__stat)
-        {
-            stat_list.push_back(__stat);
-        }
-        llvm::Value *codegen(codegenerator &__generator);
+        std::vector<Stat*> Stat_List_ ;
+        //StatList(std::vector<Stat*> StatList_):StatList_(StatList_){}
+    // Value *codegen(CodeGenerator& __Generator) override;
+    void addstat(Stat* a){Stat_List_.push_back(a);}
+    void visualization(int n);
     };
 
     class Block : public Node
     {
     public:
-        Stat_List *stat_list;
-        Block(Stat_List *__stat_list)
-        {
-            stat_list = __stat_list;
-        }
-        llvm::Value *codegen(codegenerator &__generator);
+        Stat_List* StatList_;
+        Block(Stat_List* StatList_): StatList_( StatList_){}
+        void visualization(int n);
+        llvm::Value *codegen(CodeGenerator& __Generator) ;
     };
 
     class Stat_Exp : public Stat
     {
     public:
-        Exp *exp;
-        Stat_Exp(Exp *__exp)
-        {
-            exp = __exp;
-        }
+        Exp *a;
+        Stat_Exp(Exp *a): a(a){}
+        void visualization(int n);
+        
     };
 
     class Stat_Return : public Stat
     {
     public:
-        Exp *exp;
-        Stat_Return(Exp *__exp)
-        {
-            exp = __exp;
-        }
-        llvm::Value *codegen(codegenerator &__generator) override;
+        Exp* a;
+        Stat_Return(Exp *a): a(a){}
+        void visualization(int n);
+        llvm::Value *codegen(CodeGenerator& __Generator) override ;
+    
     };
 
     class Stat_If : public Stat
     {
     public:
-        Exp *exp;
-        Block *block;
-        Stat_If(Exp *__exp, Block *__block)
-        {
-            exp = __exp;
-            block = __block;
-        }
-        llvm::Value *codegen(codegenerator &__generator) override;
+        Exp *a;
+        Block *t;
+        Stat_If(Exp *a,Block *t): a(a),t(t){}
+        void visualization(int n);
+        llvm::Value *codegen(CodeGenerator& __Generator) override;
     };
 
     class Stat_IfElse : public Stat
     {
     public:
-        Exp *exp;
-        Block *block1, *block2;
-        Stat_IfElse(Exp *__exp, Block *__block1, Block *__block2)
-        {
-            exp = __exp;
-            block1 = __block1;
-            block2 = __block2;
-        }
-        llvm::Value *codegen(codegenerator &__generator) override;
+        Exp *a;
+        Block *t,*f;
+        Stat_IfElse(Exp *a,Block *t,Block *f): a(a),t(t),f(f){}
+        void visualization(int n);
+        llvm::Value *codegen(CodeGenerator& __Generator) override;
+    
     };
 
     class Stat_For : public Stat
     {
     public:
-        Exp *exp1, *exp2, *exp3;
-        Block *block;
-        Stat_For(Exp *__exp1, Exp *__exp2, Exp *__exp3, Block *__block)
-        {
-            exp1 = __exp1;
-            exp2 = __exp2;
-            exp3 = __exp3;
-            block = __block;
-        }
-        llvm::Value *codegen(codegenerator &__generator) override;
+        Exp *a,*b,*c;
+        Block *t;
+        Stat_For(Exp *a,Exp* b,Exp *c,Block *t): a(a),b(b),c(c),t(t){}
+        void visualization(int n);
+        llvm::Value *codegen(CodeGenerator& __Generator) override;
+    
     };
 
     class Stat_While : public Stat
     {
     public:
-        Exp *exp;
-        Block *block;
-        Stat_While(Exp *__exp, Block *__block)
-        {
-            exp = __exp;
-            block = __block;
-        }
-        llvm::Value *codegen(codegenerator &__generator) override;
+        Exp *a;
+        Block *t;
+        Stat_While(Exp* a,Block* t): a(a),t(t){}
+        void visualization(int n);
+        llvm::Value *codegen(CodeGenerator& __Generator) override ;
+    
     };
 
     class Stat_DoWhile : public Stat
     {
     public:
-        Exp *exp;
-        Block *block;
-        Stat_DoWhile(Exp *__exp, Block *__block)
-        {
-            exp = __exp;
-            block = __block;
-        }
-        llvm::Value *codegen(codegenerator &__generator) override;
+        Exp *a;
+        Block *t;
+        Stat_DoWhile(Exp *a,Block *t): a(a),t(t){}
+        void visualization(int n);
+        llvm::Value *codegen(CodeGenerator& __Generator) override ;
+    
     };
 
-    class Var_Dec : public Define_Block
+
+
+    class Var_Dec: public Define_Block
     {
     public:
-        std::string type;
-        std::string id;
-        Exp *exp;
-        Var_Dec(const std::string &__type, const std::string &__id, Exp *__exp)
-        {
-            type = __type;
-            id = __id;
-            exp = __exp;
-        }
-        llvm::Value *codegen(codegenerator &__generator) override;
+        Specifier *Type;
+        std::string ID;
+        Var_Dec(Specifier *Type,std::string ID):Type(Type),ID(ID){}
+        llvm::Value *codegen(CodeGenerator& __Generator) override;
+        void visualization(int n);
     };
 
     class Para_List : public Node
     {
     public:
-        std::vector<Var_Dec *> para_list;
-        Para_List()
-        {
-            para_list.clear();
-        }
-        void add_para(Var_Dec *__para)
-        {
-            para_list.push_back(__para);
-        }
+        std::vector<Specifier*> Specifier_List_ ;
+        std::vector<std::string> Exp_ID_List_ ;
+        Para_List(){}
+        void addpara(Specifier* Specifier ,std::string Exp){Specifier_List_.push_back(Specifier);Exp_ID_List_.push_back(Exp);}
+        void visualization(int n);
     };
 
-    class Fun_Imp : public Define_Block
+    class Fun_Imp: public Define_Block
     {
     public:
-        std::string type;
-        std::string id;
-        Para_List *parameters;
-        Block *block;
-        Fun_Imp(const std::string &__type, const std::string &__id, Para_List *__parameters, Block *__block)
-        {
-            type = __type;
-            id = __id;
-            parameters = __parameters;
-            block = __block;
-        }
-        llvm::Value *codegen(codegenerator &__generator) override;
+        Specifier *Return_Type;
+        std::string Fun_ID;
+        Para_List *ParaList_;
+        Block * Fun_Block;
+        Fun_Imp(Specifier *Return_Type,std::string Fun_ID,Para_List *ParaList_,Block  *Fun_Block):Return_Type(Return_Type),ParaList_(ParaList_),Fun_ID(Fun_ID),Fun_Block(Fun_Block){}
+        Fun_Imp(Specifier *Return_Type,std::string Fun_ID,Block  *Fun_Block):Return_Type(Return_Type),ParaList_(NULL),Fun_ID(Fun_ID),Fun_Block(Fun_Block){}
+        llvm::Value *codegen(CodeGenerator& __Generator) override;
+        void visualization(int n);
     };
 
     class Var_Init : public Node
     {
     public:
-        Exp_Id *id;
-        Exp *exp;
-        Var_Init(Exp_Id *__id, Exp *__exp)
-        {
-            id = __id;
-            exp = __exp;
-        }
+        Exp_ID* ID ;
+        Exp* Val;
+        Var_Init(Exp_ID* ID):ID(ID),Val(NULL){}
+        Var_Init(Exp_ID* ID,Exp* Val):ID(ID),Val(Val){}
+        void visualization(int n);
     };
 
     class Var_List : public Node
     {
     public:
-        std::vector<Var_Init *> var_list;
-        Var_List()
-        {
-            var_list.clear();
-        }
-        void add_var(Var_Init *__var)
-        {
-            var_list.push_back(__var);
-        }
+        std::vector<Var_Init*> Var_Init_List_ ;
+        //VarList(std::vector<Var_Init*> Var_Init_List):Var_Init_List(Var_Init_List){}
+        void addvar(Var_Init* a){Var_Init_List_.push_back(a);}
+        void visualization(int n);
     };
+
+    
 }
+
+
+// 
+
+
+
+
+
