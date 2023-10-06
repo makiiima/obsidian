@@ -15,7 +15,7 @@
 #define JMP 0b1100
 #define LEA 0b1110
 #define HALT 0b1111
-unsigned short mem[0xffff];
+short mem[0xffff];
 short regs[8];
 unsigned short pc;
 unsigned short ir;
@@ -33,11 +33,9 @@ void Init();
 unsigned short Load();
 
 // execute the insts
-void execute();
+void execute(unsigned short begin);
 
 unsigned short str2num(char *src);
-
-char *MyGetLine();
 
 short SEXT(unsigned int inst, int len)
 {
@@ -175,7 +173,7 @@ inline void jsr()
     return;
 }
 
-inline void and ()
+void and ()
 {
     if (ir & 0b100000)
     {
@@ -195,7 +193,7 @@ inline void and ()
     return;
 }
 
-inline void ldr()
+void ldr()
 {
     tmp1 = SEXT(ir, 6);
     tmp2 = regnum(ir, 11);
@@ -206,7 +204,7 @@ inline void ldr()
     return;
 }
 
-inline void str()
+void str()
 {
     tmp1 = SEXT(ir, 6);
     tmp2 = regnum(ir, 11);
@@ -216,7 +214,7 @@ inline void str()
     return;
 }
 
-inline void not()
+void not()
 {
     tmp1 = regnum(ir, 8);
     tmp2 = regnum(ir, 11);
@@ -226,18 +224,18 @@ inline void not()
     return;
 }
 
-inline void ldi()
+void ldi()
 {
     tmp2 = regnum(ir, 11);
     tmp1 = pc + SEXT(ir, 9);
     tmp1 = mem[tmp1];
-    regs[tmp2] = mem[tmp1];
+    regs[tmp2]=mem[tmp1];
 
     setcc();
     return;
 }
 
-inline void sti()
+void sti()
 {
     tmp2 = regnum(ir, 11);
     tmp1 = pc + SEXT(ir, 9);
@@ -246,21 +244,21 @@ inline void sti()
     return;
 }
 
-inline void jmp()
+void jmp()
 {
     tmp2 = regnum(ir, 8);
     pc = regs[tmp2];
     return;
 }
 
-inline void lea()
+void lea()
 {
     tmp1 = SEXT(ir, 9);
     tmp2 = regnum(ir, 11);
     regs[tmp2] = tmp1 + pc;
 }
 
-inline void halt()
+void halt()
 {
     for (int i = 0; i < 8; i++)
     {
@@ -295,56 +293,25 @@ unsigned short str2num(char *src)
 
 unsigned short Load()
 {
-  char tmp;
-  char *inst;
-  unsigned short NowAddr = 0;
-  unsigned short Head = 0;
-
-  inst = MyGetLine();
-  Head = str2num(inst);
-  NowAddr = Head;
-  while ((inst = MyGetLine()) != NULL)
-  {
-    mem[NowAddr] = str2num(inst);
-    NowAddr++;
-  }
-  return Head;
+    char nowline[17];
+    unsigned short linenum = 0;
+    scanf("%s", nowline);
+    short head = str2num(nowline);
+    while (fgets(nowline, 17, stdin) != NULL)
+    {
+        mem[head + linenum] = str2num(nowline);
+        linenum++;
+    }
+    return head;
 }
 
-// read a 16bits string in buffer
-// return address of string after read 16 chars
-// or return NULL while reading EOF
-char *MyGetLine()
+void execute(unsigned short begin)
 {
-  int count = 0;
-  char tmp;
-  char *IS;
-  IS = (char *)calloc(16, sizeof(char));
-  while (1)
-  {
-    tmp = getchar();
-    if (tmp == EOF)
-    {
-      return NULL;
-    }
-    if (tmp != '\n')
-    {
-      IS[count] = tmp;
-      count++;
-    }
-    if (count >= 16)
-    {
-      return IS;
-    }
-  }
-}
-
-void execute()
-{
-    pc=Load();
+    pc = begin;
+    pc++;
     while (flag)
     {
-        ir = mem[pc];
+        ir=mem[pc];
         pc++;
         opcode = ir >> 12;
         switch (opcode)
@@ -398,7 +365,20 @@ void execute()
 int main()
 {
     Init();
+    //begin = Load();
     // printf("%x\n%x",mem[0x3000],mem[0x3001]);
-    execute();
+    begin=0x3000;
+    mem[0x3000]=0x3000;
+    mem[0x3001]=0x2008;
+    mem[0x3002]=0b0101010010100000;
+    mem[0x3003]=0b0001011000000000;
+    mem[0x3004]=0b0001100011000011;
+    mem[0x3005]=0b0101001011000100;
+    mem[0x3006]=0b0101001001000000;
+    mem[0x3007]=0b0000010000000001;
+    mem[0x3008]=0b0001010010100001;
+    mem[0x3009]=0b1111000000100101;
+    mem[0x300A]=0b0001001000110100;
+    execute(begin);
     return 0;
 }

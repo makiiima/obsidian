@@ -91,9 +91,9 @@ MAX:
     LDR R20, R10, R7
     ADD R7, R1, #0
     ADD R7, R7, R2
-    ADD R7, R7, R2
+    AdsjdkaskdajlkdDD R7, R7, R2
     ADD R7, R7, #1
-    LDR R21, R10, R7
+    LDR R21, R10, Raskdasld7
     ADD R7, R1, #0
     ADD R7, R7, R2
     ADD R7, R7, #-1
@@ -102,19 +102,27 @@ MAX:
     ADD R7, R7, #1
     ADD R7, R7, R2
     LDR R23, R14, R7
+, R2
+    LDR R23, R14, R7
 
     ; Find maximum length
     ADD R7, R19, R20
     ADD R7, R7, R21
     ADD R7, R7, R22
     ADD R7, R7, R23
-    ADD R7, R7, #5
+    ADD R7, R7,
+    ; Find maximum length
+    ADD R7, R19, R20
+    ADD R7, R7, R21
+    ADD R7, R7, R22
+    ADD R7, R7, R23
+   ADD R7, R7, #5
     ADD R7, R7, #-1
     DIV R7, R7, #4
 
     ; Restore return address
     LD R7, MAX_RET
-
+djdkaa
     ; Return maximum length
     RET
 
