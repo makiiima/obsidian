@@ -8,11 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/gongsunyangmei/Documents/Compiler/src/AST.cpp" "CMakeFiles/mycompiler.dir/src/AST.cpp.o" "gcc" "CMakeFiles/mycompiler.dir/src/AST.cpp.o.d"
-  "/home/gongsunyangmei/Documents/Compiler/src/lexer.cpp" "CMakeFiles/mycompiler.dir/src/lexer.cpp.o" "gcc" "CMakeFiles/mycompiler.dir/src/lexer.cpp.o.d"
-  "/home/gongsunyangmei/Documents/Compiler/src/main.cpp" "CMakeFiles/mycompiler.dir/src/main.cpp.o" "gcc" "CMakeFiles/mycompiler.dir/src/main.cpp.o.d"
-  "/home/gongsunyangmei/Documents/Compiler/src/parser.cpp" "CMakeFiles/mycompiler.dir/src/parser.cpp.o" "gcc" "CMakeFiles/mycompiler.dir/src/parser.cpp.o.d"
-  "/home/gongsunyangmei/Documents/Compiler/src/visualization.cpp" "CMakeFiles/mycompiler.dir/src/visualization.cpp.o" "gcc" "CMakeFiles/mycompiler.dir/src/visualization.cpp.o.d"
+  "/home/gongsunyangmei/Documents/Compiler/src/AST.cpp" "CMakeFiles/myCompiler.dir/src/AST.cpp.o" "gcc" "CMakeFiles/myCompiler.dir/src/AST.cpp.o.d"
+  "/home/gongsunyangmei/Documents/Compiler/src/lexer.cpp" "CMakeFiles/myCompiler.dir/src/lexer.cpp.o" "gcc" "CMakeFiles/myCompiler.dir/src/lexer.cpp.o.d"
+  "/home/gongsunyangmei/Documents/Compiler/src/main.cpp" "CMakeFiles/myCompiler.dir/src/main.cpp.o" "gcc" "CMakeFiles/myCompiler.dir/src/main.cpp.o.d"
+  "/home/gongsunyangmei/Documents/Compiler/src/parser.cpp" "CMakeFiles/myCompiler.dir/src/parser.cpp.o" "gcc" "CMakeFiles/myCompiler.dir/src/parser.cpp.o.d"
+  "/home/gongsunyangmei/Documents/Compiler/src/visualization.cpp" "CMakeFiles/myCompiler.dir/src/visualization.cpp.o" "gcc" "CMakeFiles/myCompiler.dir/src/visualization.cpp.o.d"
   )
 
 # Targets to which this target links.
