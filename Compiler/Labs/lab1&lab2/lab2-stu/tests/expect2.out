@@ -1,5 +1,0 @@
-// test int in comment
-
-INT main() {
-    RETURN 0;
-}
