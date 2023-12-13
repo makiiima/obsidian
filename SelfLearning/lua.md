@@ -22,16 +22,16 @@ To delete a global varible, just let it be `nil`.
 
 ## DataType
 
-| Êý¾ÝÀàÐÍ | ÃèÊö                                                         |
+| æ•°æ®ç±»åž‹ | æè¿°                                                         |
 | :------- | :----------------------------------------------------------- |
-| nil      | Õâ¸ö×î¼òµ¥£¬Ö»ÓÐÖµnilÊôÓÚ¸ÃÀà£¬±íÊ¾Ò»¸öÎÞÐ§Öµ£¨ÔÚÌõ¼þ±í´ïÊ½ÖÐÏàµ±ÓÚfalse£©¡£ |
-| boolean  | °üº¬Á½¸öÖµ£ºfalseºÍtrue¡£                                    |
-| number   | ±íÊ¾Ë«¾«¶ÈÀàÐÍµÄÊµ¸¡µãÊý                                     |
-| string   | ×Ö·û´®ÓÉÒ»¶ÔË«ÒýºÅ»òµ¥ÒýºÅÀ´±íÊ¾                             |
-| function | ÓÉ C »ò Lua ±àÐ´µÄº¯Êý                                       |
-| userdata | ±íÊ¾ÈÎÒâ´æ´¢ÔÚ±äÁ¿ÖÐµÄCÊý¾Ý½á¹¹                              |
-| thread   | ±íÊ¾Ö´ÐÐµÄ¶ÀÁ¢ÏßÂ·£¬ÓÃÓÚÖ´ÐÐÐ­Í¬³ÌÐò                         |
-| table    | Lua ÖÐµÄ±í£¨table£©ÆäÊµÊÇÒ»¸ö"¹ØÁªÊý×é"£¨associative arrays£©£¬Êý×éµÄË÷Òý¿ÉÒÔÊÇÊý×Ö¡¢×Ö·û´®»ò±íÀàÐÍ¡£ÔÚ Lua Àï£¬table µÄ´´½¨ÊÇÍ¨¹ý"¹¹Ôì±í´ïÊ½"À´Íê³É£¬×î¼òµ¥¹¹Ôì±í´ïÊ½ÊÇ{}£¬ÓÃÀ´´´½¨Ò»¸ö¿Õ±í¡£ |
+| nil      | è¿™ä¸ªæœ€ç®€å•ï¼Œåªæœ‰å€¼nilå±žäºŽè¯¥ç±»ï¼Œè¡¨ç¤ºä¸€ä¸ªæ— æ•ˆå€¼ï¼ˆåœ¨æ¡ä»¶è¡¨è¾¾å¼ä¸­ç›¸å½“äºŽfalseï¼‰ã€‚ |
+| boolean  | åŒ…å«ä¸¤ä¸ªå€¼ï¼šfalseå’Œtrueã€‚                                    |
+| number   | è¡¨ç¤ºåŒç²¾åº¦ç±»åž‹çš„å®žæµ®ç‚¹æ•°                                     |
+| string   | å­—ç¬¦ä¸²ç”±ä¸€å¯¹åŒå¼•å·æˆ–å•å¼•å·æ¥è¡¨ç¤º                             |
+| function | ç”± C æˆ– Lua ç¼–å†™çš„å‡½æ•°                                       |
+| userdata | è¡¨ç¤ºä»»æ„å­˜å‚¨åœ¨å˜é‡ä¸­çš„Cæ•°æ®ç»“æž„                              |
+| thread   | è¡¨ç¤ºæ‰§è¡Œçš„ç‹¬ç«‹çº¿è·¯ï¼Œç”¨äºŽæ‰§è¡ŒååŒç¨‹åº                         |
+| table    | Lua ä¸­çš„è¡¨ï¼ˆtableï¼‰å…¶å®žæ˜¯ä¸€ä¸ª"å…³è”æ•°ç»„"ï¼ˆassociative arraysï¼‰ï¼Œæ•°ç»„çš„ç´¢å¼•å¯ä»¥æ˜¯æ•°å­—ã€å­—ç¬¦ä¸²æˆ–è¡¨ç±»åž‹ã€‚åœ¨ Lua é‡Œï¼Œtable çš„åˆ›å»ºæ˜¯é€šè¿‡"æž„é€ è¡¨è¾¾å¼"æ¥å®Œæˆï¼Œæœ€ç®€å•æž„é€ è¡¨è¾¾å¼æ˜¯{}ï¼Œç”¨æ¥åˆ›å»ºä¸€ä¸ªç©ºè¡¨ã€‚ |
 ```lua
 --empty table
 local tbl1={}
