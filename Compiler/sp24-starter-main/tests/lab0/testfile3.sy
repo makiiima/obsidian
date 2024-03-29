@@ -1,0 +1,18 @@
+int add(int a, int b) {
+    return a + b; // AddOp: "+"
+}
+
+int subtract(int a, int b) {
+    return a - b; // AddOp: "-"
+}
+
+int main() {
+    int a = 9 % 4; // MulOp: "%"
+    int b = add(5, 5) * subtract(10, 5); // MulOp: "*", AddOp: "+", "-"
+    if (a == b) { // EqOp: "=="
+        write(a);
+    } else if (a != b) { // EqOp: "!="
+        write(b);
+    }
+    return 0;
+}

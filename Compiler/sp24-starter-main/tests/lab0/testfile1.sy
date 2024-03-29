@@ -1,0 +1,16 @@
+
+void myvoid(int x[][3]){
+;
+return;
+}
+int main() {
+    int a = 10, b = 20, c[3] = {1, 2, 3}, d[2][2] = {{1, 1}, {2, 2}};
+    int e[10];
+    e[0] = a + b;
+    write(a);
+    write(b);
+    write(c[0]);
+    write(d[1][1]);
+    write(e[0]);
+    return 0;
+}

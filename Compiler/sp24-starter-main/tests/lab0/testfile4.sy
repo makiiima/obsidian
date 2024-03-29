@@ -1,0 +1,11 @@
+int main() {
+    int flag = 0;
+    int negation = !flag; // 覆盖 UnaryOp: "!"
+    int positive = +negation; // 覆盖 UnaryOp: "+"
+    if (flag || positive) { // 覆盖 LOrExp
+        write(1);
+    } else {
+        write(0);
+    }
+    return 0;
+}
